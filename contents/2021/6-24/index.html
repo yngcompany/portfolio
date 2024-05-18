@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<style type="text/css">
+	.tabArea {width: 100%;}
+	.evWrap {position:relative; width:100%; font-family:'Noto Sans Regular'; overflow:hidden;}
+	._sr_only {position:absolute; width:0; height:0; overflow:hidden; padding:0; margin:0; border:none; clip:rect(0,0,0,0);}
+	._mss {width:100%; background:#000;}
+	._mss img {display:block !important; width:auto; height:auto; margin:0 auto;}
+	._mss_video {position:relative; width:100%; padding-top:56.25%; overflow:hidden; background:#ff7424; font-size:0;}
+	._mss_video ._video_wrap {position:absolute; left:0; top:0; width:100%; padding-top:66.66667%; margin-top:-5.20833%; overflow:hidden;}
+	._mss_video ._video_wrap iframe {position:absolute; left:0; top:0; width:100.1%; height:100.1%; margin:0; padding:0; border:none;}
+	._mss_video ._video_wrap video {position:absolute; left:0; top:0; display:block; width:100%; height:100%;}
+	._mss_video ._video_cover {position:absolute; left:0; top:7.8125%; right:0; bottom:7.8125%; background:#ff7424 url('https://static.lottedfs.com/contents/images/ckeditor-img/20210614/20210614111619786faf5327db21b41cfaab0824de7b2d3d5.jpg') 50% 0 no-repeat; background-size:100%; opacity:0; z-index:100; transition:opacity .5s;}
+	._mss_video._video_wait ._video_cover {opacity:1; text-align:center;}
+	._mss_video ._video_play {display:none; position:absolute; left:50%; top:50%; width:100px; height:100px; margin:-50px 0 0 -50px; border-radius:100px; overflow:hidden; background:#fff; z-index:350; box-shadow:5px 5px 10px rgba(0,0,0,0.5);}
+	._mss_video ._video_play::after {content:''; position:absolute; left:50%; top:50%; width:0; height:0; margin:-30px 0 0 -18px; border:solid 30px transparent; border-right:solid 0 transparent; border-left:solid 50px #000;}
+	._mss_video._video_wait ._video_play {display:block;}
+	._mss_video ._event_date {position:absolute; left:0; bottom:10.64814%; width:100%; text-align:center; font-size:22px; color:#fff; z-index:400;}
+	._event_header {width:100%; height:521px; padding-top:158px; box-sizing:border-box;}
+	._event_product {width:100%;}
+	._event_product_1 {background:#000;}
+	._event_product_2 {padding-top:250px; background:#fff;}
+	._prd_group {position:relative; width:1160px; margin:0 auto; padding-top:134px; box-sizing:border-box;}
+	._prd_group::before {content:''; position:absolute; left:50%; top:0; width:131px; height:26px; margin-left:-66px;}
+	._prd_group::after {content:''; display:block; clear:both;}
+	._prd_group._prd_group_1 {height:1495px;}
+	._prd_group._prd_group_2 {height:1495px;}
+	._prd_group._prd_group_3 {height:1494px;}
+	._prd_group._prd_group_4 {height:1402px;}
+	._prd_group._prd_group_1::before {background:#ff7424;}
+	._prd_group._prd_group_2::before {background:#ffaf28;}
+	._prd_group._prd_group_3::before {background:#0e3aa0;}
+	._prd_group._prd_group_4::before {background:#4f239a;}
+	._prd_group ._prd_banner {position:absolute; white-space:nowrap; font-size:0; z-index:0;}
+	._prd_group ._prd_banner img {display:inline-block !important;}
+	._prd_group ._prd_banner._prd_banner_top {z-index:20;}
+	._prd_group._prd_group_1 ._prd_banner {top:159px; left:50%; margin-left:-100%; animation:_header_marquee_1 15.6s linear infinite;}
+	._prd_group._prd_group_2 ._prd_banner {top:164px; right:50%; margin-right:-100%; animation:_header_marquee_2 15.6s linear infinite;}
+	._prd_group._prd_group_3 ._prd_banner {top:169px; left:50%; margin-left:-100%; animation:_header_marquee_3 15.6s linear infinite;}
+	._prd_group._prd_group_4 ._prd_banner {top:185px; right:50%; margin-right:-100%; animation:_header_marquee_4 15.6s linear infinite;}
+	@keyframes _header_marquee_1 {
+		0% {transform:translate3d(0, 0, 0);}
+		100% {transform:translate3d(-2343px, 0, 0);}
+	}
+	@keyframes _header_marquee_2 {
+		0% {transform:translate3d(0, 0, 0);}
+		100% {transform:translate3d(2220px, 0, 0);}
+	}
+	@keyframes _header_marquee_3 {
+		0% {transform:translate3d(0, 0, 0);}
+		100% {transform:translate3d(-1981px, 0, 0);}
+	}
+	@keyframes _header_marquee_4 {
+		0% {transform:translate3d(0, 0, 0);}
+		100% {transform:translate3d(2059px, 0, 0);}
+	}
+	._prd {position:relative; float:left; width:540px; z-index:10;}
+	._prd:first-child + ._prd {margin-left:80px; padding-top:270px;}
+	._prd ._prd_thumb {float:left; width:540px; height:620px;}
+	._prd ._prd_title {float:left; margin-top:60px;}
+	._prd ._prd_desc {float:left; margin-top:39px;}
+	._prd_1 ._prd_thumb {background:#ff7424;}
+	._prd_2 ._prd_thumb {background:#fff;}
+	._prd_3 ._prd_thumb {background:#ffaf28;}
+	._prd_4 ._prd_thumb {background:#fff;}
+	._prd_5 ._prd_thumb {background:#0e3aa0;}
+	._prd_6 ._prd_thumb {background:#e2e2e2;}
+	._prd_7 ._prd_thumb {background:#4f239a;}
+	._prd_8 ._prd_thumb {background:#e2e2e2;}
+	._event_info {width:100%;}
+	._event_info ._info_title {width:100%; height:416px; padding-top:141px; box-sizing:border-box;}
+	._event_info ._info_content {position:relative; width:1160px; height:1311px; margin:0 auto; box-sizing:border-box;}
+	._event_info ._info_content ._about {position:absolute; left:207px; top:373px; font-size:19px; line-height:37px; color:#fff; letter-spacing:-0.38px; white-space:nowrap;}
+	._event_info ._info_content ._soldout {position:absolute; left:844px; top:0; width:316px; height:576px;}
+	._event_info ._info_content ._soldout a {display:block; width:100%; height:100%;}
+	._event_info ._info_content ._step {font-size:20px; line-height:28px; color:#fff;}
+	._event_info ._info_content ._step em {font-size:18px; color:#7a7979; line-height:30px;}
+	._event_info ._info_content ._step_1 {position:absolute; left:207px; top:747px;}
+	._event_info ._info_content ._step_2 {position:absolute; left:566px; top:750px;}
+	._event_info ._info_content ._step_3 {position:absolute; left:886px; top:750px;}
+	._event_info ._info_content ._btn_join {position:absolute; left:305px; top:949px;}
+	._event_info ._info_content ._btn_join a {display:block; width:100%; height:100%;}
+	._event_info ._info_content ._event_caution {position:absolute; left:304px; top:1066px; font-size:18px; line-height:30px; color:#999;}
+	._event_info ._info_content ._event_caution li {position:relative; padding-left:14px;}
+	._event_info ._info_content ._event_caution li::before {content:''; position:absolute; left:0; top:13px; width:4px; height:4px; border-radius:4px; background:#999;}
+	._mss_banner {position:relative; width:100%; height:262px; overflow:hidden; background:#fff;}
+	._mss_banner::after {content:''; position:absolute; left:0; top:0; width:100%; height:220px; background:#1a38d3; z-index:0;}
+	._mss_banner ._banner_wrap {position:absolute; left:50%; top:0; width:1920px; height:100%; margin-left:-960px; z-index:10;}
+	._mss_banner ._banner_wrap > div {width:1920px; height:100%; margin:0 auto;}
+</style>
+<div class="evWrap">
+	<div class="_mss">
+		<div class="_mss_video _video_wait">
+			<div class="_video_wrap">
+				<video muted playsinline autoplay loop class="video">
+					<source type="video/mp4" src="무신사_웹_솔드아웃.mp4" />
+				</video>
+				<script>
+					$('.video')[0].play();
+				</script>
+			</div>
+			<div class="_event_date">응모기간 : <span>2021.06.14 (10시) ~ 06.20 (18시)</span></div>
+		</div>
+		<div class="_mss_content">
+			<div class="_event_header"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081647160938855d0695ce744c4bb82920a7d454b26.png" alt="환상의 짝꿍은 누구? 4쌍의 스니커즈 중 1켤레 랜덤 증정" /></div>
+			<div class="_event_product _event_product_1">
+				<div class="_prd_group _prd_group_1">
+					<div class="_prd _prd_1">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081653279475b7eff70e43e4a2f9b20f7f179c96cab.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165339770647f65d6fb5e460b9d2e34e74bd76d31.png" alt="에어 조던 1 레트로 하이 OG 트래비스 스캇" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165350350022e6fc4e6344700960da2c6033324e2.png" alt="트래비스 스캇이 재 탄생 시킨 가장 파격적인 디테일의 오리지널 에어 조던 1" /></div>
+					</div>
+					<div class="_prd _prd_2">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165401506e1f8f92a80a740a8ac72821c53fb697e.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165411097d5f3d9ed89c34ba1a47eeca576ba762e.png" alt="에어 조던 1 레트로 로우 SP 트래비스 스캇" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816542109519cabc7b412e4d9692847b6286137b23.png" alt="하이컷과는 또 다른 매력, 지금 이 순간 가장 비싼 에어 조던 1 로우" /></div>
+					</div>
+					<div class="_prd_banner">
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081719283254945ceed199c4980a193d368571a7de0.png" alt="RAFFLE LINE-UP Travis Scott" />
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081719283254945ceed199c4980a193d368571a7de0.png" alt="" />
+					</div>
+				</div>
+				<div class="_prd_group _prd_group_2">
+					<div class="_prd _prd_3">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816543032710f01fa947b747b99307256db5458438.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165440178002a599ac7b74e4fbc0866e4c1e9fc2d.png" alt="나이키 에어 포스 1 로우 파라노이즈 검흰" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816545229830c43afc28fa4e09a415b0af0b0bceb2.png" alt="‘그냥 해'의 시작, 지드래곤이 그려낸 나이키 에어 포스 1" /></div>
+					</div>
+					<div class="_prd _prd_4">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081655018314e68009c8c984c7785591acddc933acf.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165512211d0d61fcb49e844f5af43a67c07633d94.png" alt="나이키 에어 포스 1 로우 파라노이즈 흰검 (2020)" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816552383084145331542b462ba222775b7b97a5eb.png" alt="순백의 갑피가 벗겨지면 나타나는 그래피티의 반전 매력, 파라노이즈 2.0" /></div>
+					</div>
+					<div class="_prd_banner">
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608171939768e39eea5ace68490fab50d888a919d12c.png" alt="RAFFLE LINE-UP Para Noise" />
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608171939768e39eea5ace68490fab50d888a919d12c.png" alt="" />
+					</div>
+					<div class="_prd_banner _prd_banner_top">
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/202106091652488160ea332fd53db4bd79ce5bc30b669ff79.png" alt="" />
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/202106091652488160ea332fd53db4bd79ce5bc30b669ff79.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="_event_product _event_product_2">
+				<div class="_prd_group _prd_group_3">
+					<div class="_prd _prd_5">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165535634f6bff9551e4043b78344518ee68e8602.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165546255cf649ada9caf4f96bf4bed5abf1ca451.png" alt="나이키 덩크 로우 카시나 로드 사인" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816555539809d4c868e886488abd250dac121b3326.png" alt="한국의 1번 고속도로, 경부선 표지판을 모티브로 오직 한국에서만 발매" /></div>
+					</div>
+					<div class="_prd _prd_6">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165605457dfa6ce35112f4eb2b60010b479b91126.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165615328f81aefdea37d4295b3233bed875c93a8.png" alt="나이키 덩크 로우 카시나 세일 80's 버스" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165624255ee3501c79a194f809a70c9cd50f592d6.png" alt="버스 타고 부산에서 서울까지, 카시나의 상경 이야기가 담긴 덩크 로우" /></div>
+					</div>
+					<div class="_prd_banner">
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081719491011fd9d56cb8f6415ca321124fdf868ff3.png" alt="RAFFLE LINE-UP KASINA" />
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081719491011fd9d56cb8f6415ca321124fdf868ff3.png" alt="" />
+					</div>
+				</div>
+				<div class="_prd_group _prd_group_4">
+					<div class="_prd _prd_7">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816563416788a76aac69b6448283b081bd7a2df21e.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816564483225b53bb4802843308cd31790b87ad668.png" alt="나이키 베이퍼와플 사카이 세서미 앤 블루 보이드" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081656540009cedcf3eee204c7caa3680d2176f7a25.png" alt="다양한 소재의 조화, 사카이의 인기 상승은 현재 진행형" /></div>
+					</div>
+					<div class="_prd _prd_8">
+						<div class="_prd_thumb"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/2021060816570316295b114bf0ce44e6d9a2d8ac8d0042517.png" alt="" /></div>
+						<div class="_prd_title"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608165712509657d6b4fd24344868c684482386193cd.png" alt="나이키 베이퍼와플 사카이 다크 아이리스" /></div>
+						<div class="_prd_desc"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/202106081657214757856adfb395c48fda14d46241ff1bd2c.png" alt="여러겹의 레이어처럼 쌓여가는 명성, 나이키 베이퍼와플 사카이" /></div>
+					</div>
+					<div class="_prd_banner">
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608171958743dc98bc5a73274b979af4d48ca9ba980e.png" alt="SACAI" />
+						<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210608/20210608171958743dc98bc5a73274b979af4d48ca9ba980e.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="_event_info">
+				<div class="_info_title">
+					<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/2021060913262180054c4ad9f91e7498a92d3c0e290237b2e.png" alt="환상의 짝꿍 주인공은? 지금 바로 응모하세요" />
+				</div>
+				<div class="_info_content">
+					<img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/2021060913275172182a9b49827da4fc7b5832fcf2a055f39.png" alt="" />
+					<div class="_sr_only">
+						<p>8종의 스니커즈 중 1켤레 증정(모델 및 사이즈 랜덤)</p>
+						<p>행사안내</p>
+					</div>
+					<div class="_about">
+						<p>응모 대상 : 롯데인터넷면세점 & 솔드아웃 회원</p>
+						<p>당첨 인원 : 총 8명</p>
+						<p>응모 기간 : 2021.06.14 (10시) ~ 06.20 (18시)</p>
+						<p>당첨자 발표 : 2021.07.06</p>
+					</div>
+					<a href="https://soldout.onelink.me/Ebx8/5701e126" target="_blank" class="_soldout"><span class="_sr_only">soldout</span></a>
+					<div class="_sr_only">
+						<p>무신사가 만든 한정판 마켓 솔드아웃에서는 인기있는 한정판 래플 응모와 함께, 가품 걱정없이 꼼꼼한 검수로 원하는 제품을 스마트하게 거래할 수 있습니다. </p>
+						<p>응모방법</p>
+					</div>
+					<div class="_step">
+						<p class="_step_1"><span class="_sr_only">STEP.1</span>롯데인터넷면세점 및<br>솔드아웃 앱<br>회원가입</p>
+						<p class="_step_2"><span class="_sr_only">STEP.2</span>이벤트페이지 내<br>응모하기를 통해<br>응모정보 입력<br><em>(ID당 1회 가능)</em></p>
+						<p class="_step_3"><span class="_sr_only">STEP.3</span>개인정보 수집<br>동의 후<br>최종 응모 완료</p>
+					</div>
+					<div class="_btn_join">
+						<a href="https://forms.gle/fThMFSoVPnqFXbj49" target="_blank"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/20210609134038053f3ef569eba594e99b0fc903087611d19.png" alt="응모하기" /></a>
+					</div>
+					<div class="_event_caution">
+						<ul>
+							<li>응모 대상 모델 및 사이즈는 랜덤이며 교환 불가 제품입니다.</li>
+							<li>롯데인터넷면세점 &amp; 솔드아웃 회원이 아닌 경우 응모되지 않습니다.</li>
+							<li>중복 응모 시 마지막 응모만 인정됩니다.</li>
+							<li>응모 페이지 안내사항과 하단 유의사항을 반드시 확인해 주세요.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="_mss_banner">
+			<div class="_banner_wrap">
+				<div><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210609/202106091353170501339ba2e2bdc4c16a562d27cd76fb910.png" alt="6월한정, 솔드아웃 회원 누구나 5,000P 최대 80만 포인트를 받을 수 있는 역대급 기회!" /></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

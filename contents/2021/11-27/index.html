@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<style type="text/css">
+	html {overflow-y:scroll;}
+	.tabArea {width:100%;}
+	.evWrap {position:relative; width:100%; overflow:hidden; background:#1a1a1a; line-height:1.42857143; font-family:'Microsoft Yahei','Tahoma','Lantinghei SC','Simhei',simsun,'微软雅黑',STXihei,"华文细黑",sans-serif;}
+	.evWrap img {display:block;}
+	.evWrap .screenOut {position:absolute; width:1px; height:1px; font-size:1px; visibility:hidden; overflow:hidden;}
+	
+	._layout_area {position:relative; width:100%; overflow:hidden;}
+
+	._sec {box-sizing:border-box;}
+	._sec_1 {position:absolute; left:0; top:0; width:100%; height:0; opacity:1; z-index:10; transition:height 1s ease-out .6s, top 1s ease-out, opacity .5s ease-in; pointer-events:none;}
+	._sec_1 ._sec_wrap {}
+	._sec_1::after {content:''; position:absolute; left:0; top:0; width:100%; height:337px; background:url('./static-fo-pc/img/zh/event/kc211022_singlesday/p_bg_title_cover.png') 0 0 repeat-x; opacity:0; z-index:0; transition:opacity 1s linear;}
+	._sec_1._ani::after {opacity:0.9;}
+	._sec_1 img {pointer-events:none;}
+	._sec_1._end {opacity:0;}
+
+	._sec_1 ._bg {position:absolute; left:0; top:0; width:100%; height:100%; opacity:0; transition:opacity 1.2s ease-out; z-index:1;}
+	._sec_1 ._obj {position:absolute; left:50%; top:-400px; margin-left:-588px; opacity:0; transition:opacity .4s ease-in, top 1s ease-in-out; z-index:2;}
+	._sec_1 ._obj ._obj_1 {position:absolute; left:0; top:0; opacity:0; transition:opacity .4s ease-in 0s;}
+	._sec_1 ._obj ._obj_2 {position:absolute; left:-32px; top:-151px; opacity:0; transition:opacity .4s ease-in .6s;}
+	._sec_1 ._obj ._obj_3 {position:absolute; left:16px; top:-111px; opacity:0; transition:opacity .4s ease-in .8s;}
+	._sec_1 ._obj ._obj_video {position:absolute; left:-200px; top:-170px; width:800px; height:800px; opacity:0; transition:opacity .4s ease-in 0s;}
+	._sec_1 ._obj ._obj_video video {width:100%; height:100%;}
+	._sec_1 ._txt {position:absolute; left:50%; top:288px; width:700px; height:0; margin-left:-170px; overflow:hidden; transition:opacity .4s ease-in, height 1s ease-out .6s, top 1s ease-out; z-index:3;}
+	._sec_1 ._txt._video_transition {top:0; width:100%; height:1000px; margin-left:-50%; opacity:0; transition:opacity .4s ease-in .5s;}
+	._sec_1 ._txt ._obj_video {position:absolute; left:50%; top:0; width:1920px; height:1000px; margin-left:-960px;}
+	._sec_1 ._txt ._obj_video video {width:100%; height:100%;}
+	._sec_1 ._txt ._obj_1 {position:absolute; left:528px; top:0;}
+	._sec_1 ._txt ._obj_2 {position:absolute; left:0; top:61px;}
+
+	._sec_1 ._not_webm {position:absolute; left:0; top:0; width:100%; height:1000px;}
+	._sec_1 ._not_webm video {position:absolute; left:50%; top:0; width:1920px; height:1000px; margin-left:-960px;}
+	
+	._layout_area.active ._sec_1 ._bg {opacity:1;}
+	._layout_area.active ._sec_1 ._obj {opacity:1; top:219px;}
+	._layout_area.active ._sec_1 ._obj ._obj_1 {opacity:1;}
+	._layout_area.active ._sec_1 ._obj ._obj_2 {opacity:1;}
+	._layout_area.active ._sec_1 ._obj ._obj_3 {opacity:1;}
+	._layout_area.active ._sec_1 ._obj ._obj_video {opacity:1;}
+	._layout_area.active ._sec_1 ._txt {height:400px;}
+	._layout_area.active ._sec_1 ._txt._video_transition {top:0; height:1000px; opacity:1; transition:opacity .4s ease-in .5s, top 0.8s ease-out;}
+	._layout_area.active ._sec_1 ._txt._video_transition ._obj_video {opacity:1;}
+
+	._layout_area.active ._sec_1._ani ._bg {opacity:0;}
+	._layout_area.active ._sec_1._ani ._obj {opacity:0; top:-400px;}
+	._layout_area.active ._sec_1._ani ._obj ._obj_1 {opacity:0;}
+	._layout_area.active ._sec_1._ani ._obj ._obj_2 {opacity:0;}
+	._layout_area.active ._sec_1._ani ._obj ._obj_3 {opacity:0;}
+	._layout_area.active ._sec_1._ani ._txt {top:-130px;}
+	._layout_area.active ._sec_1._ani ._txt._video_transition {top:-470px; opacity:1;}
+	._layout_area.active ._sec_1._ani + ._sec_2 {margin-top:-615px;}
+
+	._layout_area.active.notScroll ._sec_1::after {display:none;}
+	._layout_area.active.notScroll ._sec_1._ani ._bg {opacity:1;}
+	._layout_area.active.notScroll ._sec_1._ani ._obj {opacity:1; top:219px;}
+	._layout_area.active.notScroll ._sec_1._ani ._obj ._obj_1 {opacity:1;}
+	._layout_area.active.notScroll ._sec_1._ani ._obj ._obj_2 {opacity:1;}
+	._layout_area.active.notScroll ._sec_1._ani ._obj ._obj_3 {opacity:1;}
+	._layout_area.active.notScroll ._sec_1._ani ._txt {top:288px;}
+	._layout_area.active.notScroll ._sec_1._ani ._txt._video_transition {top:0; opacity:1;}
+	._layout_area.active.notScroll ._sec_1._ani + ._sec_2 {margin-top:0;}
+
+	._sec_2 {position:relative; top:0; width:100%; z-index:2; transition:margin-top 1s ease-out; transform:translate3d(0,0,0);}
+	._sec_2 ._point_wrap {position:relative; width:1080px; margin:0 auto; padding:0 0 0 0; box-sizing:border-box;}
+	._sec_2 ._sec_wrap {position:relative; width:100%; margin-left:-6px; padding:0 90px 90px 90px; box-sizing:border-box;}
+	._sec_2 ._area_wrap {position:relative; width:100%;}
+	._sec_2 ._item {position:relative; font-size:0; text-align:right; z-index:1;}
+	._sec_2 ._item img {display:inline-block;}
+
+	._sec_2 ._item_1 {margin-right:4px;}
+	._sec_2 ._item_2 {margin-top:53px; margin-right:-16px;}
+	._sec_2 ._item_3 {margin-top:38px; margin-right:-1px;}
+	._sec_2 ._item_3 span {font-size:26px; color:#fff; letter-spacing:1.56px;}
+	._sec_2 ._item_4 {margin-top:3px; margin-right:0;}
+	._sec_2 ._item_4 span {font-size:26px; color:#fff; letter-spacing:1.56px;}
+	._sec_2 ._item_5 {margin-top:35px; margin-right:2px;}
+	._sec_2 ._item_5 ._inline_wrap {display:inline-block;}
+	._sec_2 ._item_5 ._table_wrap {display:table; border-top:1px solid #efefef; border-bottom:1px solid #efefef; font-size:26px; color:#fff; letter-spacing:1.56px; line-height:1;}
+	._sec_2 ._item_5 ._table_wrap > div {display:table-cell; height:66px; padding:5px 0 8px 0; box-sizing:border-box; vertical-align:middle; text-align:right;}
+	._sec_2 ._item_5 ._table_wrap > div:first-child {padding-left:5px; padding-right:58px; text-align:left;}
+	._sec_2 ._item_5 ._table_wrap > div img {position:relative; top:-5px; left:-5px; vertical-align:middle;}
+	._sec_2 ._item_5 div span {position:relative; top:0; text-align:left;}
+	._sec_2 ._item_5 div span a {color:#cdfff7;}
+	._sec_2 ._item_5 div em {position:relative; top:2px; font-size:34px; letter-spacing:2.04px; color:#fff;}
+	._sec_2 ._item_5 div i {font-family:'Montserrat Medium';}
+	._sec_2 ._item_6 {margin-top:92px; margin-right:8px;}
+	._sec_2 ._item_7 {margin-top:-6px; margin-right:1px;}
+	._sec_2 ._item_7 ._mask_1 {animation:mask_ani 10s linear infinite; transform:translate3d(0, 0, 0);}
+
+	._sec_2 ._item_8 {margin-top:-4px; margin-right:-1px;}
+	._sec_2 ._item_9 {margin-top:62px; margin-right:-1px;}
+	._sec_2 ._item_9 .btn-benefit {position:relative; display:inline-block; width:300px; height:100px; overflow:hidden;}
+	._sec_2 ._item_9 .btn-benefit._off {top:30px;}
+	._sec_2 ._item_9 .btn-benefit video {position:absolute; left:50%; top:50%; width:430px; height:214px; margin:-95px 0 0 -187px;}
+	._sec_2 ._item_9 .btn-benefit::after {content:''; position:absolute; left:-1px; top:0; width:2px; height:100%; background:#1a1a1a;}
+	._sec_2 ._item_10 {margin-top:48px; margin-right:3px;}
+	._sec_2 ._item_11 {margin-top:15px; margin-right:0;}
+	._sec_2 ._item_12 {margin-top:12px; margin-right:0;}
+	._sec_2 ._item_13 {margin-top:73px; margin-right:0;}
+	._sec_2 ._item_14 {margin-top:10px; margin-right:-1px;}
+	._sec_2 ._item_15 {margin-top:10px; margin-right:-1px;}
+	._sec_2 ._item_16 {margin-top:10px; margin-right:-1px;}
+	._sec_2 ._item_17 {margin-top:9px; margin-right:-1px;}
+
+	._sec_2 ._obj {position:relative; z-index:0;}
+	._sec_2 ._obj_1 {position:absolute; left:50%; top:25px/*145*/; margin-left:606px; z-index:6;}
+	._sec_2 ._obj_2 {position:absolute; right:0%; top:0px/*151*/; z-index:5;}
+
+	._sec_2 ._line {position:absolute; right:50px; top:102px; bottom:68px; width:1px; background:rgba(255,255,255,0.3);}
+	._sec_2 ._line::before {content:''; position:absolute; left:-3px; top:-4px; width:7px; height:7px; border-radius:7px; overflow:hidden; background:#fff;}
+	._sec_2 ._line::after {content:''; position:absolute; left:-3px; bottom:-4px; width:7px; height:7px; border-radius:7px; overflow:hidden; background:#fff;}
+	._sec_2 ._line ._line_1 {position:absolute; left:22px; top:-3px;}
+	._sec_2 ._line ._line_2 {position:absolute; left:22px; bottom:-3px;}
+	._sec_2 ._line ._dot {position:absolute; left:0; top:0; width:7px; height:7px; border-radius:7px; transform:translate3d(-3px, -4px, 0); overflow:hidden; background:#fff; transition:top .3s ease-out;}
+
+	._sec_2 ._card {position:absolute; left:50%; top:0; width:100%; height:100%; z-index:0; pointer-events:none;}
+	._sec_2 ._card video {position:absolute; left:-900px; top:150px; width:1000px; height:1314px;}
+
+	._sec_3 {position:relative; width:100%; z-index:1;}
+	._sec_3 ._point_wrap {position:relative; width:1080px; margin:0 auto; padding:250px 0 0 0; box-sizing:border-box;}
+	._sec_3 ._sec_wrap {position:relative; width:100%; margin-left:-6px; padding:0 90px 300px 90px; box-sizing:border-box;}
+	._sec_3 ._sec_wrap ._area_wrap {position:relative; width:100%;}
+	._sec_3 ._video_parent {font-size:0; text-align:right;}
+	._sec_3 ._item {font-size:0; text-align:right;}
+	._sec_3 ._item img {display:inline-block;}
+	
+	._sec_3 ._item_7 {margin-top:100px; margin-right:-3px;}
+	._sec_3 ._item_8 {margin-top:18px; margin-right:-7px;}
+
+	._sec_3 ._obj_video_obj_4 {position:relative; display:inline-block; width:540px; height:105px; margin-top:20px; margin-right:-7px; transform:translate3d(0,100px,0); opacity:0; transition:opacity 1s, transform 1s;}
+	._sec_3 ._obj_video_obj_4 video {position:absolute; left:-44px; top:-69px; width:600px; height:250px;}
+	._sec_3 ._obj_video_obj_4.active {transform:translate3d(0,0,0); opacity:1;}
+
+	._sec_3 ._item_9 {margin-top:26px; margin-right:2px;}
+	._sec_3 ._item_10 {margin-top:7px; margin-right:0;}
+	._sec_3 ._item_11 {margin-top:77px; margin-right:-3px;}
+	._sec_3 ._item_12 {margin-top:77px; margin-right:0;}
+	._sec_3 ._item_12 ._mask_2 {animation:mask_ani 10s linear infinite; transform:translate3d(0, 0, 0);}
+
+	@keyframes mask_ani {
+		0% {transform:translate3d(0, 0, 0);}
+		100% {transform:translate3d(-1254px, 0, 0);}
+	}
+
+	._sec_3 ._item_13 {margin-top:30px; margin-right:3px;}
+	._sec_3 ._item_14 {margin-top:48px; margin-right:-1px;}
+	._sec_3 ._item_14 .btn-link {position:relative; display:inline-block; width:295px; height:100px; overflow:hidden;}
+	._sec_3 ._item_14 .btn-link video {position:absolute; left:50%; top:50%; width:430px; height:214px; margin:-95px 0 0 -192px;}
+	._sec_3 ._item_14 .btn-link::after {content:''; position:absolute; left:-1px; top:0; width:2px; height:100%; background:#1a1a1a;}
+
+	._sec_3 ._line {position:absolute; right:50px; top:10px; bottom:301px; width:1px; background:rgba(255,255,255,0.3); z-index:10;}
+	._sec_3 ._line::before {content:''; position:absolute; left:-3px; top:-4px; width:7px; height:7px; border-radius:7px; overflow:hidden; background:#fff;}
+	._sec_3 ._line::after {content:''; position:absolute; left:-3px; bottom:-4px; width:7px; height:7px; border-radius:7px; overflow:hidden; background:#fff;}
+	._sec_3 ._line ._line_1 {position:absolute; left:22px; top:-2px;}
+	._sec_3 ._line ._line_2 {position:absolute; left:22px; bottom:-8px;}
+	._sec_3 ._line ._dot {position:absolute; left:0; top:0; width:7px; height:7px; border-radius:7px; transform:translate3d(-3px, -4px, 0); overflow:hidden; background:#fff; transition:top .3s ease-out;}
+
+	._sec_3 ._obj {position:relative; z-index:0;}
+	._sec_3 ._obj_3 {position:absolute; left:50%; top:0; margin-left:-741px; z-index:1;}
+	._sec_3 ._obj_4 {position:absolute; left:50%; top:-89px; margin-left:-931px; z-index:0}
+
+	._sec_3 ._obj_video_obj_2 {position:absolute; left:50%; top:10px; width:800px; height:800px; margin-left:-852px; opacity:0; transition:opacity 1s ease-in 0s; z-index:2;}
+	._sec_3 ._obj_video_obj_2 video {width:100%; height:100%;}
+	._sec_3 ._obj_video_obj_2.active {opacity:1;}
+
+	._ele_ani {transition:opacity 1s, transform 1s; transform:translate3d(0,0,0);}
+	._ele_ani_t {transform:translate3d(0,100px,0); opacity:0; transition:opacity 1s, transform 1s;}
+	._ele_ani_t.active {transform:translate3d(0,0,0); opacity:1;}
+
+	._ele_ani_i {opacity:0; transition:opacity .8s ease-in .8s, transform 1s; transform:translate3d(0,0,0);}
+	._ele_ani_i.active {opacity:1;}
+
+	._bounce_ani_1 {animation:_bounce_ani_1 3s cubic-bezier(0.37, 0, 0.63, 1) 1s infinite; transform:translate3d(0, 0, 0);}
+
+	@keyframes _bounce_ani_1 {
+		0% {transform:translate3d(0, 0, 0);}
+		50% {transform:translate3d(0, -30px, 0);}
+		100% {transform:translate3d(0, 0, 0);}
+	}
+</style>
+<div class="evWrap">
+	<div class="_layout_area">
+		<div class="_sec _sec_1 _cover _scr_height" data-idx="0" data-hx="1">
+			<div class="_sec_wrap">
+				<div class="_bg _obj_webm">
+					<div class="_obj_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_bg_title_1.png" alt="" /></div>
+				</div>
+				<div class="_obj _video_parent">
+					<div class="_obj_video _obj_video_obj_1">
+						<div class="_bounce_ani_1">
+							<video muted playsinline autoplay loop>
+								<source type="video/webm" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_video_1.webm" />
+							</video>
+						</div>
+					</div>
+				</div>
+				<div class="_txt _video_parent">
+					<div class="_obj_video _obj_video_title">
+						<video muted playsinline autoplay>
+							<source type="video/webm" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_video_title.webm" />
+						</video>
+					</div>
+				</div>
+				<div class="_canvideo _not_webm">
+					<video muted playsinline autoplay loop>
+						<source type="video/mp4" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_not_webm.mp4" />
+					</video>
+				</div>
+				<div class="screenOut">
+					<p>双11当天</p>
+					<p>畅享积分购 2021 狂欢节 11.11</p>
+				</div>
+			</div>
+		</div>
+		<div class="_sec _sec_2 _scr_height" data-idx="1" data-hx="2">
+			<div class="_area_wrap">
+				<div class="_obj">
+					<div class="_obj_1 _ele_ani _ele_ani_i"><div class="_bounce_ani_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_obj_2_1.png" alt="" /></div></div>
+					<div class="_obj_2 _ele_ani _ele_ani_i"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_obj_2_2.png" alt="" /></div>
+					<div class="_card">
+						<video muted playsinline autoplay loop>
+							<source type="video/mp4" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_card.mp4" />
+						</video>
+					</div>
+				</div>
+			</div>
+			<div class="_point_wrap">
+				<div class="_sec_wrap">
+					<div class="screenOut">
+						<p>11.11 00:00 ~ 11.11 24:00</p>
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_1.png" alt="WAITING FOR YOU" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_2"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_2.png" alt="巅峰盛惠 赢高额积分" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_3"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_3.png" alt="11.11当天购买总额$400以上会员均可参与活动" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_4"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_4.png" alt="获奖者公布日: 2021.12.06(以取完货的会员为准进行抽取)" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_5">
+						<div class="_inline_wrap">
+							<div class="_table_wrap">
+
+								<!-- 로그인 상태 아닐 때 로그인 버튼 -->
+								<div><span><a href="#">登录会员</a>确认付款总额</span></div>
+								<div><em><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_arrow.png" alt=">>" /></em></div>
+								<!-- //로그인 상태 아닐 때 로그인 버튼 -->
+
+								<!-- 로그인 후 당일 구매 합산 금액 노출 -->
+								<!--
+
+								<div><span>付款总额共计</span></div>
+								<div><em><i>$</i>500</em></div>
+
+								-->
+								<!-- //로그인 후 당일 구매 합산 금액 노출 -->
+
+							</div>
+						</div>
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_6"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_6_p1.png" alt="购满$700可使用" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_7">
+						<svg viewBox="0 0 505 164" width="505px" height="164px" preserveAspectRatio="none">
+							<defs>
+								<mask id="Mask1">
+									<image x="0px" y="0px" width="505px" height="164px" xlink:href="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_6_m.png" />
+								</mask>
+							</defs>
+							<g mask="url(#Mask1)">
+								<image x="0px" y="0px" width="2000px" height="211px" class="_mask_1" xlink:href="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_6_bg.png" />
+							</g>
+						</svg>
+						<div class="screenOut">
+							<p>$100 抽选 30名</p>
+						</div>
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_8"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_7.png" alt="PLUS 现金积分" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_9">
+
+						<!-- 이벤트 응모 버튼 -->
+						<a href="#" class="btn-benefit">
+							<video muted playsinline autoplay loop>
+								<source type="video/mp4" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_btn_1.mp4" />
+							</video>
+							<div class="screenOut">
+								<span>立即参与</span>
+							</div>
+						</a>
+						<!-- //이벤트 응모 버튼 -->
+
+						<!-- 이벤트 응모완료시 비활성화 버튼 -->
+						<!--
+
+						<span class="btn-benefit _off"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_8_off.png" alt="已参与" /></span>
+
+						-->
+						<!-- //이벤트 응모완료시 비활성화 버튼 -->
+
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_10"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_9.png" alt="参与方式" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_11"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_10.png" alt="STEP1. 登录乐天免税店 STEP2. 双11当天购满$400 STEP3.点击立即参与" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_12"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_11.png" alt="STEP4. 取货完成后抽选获奖者 / 获奖者公布日：2021.12.06" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_13"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_13.png" alt="积分使用期限：发放日起一年内" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_14"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_14.png" alt="本次活动仅限2021年11月11日当天购满$400以上会员参与活动。" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_15"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_15.png" alt="本次活动活动期间内一个ID仅限参与一次，积分下载后如若不使用将自动消失。" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_16"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_16.png" alt="获奖者以取完货的会员为准进行抽取, 取消订单时自动取消中奖资格。" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_17"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_1_17.png" alt="本活动可能根据本公司情况临时变更或提早结束。" /></div>
+					<div class="_ele_ani _ele_ani_t _line">
+						<div class="_line_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_line_txt_1.png" alt="" /></div>
+						<div class="_line_2"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_line_txt_2.png" alt="" /></div>
+						<div class="_dot" data-idx="1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="_sec _sec_3" data-idx="2">
+			<div class="_point_wrap">
+				<div class="_sec_wrap">
+					<div class="_area_wrap">
+						<div class="_obj">
+							<div class="_video_parent">
+								<div class="_ele_ani _obj_video _obj_video_obj_2">
+									<video muted playsinline autoplay loop>
+										<source type="video/webm" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_video_2.webm" />
+									</video>
+								</div>
+								<div class="_canvideo _obj_3 _ele_ani _ele_ani_i" style="display:none;"><div class="_bounce_ani_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_obj_3_1.png" alt="" /></div></div>
+							</div>
+							<div class="_obj_4 _ele_ani _ele_ani_i"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_obj_3_2.jpg" alt="" /></div>
+						</div>
+					</div>
+					<div class="screenOut">
+						<p>11.11 ~ 11.30</p>
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_7"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_1.png" alt="支付宝福利全开" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_8"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_2.png" alt="ALIPAY" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_9"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_3.png" alt="线上线下支付宝刷单即享满减福利" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_10"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_4.png" alt="史无前例多重福利等你来拿" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_12">
+						<svg viewBox="0 0 477 93" width="477px" height="93px" preserveAspectRatio="none">
+							<defs>
+								<mask id="Mask2">
+									<image x="0px" y="0px" width="477px" height="93px" xlink:href="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_6_m.png" />
+								</mask>
+							</defs>
+							<g mask="url(#Mask2)">
+								<image x="0px" y="0px" width="2000px" height="211px" class="_mask_2" xlink:href="./static-fo-pc/img/zh/event/kc211022_singlesday/p_txt_content_1_6_bg.png" />
+							</g>
+						</svg>
+						<div class="screenOut">
+							<p>ON/ OFF</p>
+						</div>
+					</div>
+					<div class="_ele_ani _ele_ani_t _item _item_13"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/n_p_txt_content_3_7.png" alt="双重福利" /></div>
+					<div class="_ele_ani _ele_ani_t _item _item_14">
+
+						<!-- 알리페이 결제혜택 바로가기 -->
+						<a href="https://chn.lottedfs.cn/kr/event/eventDetail?evtDispNo=1038449" target="_blank" class="btn-link">
+							<video muted playsinline autoplay loop>
+								<source type="video/mp4" src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_btn_2.mp4" />
+							</video>
+							<div class="screenOut">
+								<span>点击查看</span>
+							</div>
+						</a>
+						<!-- //알리페이 결제혜택 바로가기 -->
+
+					</div>
+					<div class="_ele_ani _ele_ani_t _line">
+						<div class="_line_1"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_line_txt_3.png" alt="" /></div>
+						<div class="_line_2"><img src="./static-fo-pc/img/zh/event/kc211022_singlesday/p_line_txt_4.png" alt="" /></div>
+						<div class="_dot" data-idx="2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	(function() {
+		var checkVideo = $('._obj_video_obj_1').find('video')[0].canPlayType('video/webm; codecs="vp8, vorbis"');
+
+		if (!checkVideo || checkVideo == '') {
+			$('._obj_video').remove();
+			$('._obj_webm').remove();
+			$('._canvideo').css('display', '');
+			$('._layout_area').addClass('notScroll');
+			checkVideo = false;
+		} else {
+			$('._canvideo').remove();
+			$('._video_parent').addClass('_video_transition');
+			checkVideo = true;
+		}
+
+		var _evWrap = {
+			actEvent: [],
+			introTimerCnt: 0,
+			jumpTimerCnt: 0,
+			topTimer: null,
+			navScroll: false
+		};
+
+		$(window).one('DOMMouseScroll mousewheel wheel touchend touchmove', function(ev) {
+			var _this = $(this);
+
+			_evWrap.actEvent.push(ev.type);
+
+			$.each(_evWrap.actEvent, function(i, v) {
+				if (i != 0) {
+					_this.off(v);
+				}
+			});
+		}).on('DOMMouseScroll mousewheel wheel touchend touchmove _customTrigger', function(ev, _sev) {
+			var _this = $(this);
+			var scrTop = Math.round(_this.scrollTop());
+			var scrWidth = _this.outerWidth();
+			var scrHeight = _this.outerHeight();
+
+			var $doc = $('body');
+			var $docSet = $('html, body');
+
+			var $evArea = $('._layout_area');
+			var $evAreaTop = Math.round($evArea.offset().top);
+
+			var $evSec = $evArea.find('._sec');
+
+			var $eleAni = $evSec.find('._ele_ani');
+
+			var $dot = $('._dot');
+
+			if (ev.type == 'touchend') {
+
+				dataDelta = _evWrap.touchStartY - ev.originalEvent.changedTouches[0].pageY;
+
+				if (dataDelta > 0) {
+					if (dataDelta > 20){
+						dataDelta = 100;
+					} else {
+						dataDelta = 0;
+					}
+				} else {
+					if ((dataDelta * -1) > 20) {
+						dataDelta = -100;
+					} else {
+						dataDelta = 0;
+					}
+				}
+			} else {
+				if (ev.type !== 'scroll') {
+					dataDelta = ev.originalEvent ? ev.originalEvent.deltaY : _sev.originalEvent.deltaY;
+				} else {
+					dataDelta = 0;
+				}
+			}
+
+			_evWrap.dir = dataDelta > 0 ? true : false;
+
+			if (scrTop > 0 && scrTop < $evAreaTop && _evWrap.dir) {
+
+				if ($doc.css('overflow') !== 'hidden' && checkVideo) {
+					$doc.css('overflow', 'hidden');
+					$docSet.scrollTop(scrTop);
+					$docSet.scrollLeft(_evWrap.lastScrollLeft);
+
+					$docSet.stop().animate({
+						scrollTop: $evAreaTop
+					}, 400, function() {
+						if (this.nodeName.toLowerCase() == 'body') {
+							$doc.css('overflow', '');
+							$docSet.scrollTop($evAreaTop);
+							$docSet.scrollLeft(_evWrap.lastScrollLeft);
+						}
+					});
+				}
+
+			} else if (scrTop >= 0 && scrTop <= $evAreaTop && !_evWrap.dir) {
+
+				if (_evWrap.coverScroll) {
+					$evSec.css('position', '');
+					$evSec.removeClass('_ani').css('margin-top', '');
+					_evWrap.cover = false;
+					_evWrap.coverScroll = false;
+					$dot.css('top', 0);
+				}
+
+			} else if (scrTop >= $evAreaTop) {
+
+				$.each($evSec, function(i, v) {
+					var $sec = $(this);
+					var $secHeight = $sec.height() > 0 ? $sec.height() : $sec.data('height');
+					var $secTop = $sec.offset().top;
+					var $secBottom = $secHeight + $secTop;
+
+					var _secData = $sec.data();
+
+					if (scrTop >= $secTop && scrTop < $secBottom) {
+
+						if (_secData.idx == 0) {
+
+							if (!_evWrap.cover && !$sec.is('._end')) {
+
+								if (checkVideo) {
+									_evWrap.cover = true;
+									$doc.css('overflow', 'hidden');
+
+									var marginGap = Math.abs($('._sec_2 ._sec_wrap').data('top')) / 2.2;
+
+									if (ev.type == '_customTrigger') {
+										$docSet.scrollTop(_evWrap.lastScrollTop);
+									} else {
+										$docSet.scrollTop(scrTop);
+									}
+
+									$docSet.scrollLeft(_evWrap.lastScrollLeft);
+
+									$sec.off().on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(e) {
+										$(this).off().css('position', 'fixed');
+										$doc.css('overflow', '');
+										$docSet.scrollTop(scrTop);
+										$docSet.scrollLeft(_evWrap.lastScrollLeft);
+
+										_evWrap.introTimer = setInterval(function() {
+											++_evWrap.introTimerCnt;
+											_this.trigger('scroll._evt');
+											if (_evWrap.introTimerCnt > 15) {
+												clearTimeout(_evWrap.introTimer);
+												_evWrap.introTimerCnt = 0;
+											}
+										}, 100);
+
+										_evWrap.coverScroll = true;
+
+									}).addClass('_ani').next().addClass('_loading').css('margin-top', '-'+ marginGap +'px');
+								} else {
+									_evWrap.cover = true;
+
+									$sec.off().on('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd', function(e) {
+										$(this).off();
+
+										_evWrap.coverScroll = true;
+
+									}).addClass('_ani');
+								}
+							}
+						}
+					}
+
+					if (scrTop + scrHeight > $secTop && _secData.idx == 2 && !_evWrap.jumpDown && _evWrap.dir) {
+
+						if (checkVideo) {
+							_evWrap.jumpDown = true;
+
+							$doc.css('overflow', 'hidden');
+							$docSet.scrollTop(scrTop);
+							$docSet.scrollLeft(_evWrap.lastScrollLeft);
+
+							$docSet.stop().animate({
+								scrollTop: $secTop
+							}, {
+								duration: 1000,
+								start: function() {
+
+									if (this.nodeName.toLowerCase() == 'body') {
+
+										$.each($dot, function(j, w) {
+											if (Math.abs($(this).data('idx')) == 1) {
+												$(this).css('top', '100%');
+											} else {
+												$(this).css('top', '0%');
+											}
+										});
+
+										_evWrap.jumpTimer = setInterval(function() {
+											++_evWrap.jumpTimerCnt;
+											_this.trigger('scroll._evt');
+											if (_evWrap.jumpTimerCnt > 15) {
+												clearTimeout(_evWrap.jumpTimer);
+												_evWrap.jumpTimerCnt = 0;
+											}
+										}, 100);
+									}
+
+								},
+								complete: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+										$doc.css('overflow', '');
+										$docSet.scrollTop($secTop);
+										$docSet.scrollLeft(_evWrap.lastScrollLeft);
+										_evWrap.jumpUp = true;
+									}
+								}
+							});
+						} else {
+							_evWrap.jumpDown = true;
+
+							$docSet.stop().animate({
+								notScroll: $secTop
+							}, {
+								duration: 1000,
+								start: function() {
+
+									if (this.nodeName.toLowerCase() == 'body') {
+
+										$.each($dot, function(j, w) {
+											if (Math.abs($(this).data('idx')) == 1) {
+												$(this).css('top', '100%');
+											} else {
+												$(this).css('top', '0%');
+											}
+										});
+									}
+
+								},
+								complete: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+										_evWrap.jumpUp = true;
+									}
+								}
+							});
+						}
+					}
+
+					if (scrTop <= $secTop && _secData.idx == 2 && _evWrap.jumpUp && !_evWrap.dir) {
+
+						if (checkVideo) {
+							_evWrap.jumpUp = false;
+
+							var prevScroll = Math.abs($sec.prev().offset().top + $sec.prev().outerHeight() - scrHeight);
+
+							$doc.css('overflow', 'hidden');
+							$docSet.scrollTop(scrTop);
+							$docSet.scrollLeft(_evWrap.lastScrollLeft);
+
+							$docSet.stop().animate({
+								scrollTop: prevScroll
+							}, {
+								duration: 1000,
+								start: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+
+										$.each($dot, function(j, w) {
+											if (Math.abs($(this).data('idx')) == 1) {
+												$(this).css('top', '100%');
+											} else {
+												$(this).css('top', '0%');
+											}
+										});
+									}
+								},
+								complete: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+										$doc.css('overflow', '');
+										$docSet.scrollTop(prevScroll);
+										$docSet.scrollLeft(_evWrap.lastScrollLeft);
+										_evWrap.jumpDown = false;
+									}
+								}
+							});
+						} else {
+							_evWrap.jumpUp = false;
+
+							var prevScroll = Math.abs($sec.prev().offset().top + $sec.prev().outerHeight() - scrHeight);
+
+							$docSet.stop().animate({
+								notScroll: prevScroll
+							}, {
+								duration: 1000,
+								start: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+
+										$.each($dot, function(j, w) {
+											if (Math.abs($(this).data('idx')) == 1) {
+												$(this).css('top', '100%');
+											} else {
+												$(this).css('top', '0%');
+											}
+										});
+									}
+								},
+								complete: function() {
+									if (this.nodeName.toLowerCase() == 'body') {
+										_evWrap.jumpDown = false;
+									}
+								}
+							});
+						}
+					}
+				});
+			}
+
+		}).on('scroll._evt', function(ev) {
+			var _this = $(this);
+			var scrTop = Math.round(_this.scrollTop());
+			var scrWidth = _this.outerWidth();
+			var scrHeight = _this.outerHeight();
+
+			var $doc = $('body');
+			var $docSet = $('html, body');
+
+			var $evArea = $('._layout_area');
+			var $evAreaTop = Math.round($evArea.offset().top);
+
+			var $evSec = $evArea.find('._sec');
+
+			var $eleAni = $evSec.find('._ele_ani');
+
+			_evWrap.lastScrollTop = scrTop;
+
+			$('._sec_2 ._sec_wrap').data('top', $('._sec_2 ._sec_wrap').offset().top);
+
+			if (_this.scrollLeft() !== 0) {
+				_evWrap.lastScrollLeft = _this.scrollLeft();
+			}
+
+			if (scrTop >= 0 && scrTop < $evAreaTop) {
+				if ($('._sec_1').is('._end')) {
+					$('._sec_1').removeClass('_end');
+				}
+				if (_evWrap.coverScroll) {
+					_evWrap.cover = false;
+				}
+			}
+
+			clearTimeout(_evWrap.scrollTimer);
+			_evWrap.scrollTimer = setTimeout(function() {
+				if (!_evWrap.cover) {
+					_this.trigger('_customTrigger', [{originalEvent:{deltaY:-1}}]);
+				}
+			}, 0);
+
+			$.each($eleAni, function(j, w) {
+				var $ele = $(this);
+				var $eleTop = $ele.offset().top - 50;
+				var $eleBottom = $eleTop + $ele.height();
+
+				if (Math.round(scrTop + (scrHeight/1)) >= Math.round($eleTop) && scrTop < $eleBottom) {
+					if (!$ele.is('.active')) {
+						$(this).addClass('active');
+					}
+				} else if (Math.round(scrTop + (scrHeight)) < $eleTop) {
+					if ($ele.is('.active')) {
+						$(this).removeClass('active');
+					}
+				}
+			});
+
+			$.each($evSec.find('._sec_wrap'), function(i, v) {
+				var $loadEle = $('._loading');
+
+				var $secParent = $(this).closest('._sec');
+				var $secParentTop = $secParent.offset().top;
+
+				if (i == 1) {
+					$secParentTop = $secParent.offset().top + Math.abs(parseInt($secParent.css('margin-top'), 10));
+				}
+
+				var $secParentBottom = $secParentTop + $secParent.height();
+
+				var $sec = $(this);
+				var $secHeight = $sec.height();
+				var $secTop = $sec.offset().top;
+				var $secBottom = $secHeight + $secTop;
+
+				if (scrTop >= $secParentTop && scrTop < $secParentBottom) {
+
+					if (i == 1) {
+
+						if (!$loadEle.length) {
+							$secTop = $sec.offset().top - (Math.abs($('._sec_2 ._sec_wrap').data('top')) / 2);
+							scrTop = scrTop - (Math.abs($('._sec_2 ._sec_wrap').data('top')) / 2);
+						}
+
+						var contentHeight = $sec.outerHeight() - (scrHeight - $secTop + $evAreaTop);
+						var contentScroll = (scrTop + $secTop - $evAreaTop) - $secTop;
+						var pointPos = contentScroll / contentHeight * 100;
+
+						if (pointPos > 100) {
+							pointPos = 100;
+						} else if (pointPos < 0) {
+							pointPos = 0;
+						}
+
+						$sec.find('._dot').css('top', pointPos + '%');
+
+						_evWrap.firstBottom = contentHeight;
+						_evWrap.firstHeight = $secHeight;
+
+					} else if (i == 2) {
+
+						if (!$loadEle.length) {
+							var $secTemp = $('._sec_2 ._sec_wrap');
+							var $secTempHeight = $secTemp.height();
+							var $secTempTop = $secTemp.offset().top;
+
+							_evWrap.firstBottom = $secTemp.outerHeight() - (scrHeight - $secTempTop + $evAreaTop);
+							_evWrap.firstHeight = $secTempHeight;
+						}
+
+						var contentHeight = ($sec.outerHeight() - (scrHeight - $secTop + $evAreaTop)) - _evWrap.firstBottom -_evWrap.firstHeight;
+						var contentScroll = ((scrTop + $secTop - $evAreaTop) - $secTop) - scrHeight - _evWrap.firstBottom;
+						var pointPos = contentScroll / contentHeight * 100;
+
+						if (pointPos > 100) {
+							pointPos = 100;
+						} else if (pointPos < 0) {
+							pointPos = 0;
+						}
+
+						$sec.find('._dot').css('top', pointPos + '%');
+					}
+				}
+
+			});
+
+			if (scrTop > $('._sec_3').offset().top + $('._sec_3').height() - Math.abs(parseInt($('._sec_2').css('margin-top'), 10))) {
+				if (!$('._sec_1').is('._end')) {
+					$('._sec_1').addClass('_end');
+				}
+			} else {
+				if ($('._sec_1').is('._end')) {
+					$('._sec_1').removeClass('_end');
+				}
+			}
+
+		}).one('scroll', function(ev) {
+			var _this = $(this);
+
+			setTimeout(function() {
+				if (_this.scrollTop() > $('._sec_2').offset().top) {
+					_evWrap.cover = true;
+					_evWrap.coverScroll = true;
+					_evWrap.dir = true;
+					_evWrap.jumpDown = true;
+					_evWrap.jumpUp = true;
+				}
+			}, 150);
+
+			$('._layout_area').addClass('active');
+			$('._card').addClass('active');
+		}).on('resize.evWrap', function() {
+			var _this = $(this);
+			var $ele = $('._scr_height');
+
+			$.each($ele, function(i, v) {
+				if (checkVideo) {
+					$(this).css({paddingTop:_this.outerHeight() * $(this).data('hx') - _this.outerHeight()}).data('height', _this.outerHeight() * $(this).data('hx'));
+				} else {
+					$(this).css({paddingTop:1000}).data('height', _this.outerHeight() * $(this).data('hx'));
+				}
+			});
+		}).scroll().resize();
+		
+		if ((navigator.appName == 'Netscape' && navigator.userAgent.toLowerCase().indexOf('trident') != -1) || (navigator.userAgent.toLowerCase().indexOf("msie") != -1)) {
+			function svgMarquee() {
+				$('svg').find('g').animate({
+					cusVal: 1254
+				}, {
+					easing: 'linear',
+					duration: 10000,
+					step: function(now, fx) {
+						var pos = [0];
+
+						$(this).find('image').each(function(i, v) {
+							$(this).attr('x', (pos[i] - now) + 'px');
+						});
+					},
+					complete: function() {
+						$(this).find('image').attr('x', '0px');
+						$(this)[0].cusVal = 0;
+						svgMarquee();
+					}
+				});
+			}
+			svgMarquee();
+		}
+	})();
+</script>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

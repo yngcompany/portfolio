@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<script type="text/javascript">
+	/* 팝업 열기 */
+	function evPopupOpen(epid) {
+		$("._ev_layer").css("display", "none");
+		$("#evDimmed, " + epid).css("display","block");
+
+		var $evtEle = $(".evWrap");
+		var evtGap = 100;
+		var winScroll = $(window).scrollTop();
+
+		var evtHeight = $evtEle.innerHeight() - evtGap;
+		var layerWidth = $(epid).width();
+		var layerHeight = $(epid).innerHeight();
+
+		var winMiddle = winScroll + ($(window).height() / 2);
+		var evtMiddle = winMiddle - $evtEle.offset().top;
+
+		var layerTop = (winScroll + evtGap) - $evtEle.offset().top;
+		var layerMiddle = evtMiddle - (layerHeight / 2);
+		var layerEnd = layerMiddle + layerHeight;
+
+		if (layerMiddle < 100 || layerTop < 100) {
+			layerTop = 100;
+			layerMiddle = 100;
+		} else if (layerEnd > evtHeight) {
+			layerTop = evtHeight - layerHeight;
+			layerMiddle = evtHeight - layerHeight;
+		} else {
+			if (layerTop + layerHeight > evtHeight) {
+				layerTop = evtHeight - layerHeight;
+			}
+		}
+
+		if ($(epid).is("._layer_mid")) {
+			$(epid).css({top: layerMiddle + "px", marginLeft: -(layerWidth/2) + "px"});
+		} else {
+			$(epid).css({top: layerTop + "px", marginLeft: -(layerWidth/2) + "px"});
+		}
+		return false;
+	}
+
+	/* 팝업 닫기 */
+	function evPopupClose() {
+		$("._ev_layer").css({top: "", marginLeft: ""});
+		$("#evDimmed, ._ev_layer").css("display","none");
+		return false;
+	}
+
+	$(document).ready(function() {
+		/* 목표달성 혜택 선택 영역 */
+		$(".evWrap").find("._evt_select").find("._evt_item").on('click', function(e) {
+			if ($(this).is('.active')) {
+				$(this).removeClass('active');
+			} else {
+				$(this).addClass('active');
+			}
+		}).on('mouseleave', function(e) {
+			if ($(this).is('.active')) {
+				$(this).removeClass('active');
+			}
+		});
+	});
+</script>
+<style type="text/css">
+	.skyscraper.renewal1806,
+	.skyscraper.renewal1806 .sideBanner,
+	.skyscraper .quickMenu {display:none;}
+	.tabArea,
+	.eventArea {width:100%;}
+
+	.evWrap {position:relative; width:100%; padding-bottom:107px; box-sizing:border-box; overflow:hidden; background:#1e204f; z-index:0; font-family:'Noto Sans Regular', 'Noto Sans Regular JP', 'Tahoma', 'Simhei', 'Microsoft Yahei'; line-height:1.42857143;}
+	.evWrap::before {content:''; position:absolute; left:0; top:92px; right:0; height:1px; background:#626384; z-index:1;}
+	.evWrap img {display:block;}
+	.evWrap a {display:block;}
+	._evt_hide {position:absolute; width:1px; height:1px; margin:0; clip:rect(0,0,0,0); white-space:nowrap; overflow:hidden;}
+
+	._evt_main {position:relative; width:1240px; margin:0 auto; box-sizing:border-box;}
+	._evt_main::before {content:''; position:absolute; left:-200%; bottom:0; right:-200%; height:1px; background:#626384;}
+	._evt_main::after {content:''; position:absolute; left:-200%; bottom:1px; right:-200%; height:60px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_12.png') 50% 0 repeat-x;}
+	._evt_main ._evt_content {position:relative; width:100%; padding-top:93px; box-sizing:border-box; border-left:1px solid #626384; border-right:1px solid #626384; z-index:1;}
+
+	._evt_main ._evt_content ._evt_date {position:absolute; left:876px; top:43px; font-size:26px; color:#fff; font-family:'Montserrat Medium';}
+
+	._evt_main ._evt_content ._evt_header {position:relative; width:100%; height:519px;}
+	._evt_main ._evt_content ._evt_header::after {content:''; position:absolute; left:-200%; bottom:-1px; right:-200%; height:1px; background:#626384;}
+	._evt_main ._evt_content ._evt_header img {display:block; margin:0 auto;}
+	._evt_main ._evt_content ._evt_header ._ani_obj_1 {position:absolute; left:304px; top:85px; width:630px; height:230px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_obj_1.png') 0 0 no-repeat; -webkit-animation:_aniStepsY 1s steps(21) forwards 0.3s; animation:_aniStepsY 1s steps(21) forwards 0.3s;}
+	._evt_main ._evt_content ._evt_header ._ani_obj_2 {position:absolute; left:898px; top:190px; width:120px; height:122px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_obj_2.png') 0 0 no-repeat; -webkit-animation:_aniStepsX 0.36s steps(7) infinite 1s, _aniStepsY 7.56s steps(21) infinite 1s; animation:_aniStepsX 0.36s steps(7) infinite 1s, _aniStepsY 7.56s steps(21) infinite 1s;}
+
+	._evt_main ._evt_content ._evt_join_area {position:relative; width:100%;}
+	._evt_main ._evt_content ._evt_join_area::before {content:''; position:absolute; left:-200%; bottom:0; right:-200%; height:1px; background:#626384;}
+	._evt_main ._evt_content ._evt_join_area::after {content:''; display:block; clear:both;}
+	._evt_main ._evt_content ._evt_join_area > ._evt_title {position:relative; width:100%; height:315px;}
+	._evt_main ._evt_content ._evt_join_area > ._evt_title img {display:block; margin:0 auto;}
+	._evt_main ._evt_content ._evt_join_area > ._evt_title ._ani_obj_3 {position:absolute; left:549px; top:60px; width:140px; height:56px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_obj_3.png') 0 0 no-repeat; -webkit-animation:_aniStepsY 2s steps(43) infinite 0.3s; animation:_aniStepsY 2s steps(43) infinite 0.3s;}
+
+	._evt_main ._evt_content ._evt_join_area ._evt_select {height:618px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end {position:absolute; left:-50px; top:-50px; right:-50px; bottom:-50px; z-index:10;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end::before {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:#1e204f url('./static-fo-pc/img/kr/event/kk211231_target/p_event_end_bg.png') 50% 50% no-repeat; opacity:1; z-index:0;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end::after {content:''; position:absolute; left:0; top:0; width:100%; height:100%; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_end.png') 50% 50% no-repeat; z-index:5;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_select_wrap {position:relative; width:666px; height:100%; margin:0 auto;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item {position:absolute; cursor:pointer;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item a {position:relative; display:block; width:100%; height:100%; z-index:1;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_1 {left:-4px; top:-66px; width:180px; height:240px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_1.png') 0 0 no-repeat; -webkit-animation:_aniStepsX 3s steps(65) infinite 0.3s; animation:_aniStepsX 3s steps(65) infinite 0.3s;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_1:hover {-webkit-animation:none; animation:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_1:hover::after {content:''; position:absolute; left:-7px; top:56px; width:191px; height:190px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_obj_hover_1.png') 0 0 no-repeat; z-index:0;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_1.active:hover::after {display:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_2 {left:249px; top:1px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_2.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_2.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_3 {left:496px; top:1px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_3.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_3.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_4 {left:0; top:221px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_4.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_4.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_5 {left:249px; top:223px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_5.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_5.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_6 {left:487px; top:171px; width:186px; height:234px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_6.png') 0 0 no-repeat; -webkit-animation:_aniStepsX 3s steps(65) infinite 0.7s; animation:_aniStepsX 3s steps(65) infinite 0.7s;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_6:hover {-webkit-animation:none; animation:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_6:hover::after {content:''; position:absolute; left:-16px; top:25px; width:211px; height:210px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_obj_hover_2.png') 0 0 no-repeat; z-index:0;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_6.active:hover::after {display:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_7 {left:0; top:446px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_7.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_7.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_8 {left:249px; top:446px; width:172px; height:172px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_8.png') 0 0 no-repeat; -webkit-animation:_aniStepsX 3s steps(65) infinite 0.5s; animation:_aniStepsX 3s steps(65) infinite 0.5s;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_8:hover {-webkit-animation:none; animation:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_8:hover::after {content:''; position:absolute; left:-10px; top:-11px; width:191px; height:190px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_obj_hover_3.png') 0 0 no-repeat; z-index:0;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_8.active:hover::after {display:none;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_9 {left:484px; top:435px; width:196px; height:196px; background:url('./static-fo-pc/img/kr/event/kk211231_target/p_event_ani_9.png') 0 0 no-repeat;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_item_9.active {-webkit-animation:_aniStepsX 3s steps(65) forwards; animation:_aniStepsX 3s steps(65) forwards;}
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end ~ ._evt_item_1,
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end ~ ._evt_item_6,
+	._evt_main ._evt_content ._evt_join_area ._evt_select ._evt_end ~ ._evt_item_8 {/* -webkit-animation:none; animation:none; */}
+
+	._evt_main ._evt_content ._evt_join_area ._evt_guide {width:100%; border-bottom:1px solid #626384;}
+	._evt_main ._evt_content ._evt_join_area ._evt_guide img {display:block; margin:0 auto;}
+	._evt_main ._evt_content ._evt_join_area ._evt_col_wrap {position:relative; width:100%; overflow:hidden;}
+	._evt_main ._evt_content ._evt_join_area ._evt_col_wrap::after {content:''; position:absolute; left:588px; top:0; width:1px; height:100%; background:#626384;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result {position:relative; float:left; width:589px; height:630px; box-sizing:border-box;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_title {position:absolute; left:160px; top:71px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_me {position:absolute; left:160px; top:176px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price {position:absolute; left:162px; top:186px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price ._evt_usd {font-size:80px; font-family:'Montserrat Bold'; font-weight:bold; color:#f8b131; letter-spacing:-2.4px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price ._evt_usd::after {content:''; display:block; clear:both;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price ._evt_usd > img {position:relative; left:-2px; top:47px; float:left;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price ._evt_usd > span {float:left;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price ._evt_target {position:relative; left:-4px; top:-13px; font-size:19px; color:#fff; font-family:'Noto Sans Regular';}
+
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_me._off {left:162px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off {left:166px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off ._evt_usd {margin-left:1px; color:#c4c5c7;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off ._evt_target {left:-6px; top:-14px; color:#c4c5c7;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off ._evt_target a {color:#d6d6dc;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off ._evt_target a::after {content:''; position:absolute; left:0; bottom:-7px; width:100%; height:2px; background:#a9a9b5;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_price._off ._evt_target a span {position:relative; top:1px; display:inline-block; transform:scale(0.5, 1);}
+
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_all {position:absolute; left:161px; top:389px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number {position:absolute; left:161px; top:400px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number ._evt_cnt {font-size:80px; font-family:'Montserrat Bold'; font-weight:bold; color:#f8b131; letter-spacing:-2.4px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number ._evt_cnt::after {content:''; display:block; clear:both;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number ._evt_cnt > img {position:relative; left:12px; top:49px; float:left;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number ._evt_cnt > span {float:left;}
+	._evt_main ._evt_content ._evt_join_area ._evt_result ._evt_number ._evt_target {position:relative; left:-4px; top:-13px; font-size:19px; color:#fff; font-family:'Noto Sans Regular';}
+
+	/* 20220119 CSS 수정: width:649px -> width:640px */
+	._evt_main ._evt_content ._evt_join_area ._evt_info {position:relative; float:left; width:640px; padding-bottom:220px; box-sizing:border-box;}
+	/* //20220119 CSS 수정: width:649px -> width:640px */
+
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_title {position:absolute; left:68px; top:71px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_button {position:absolute; left:69px; top:127px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_button a {display:block;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_caution {padding:207px 0 0 67px; font-size:16px; color:#adaeb4; font-family:'Noto Sans Regular';}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_caution ul li {position:relative; margin-bottom:8px; padding:0 0 0 19px; line-height:24px;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_caution ul li::before {content:'※'; position:absolute; left:0; top:0;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_caution ul li span {color:#fff;}
+	._evt_main ._evt_content ._evt_join_area ._evt_info ._evt_caution ul li em {color:#ffbe48;}
+	._evt_main ._evt_content ._evt_join_area ._evt_notice {position:absolute; right:0; bottom:1px; width:649px; height:181px; padding:36px 0 0 67px; box-sizing:border-box; border-top:1px solid #626384;}
+	._evt_main ._evt_content ._evt_join_area ._evt_notice p {font-size:19px; line-height:30px; color:#fff}
+	._evt_main ._evt_content ._evt_join_area ._evt_notice em {color:#f8b131;}
+	._evt_main ._evt_content ._evt_join_area ._evt_notice strong {display:block; margin-top:20px; font-size:16px; color:#c0c1c6; letter-spacing:-0.64px; font-weight:normal;}
+	
+
+	._evt_main ._evt_content ._evt_how {width:100%; border-bottom:1px solid #626384;}
+	._evt_main ._evt_content ._evt_how img {display:block; margin:0 auto;}
+	._evt_main ._evt_content ._evt_how ._evt_caution {padding:29px 0 54px 158px; font-size:16px; color:#a9a9b3; font-family:'Noto Sans Regular';}
+	._evt_main ._evt_content ._evt_how ._evt_caution p {font-size:19px; color:#f8b131;}
+	._evt_main ._evt_content ._evt_how ._evt_caution ul {margin-top:26px;}
+	._evt_main ._evt_content ._evt_how ._evt_caution ul li {position:relative; margin-bottom:8px; padding:0 0 0 19px; line-height:24px; letter-spacing:-0.32px;}
+	._evt_main ._evt_content ._evt_how ._evt_caution ul li::before {content:'※'; position:absolute; left:0; top:0;}
+	._evt_main ._evt_content ._evt_how ._evt_caution ul li a {position:relative; left:9px; display:inline-block; color:#dfdfe3; vertical-align:top;}
+	._evt_main ._evt_content ._evt_how ._evt_caution ul li a::after {content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:#dfdfe3;}
+
+	._evt_main ._evt_content ._evt_ad {width:100%; padding-bottom:134px;}
+	._evt_main ._evt_content ._evt_ad img {display:block; margin:0 auto;}
+	._evt_main ._evt_content ._evt_ad ._evt_button {width:100%; font-size:0; text-align:center;}
+	._evt_main ._evt_content ._evt_ad ._evt_button a {display:inline-block; margin:0 20px;}
+
+	._evt_main ._evt_decoration {position:absolute; left:50%; top:0; width:100%; margin-left:-50%; z-index:2;}
+	._evt_main ._evt_decoration ._evt_deco {position:absolute;}
+	._evt_main ._evt_decoration ._evt_deco_1 {left:-340px; top:93px;}
+	._evt_main ._evt_decoration ._evt_deco_2 {left:1173px; top:92px;}
+	._evt_main ._evt_decoration ._evt_deco_3 {left:1240px; top:467px;}
+	._evt_main ._evt_decoration ._evt_deco_4 {left:-340px; top:613px;}
+	._evt_main ._evt_decoration ._evt_deco_5 {left:1240px; top:613px;}
+	._evt_main ._evt_decoration ._evt_deco_6 {left:-376px; top:842px;}
+	._evt_main ._evt_decoration ._evt_deco_7 {left:-145px; top:1616px;}
+	._evt_main ._evt_decoration ._evt_deco_8 {left:-304px; top:2352px;}
+	._evt_main ._evt_decoration ._evt_deco_9 {left:-340px; top:2453px;}
+	._evt_main ._evt_decoration ._evt_deco_10 {left:1240px; top:2392px;}
+	._evt_main ._evt_decoration ._evt_deco_11 {left:1275px; top:2854px;}
+	._evt_main ._evt_decoration ._evt_deco_12 {left:-340px; top:3443px;}
+	._evt_main ._evt_decoration ._evt_deco_13 {left:-195px; top:353px;}
+	._evt_main ._evt_decoration ._evt_slogan {position:absolute; right:-144px; top:761px;}
+
+	._evt_banner {position:relative; width:100%;}
+	._evt_banner_wrap {position:relative; width:1240px; margin:0 auto; box-sizing:border-box; border-left:1px solid #626384; border-right:1px solid #626384;}
+	._evt_banner_wrap::after {content:''; position:absolute; left:-200%; bottom:-1px; right:-200%; height:1px; background:#626384;}
+	._evt_banner a {display:block;}
+
+	._ev_layer {position:absolute; left:50%; z-index:80;}
+	._ev_layer ._layer_wrap {position:relative; width:580px;}
+	._ev_layer._caution_layer ._layer_wrap {width:485px;}
+	._ev_layer ._title {height:60px; padding:0 30px; box-sizing:border-box; background:#1e204f; line-height:60px; font-size:22px; color:#fff;}
+	._ev_layer ._content {padding:32px 35px 32px 25px; box-sizing:border-box; background:#fff; font-size:16px; color:#666;}
+	._ev_layer ._content img {display:block; margin:0 auto; max-width:100%;}
+	._ev_layer ._content > ul {width:100%;}
+	._ev_layer ._content > ul > li {position:relative; margin-top:9px; padding-left:18px; line-height:25px; letter-spacing:-1px; word-break:keep-all;}
+	._ev_layer ._content > ul > li:first-child {margin-top:0;}
+	._ev_layer ._content > ul > li::before {content:'ㆍ'; position:absolute; left:0; top:0;}
+	._ev_layer ._content > ul > li > ul {font-size:90%; line-height:1.5;}
+	._ev_layer ._content > p {position:relative; margin-bottom:10px; color:#000; font-size:16px; font-family:'Noto Sans Medium'; line-height:26px;}
+	._ev_layer ._content > ul + p {margin-top:45px;}
+	._ev_layer ._close {position:absolute; right:30px; top:22px; width:16px; height:16px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20201207/202012071043373981166d80ce4924a21a57f86545b144b8c.png') 0 0 no-repeat; z-index:10;}
+
+	._ev_layer._evt_join ._content {position:relative; padding:0; background:transparent;}
+	._ev_layer._evt_join ._content::after {content:''; position:absolute; left:0; top:143px; right:0; bottom:0; background:#1e204f; box-shadow:0px 15px 50px rgba(0,0,0,100); z-index:0;}
+	._ev_layer._evt_join ._content ._join_content {position:relative; z-index:1;}
+	._ev_layer._evt_join ._content ._date {position:absolute; left:20px; top:603px; right:18px; font-size:18px; color:#000; text-align:center;}
+	._ev_layer._evt_join ._content ._evt_btn_set {font-size:0; text-align:center; background:#1e204f;}
+	._ev_layer._evt_join ._content ._evt_btn_set a {display:inline-block; margin:0 6px; font-size:1px; vertical-align:middle;}
+	._ev_layer._evt_join ._content ._evt_btn_set a img {display:block;}
+	._ev_layer._evt_join ._content ._caution {padding:23px 0 50px 0; text-align:center; background:#1e204f;}
+	._ev_layer._evt_join ._content ._caution strong {font-size:19px; color:#c4c5c7; font-weight:normal;}
+	._ev_layer._evt_join ._content ._complete {padding:22px 0 57px 0; text-align:center; background:#1e204f;}
+	._ev_layer._evt_join ._close {position:absolute; right:13px; top:45px; width:50px; height:50px; background:transparent;}
+
+	#evDimmed {display:none; position:absolute; z-index:50; left:0; right:0; top:0; bottom:0; background-color:#000; opacity:0.7;}
+
+	@-webkit-keyframes _aniStepsX {
+		0% {background-position-x: 0;}
+		100% {background-position-x: 100%;}
+	}
+	@-webkit-keyframes _aniStepsY {
+		0% {background-position-y: 0;}
+		100% {background-position-y: 100%;}
+	}
+
+	@keyframes _aniStepsX {
+		0% {background-position-x: 0;}
+		100% {background-position-x: 100%;}
+	}
+	@keyframes _aniStepsY {
+		0% {background-position-y: 0;}
+		100% {background-position-y: 100%;}
+	}
+</style>
+<div class="evWrap">
+
+	<div class="_evt_main">
+
+		<div class="_evt_content">
+
+			<div class="_evt_date"><span>2022. 01. 27 ~ 06. 30</span></div>
+
+			<div class="_evt_header">
+				<div class="_ani_obj_1"></div>
+				<div class="_ani_obj_2"></div>
+				<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_title.png" alt="" />
+				<div class="_evt_hide">
+					<p>호랑이해 호기롭게 도전!</p>
+					<p>온라인/오프라인 면세 쇼핑하고 <em>목표금액을 달성</em>하면 혜택을 드려요.</p>
+				</div>
+			</div>
+
+			<div class="_evt_join_area">
+
+				<div class="_evt_title">
+					<div class="_ani_obj_3"></div>
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_sub_title.png" alt="목표달성 혜택 선택하기. 호랑이가 좋아하는 걸 찾아보세요!" />
+				</div>
+
+				<div class="_evt_select">
+					<div class="_evt_select_wrap">
+
+					<!-- 참여 완료 상태일 때 활성화 -->
+					<!--
+						<div class="_evt_end"><span class="_evt_hide">참여완료</span></div>
+					-->
+					<!-- //참여 완료 상태일 때 활성화 -->
+
+						<!-- 20220111 문구 수정 -->
+						<!-- LDF PAY 14만원 + 오프라인 등업 LVIP 버튼 -->
+						<div class="_evt_item _evt_item_1"><a href="#" onclick="evPopupOpen('#layerJoin_DLL'); return false;"><span class="_evt_hide">LDF PAY 14만원 + 오프라인 등업 LVIP</span></a></div>
+						<!-- //LDF PAY 14만원 + 오프라인 등업 LVIP 버튼 -->
+
+						<div class="_evt_item _evt_item_2"></div>
+						<div class="_evt_item _evt_item_3"></div>
+						<div class="_evt_item _evt_item_4"></div>
+						<div class="_evt_item _evt_item_5"></div>
+
+						<!-- LDF PAY 8만원 버튼 -->
+						<div class="_evt_item _evt_item_6"><a href="#" onclick="evPopupOpen('#layerJoin_DL'); return false;"><span class="_evt_hide">LDF PAY 8만원</span></a></div>
+						<!-- //LDF PAY 8만원 버튼 -->
+
+						<div class="_evt_item _evt_item_7"></div>
+
+						<!-- LDF PAY 4만원 버튼 -->
+						<div class="_evt_item _evt_item_8"><a href="#" onclick="evPopupOpen('#layerJoin_D'); return false;"><span class="_evt_hide">LDF PAY 4만원</span></a></div>
+						<!-- //LDF PAY 4만원 버튼 -->
+						<!-- //20220111 문구 수정 -->
+
+						<div class="_evt_item _evt_item_9"></div>
+
+					</div>
+				</div>
+
+				<div class="_evt_guide">
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_guide.png" alt="" />
+					<div class="_evt_hide">
+						<!-- 20220111 문구 수정 -->
+						<ul>
+							<li>목표금액 $10,000. LDF PAY 14만원 + 오프라인 등업 LVIP</li>
+							<li>목표금액 $5,000. LDF PAY 8만원</li>
+							<li>목표금액 $3,000. LDF PAY 4만원</li>
+						</ul>
+						<!-- //20220111 문구 수정 -->
+					</div>
+				</div>
+
+				<div class="_evt_col_wrap">
+					<div class="_evt_result">
+						<div class="_evt_title"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_result_title.png" alt="목표달성 현황" /></div>
+
+						<div class="_evt_me"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_result_txt_1.png" alt="나의 구매 금액" /></div>
+
+						<!-- 나의 구매 금액 -->
+						<div class="_evt_price _off">
+							<div class="_evt_usd">
+								<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_result_usd_off.png" alt="$" />
+								<span>0</span>
+							</div>
+							<!-- 20220111 문구 수정 -->
+							<div class="_evt_target">( 2월 8일 오전부터 확인 가능합니다 )</div>
+							<!-- //20220111 문구 수정 -->
+						</div>
+						<!-- //나의 구매 금액 -->
+
+						<div class="_evt_all"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_result_txt_2.png" alt="현재까지" /></div>
+						<div class="_evt_number">
+							<div class="_evt_cnt">
+								<span>1,000</span>
+								<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_result_cnt.png" alt="명" />
+							</div>
+							<div class="_evt_target">( 회원님들이 도전 중 )</div>
+						</div>
+
+					</div>
+
+					<div class="_evt_info">
+						<div class="_evt_title"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_info_title.png" alt="내가 선택한 혜택은?" /></div>
+
+						<!-- 내가 선택한 혜택은? 버튼 -->
+						<div class="_evt_button">
+							<a href="#"onclick="evPopupOpen('#layerResult_DLL'); return false;"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_info_btn.png" alt="확인하기" /></a>
+						</div>
+						<!-- //내가 선택한 혜택은? 버튼 -->
+
+						<div class="_evt_caution">
+							<!-- 20220111 문구 수정 -->
+							<ul>
+								<li>‘나의 구매 금액’은 <span>롯데면세점 온라인/오프라인 매장 합산</span><br /><span>구매 금액</span> 입니다.</li>
+								<li><span>응모하기 완료 이후 시점부터 구매한 금액이 ‘나의 구매 금액’으로</span><br /><span>집계 됩니다.</span> <em>반드시 이벤트 응모를 먼저 해주세요.</em></li>
+								<li>목표 달성 기준은 <em>인도완료 금액 기준</em>이며 구매 취소 또는 미인도 시,<br />달성 금액 기준에서 제외됩니다.</li>
+								<li>매일 00시 업데이트 됩니다. (전일 구매 금액 합산 반영)</li>
+							</ul>
+							<!-- //20220111 문구 수정 -->
+						</div>
+					</div>
+
+					<div class="_evt_notice">
+						<p>2022년 3월 <em>면세점 구매한도가 폐지될 예정</em>입니다.<br />금액 제한 걱정없이 마음껏 쇼핑하세요!</p>
+						<strong>※ 정확한 일정은 미정이며, 내국인 면세한도($600)는 그대로 유지됩니다.</strong>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="_evt_how">
+				<div class="_evt_step">
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_how_step.png" alt="" />
+					<div class="_evt_hide">
+						<p>참여방법</p>
+						<ul>
+							<li>STEP.1 목표달성 시 받고 싶은 혜택을 선택</li>
+							<li>STEP.2 목표금액과 쇼핑유형을 확인하고 응모하기 완료</li>
+							<li>STEP.3 기간 내 목표금액 이상 온/오프라인에서 쇼핑 및 인도 완료</li>
+							<li>STEP.4 목표달성 혜택 받고 하반기에도 즐겁게 면세 쇼핑</li>
+						</ul>
+					</div>
+				</div>
+				<div class="_evt_caution">
+					<p>구매 및 인도기간 <span>ㅣ</span> 2022년 01월 27일 - 06월 30일</p>
+
+					<!-- 20220111 문구 수정 -->
+					<ul>
+						<li>혜택은 7월 중 일괄 지급될 예정이며, 지급된 혜택은 ‘마이롯데’에서 확인 가능합니다.</li>
+						<li>LOUIS VUITTON, CHANEL(화장품 포함), HERMES, CARTIER, VCA, BVLGARI, TIFFANY, C.DIOR, DIOR HOMME, ROLEX,<br />A.PIGUET, 젠틀몬스터 등 일부 브랜드 및 담배 구매 금액은 목표달성 금액 기준에서 제외되며, ‘나의 구매 금액’에 집계되지 않습니다.</li>
+						<li>LDF PAY 사용 기간 : 지급일로부터 3년 <a href="#" onclick="evPopupOpen('#evLayer2'); return false;">LDF PAY 유의사항 &gt;</a></li>
+						<li>LVIP 혜택 기간 : 2022.08.01 ~ 12.31</li>
+					</ul>
+					<!-- //20220111 문구 수정 -->
+				</div>
+			</div>
+
+			<div class="_evt_ad">
+				<div class="_evt_title"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_ad_txt.png" alt="아직 회원이 아니라면? 지금 바로 가입하세요! 본 이벤트는 롯데면세점 온라인, 오프라인 모두 가입된 회원만 참여 가능합니다." /></div>
+				<div class="_evt_button">
+					<a href="https://kor.lps.lottedfs.com/kr/member/submain" target="_blank"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_ad_btn_1.png" alt="온라인 회원 가입하기" /></a>
+					<a href="https://kor.lps.lottedfs.com/kr/mypage/vipMemberRegForm" target="_blank"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_ad_btn_2.png" alt="오프라인 회원 가입하기" /></a>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="_evt_decoration">
+			<div class="_evt_deco _evt_deco_1"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_1.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_2"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_2.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_3"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_3.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_4"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_4.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_5"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_5.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_6"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_6.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_7"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_7.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_8"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_8.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_9"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_9.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_10"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_10.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_11"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_11.png" alt="" /></div>
+			<div class="_evt_deco _evt_deco_13"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_deco_13.png" alt="" /></div>
+			<div class="_evt_slogan"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_slogan.png" alt="FLY NEW YEAR" /></div>
+		</div>
+
+	</div>
+
+	<div class="_evt_banner">
+		<div class="_evt_banner_wrap">
+			<a href="https://kor.lottedfs.com/kr/event/eventDetail?evtDispNo=1038684"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_banner.png" alt="2022 드디어 오셨군요! 롯데면세점을 다시 찾아 준 고객님께 드리는 더드림 혜택" /></a>
+		</div>
+	</div>
+
+	<!-- 목표달성 혜택 선택 레이어팝업: LDF PAY 14만원 + 오프라인 등업 LVIP -->
+	<div class="_ev_layer _evt_join" id="layerJoin_DLL" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_1.png" alt="여행보다 면세쇼핑이 목적인 면세구매왕. LDF PAY 14만원 + 오프라인 등업 LVIP. 목표달성 금액 $10,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_evt_btn_set">
+						<a href="#" onclick="evPopupClose(); return false;"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_view.png" alt="다른 혜택 보기" /></a>
+						<a href="#"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_join.png" alt="응모하기" /></a>
+					</div>
+
+					<div class="_caution"><strong>※ 응모 후 목표금액을 채우면 혜택을 드립니다.</strong></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //목표달성 혜택 선택 레이어팝업: LDF PAY 14만원 + 오프라인 등업 LVIP -->
+
+	<!-- 목표달성 혜택 선택 레이어팝업: LDF PAY 8만원 -->
+	<div class="_ev_layer _evt_join" id="layerJoin_DL" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_2.png" alt="안 사고 후회하는 것보다 사고 후회하는 게 나은 쇼핑직진러. LDF PAY 8만원. 목표달성 금액 $5,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_evt_btn_set">
+						<a href="#" onclick="evPopupClose(); return false;"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_view.png" alt="다른 혜택 보기" /></a>
+						<a href="#"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_join.png" alt="응모하기" /></a>
+					</div>
+
+					<div class="_caution"><strong>※ 응모 후 목표금액을 채우면 혜택을 드립니다.</strong></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //목표달성 혜택 선택 레이어팝업: LDF PAY 8만원 -->
+
+	<!-- 목표달성 혜택 선택 레이어팝업: LDF PAY 4만원 -->
+	<div class="_ev_layer _evt_join" id="layerJoin_D" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_3.png" alt="위시리스트대로 필수템부터 쇼핑하는 계획쇼핑러. LDF PAY 4만원. 목표달성 금액 $3,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_evt_btn_set">
+						<a href="#" onclick="evPopupClose(); return false;"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_view.png" alt="다른 혜택 보기" /></a>
+						<a href="#"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_btn_join.png" alt="응모하기" /></a>
+					</div>
+
+					<div class="_caution"><strong>※ 응모 후 목표금액을 채우면 혜택을 드립니다.</strong></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //목표달성 혜택 선택 레이어팝업: LDF PAY 4만원 -->
+
+
+
+	<!-- 내가 선택한 혜택은? 레이어팝업: LDF PAY 14만원 + 오프라인 등업 LVIP -->
+	<div class="_ev_layer _evt_join" id="layerResult_DLL" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_1.png" alt="여행보다 면세쇼핑이 목적인 면세구매왕. LDF PAY 14만원 + 오프라인 등업 LVIP. 목표달성 금액 $10,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_complete"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_txt.png" alt="목표 달성까지 힘내세요!" /></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //내가 선택한 혜택은? 레이어팝업: LDF PAY 14만원 + 오프라인 등업 LVIP -->
+
+	<!-- 내가 선택한 혜택은? 레이어팝업: LDF PAY 8만원 -->
+	<div class="_ev_layer _evt_join" id="layerResult_DL" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_2.png" alt="안 사고 후회하는 것보다 사고 후회하는 게 나은 쇼핑직진러. LDF PAY 8만원. 목표달성 금액 $5,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_complete"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_txt.png" alt="목표 달성까지 힘내세요!" /></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //내가 선택한 혜택은? 레이어팝업: LDF PAY 8만원 -->
+
+	<!-- 내가 선택한 혜택은? 레이어팝업: LDF PAY 4만원 -->
+	<div class="_ev_layer _evt_join" id="layerResult_D" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_content">
+				<div class="_join_content">
+
+					<!-- 20220111 문구 수정 -->
+					<img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_content_3.png" alt="위시리스트대로 필수템부터 쇼핑하는 계획쇼핑러. LDF PAY 4만원. 목표달성 금액 $3,000" />
+					<!-- //20220111 문구 수정 -->
+
+					<div class="_date">구매 및 인도기간 ㅣ 2022.01.27 - 06.30</div>
+
+					<div class="_complete"><img src="./static-fo-pc/img/kr/event/kk211231_target/p_event_layer_txt.png" alt="목표 달성까지 힘내세요!" /></div>
+				</div>
+			</div>
+			<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //내가 선택한 혜택은? 레이어팝업: LDF PAY 4만원 -->
+
+
+	<!-- LDF PAY 유의사항 -->
+	<div class="_ev_layer _caution_layer" id="evLayer2" style="display:none;">
+		<div class="_layer_wrap">
+			<div class="_title"><span>LDF PAY 유의사항</span></div>
+			<div class="_content">
+
+				<!-- 20220126 문구 수정 -->
+				<ul>
+					<li>본 이벤트는 내국인(KOR)여권 소지자에 한해 참여 가능합니다. (PR 여권 및 거소증 제시 고객 제외)</li>
+					<li>LDF PAY 사용기간은 발급일로부터 3년(ID당 1회)입니다.</li>
+					<li>LDF PAY는 롯데면세점 회원전용 수단이므로 비회원은 증정, 사용, 양도가 불가합니다.</li>
+					<li>본인 LDF PAY 상세내역은 롯데인터넷면세점 마이롯데에서 조회 가능합니다.</li>
+					<li>롯데면세점 오프라인 VIP(SILVER 이상) 대상 행사로, 구매 전 회원 가입 완료 시에만 참여 가능합니다.</li>
+					<li>LDF PAY는 온/오프라인 전점용으로 증정하며 젠틀몬스터, 담배 등에서는 사용할 수 없습니다.</li>
+					<li>시내면세점과 인터넷 면세점은 출국 일로부터 60일 전부터, 공항점은 출국 당일에 이용 가능합니다.</li>
+					<li>롯데면세점 고객 상담 센터 1688-3000, http://kor.lottedfs.com</li>
+					<li>본 이벤트는 사전 공지 없이 당사의 사정에 따라 변경 또는 조기종료 될 수 있습니다.</li>
+				</ul>
+				<!-- //20220126 문구 수정 -->
+
+			</div>
+			<a class="_close" href="#" onclick="evPopupClose(); return false;"><span class="_evt_hide">닫기</span></a>
+		</div>
+	</div>
+	<!-- //LDF PAY 유의사항 -->
+
+
+	<div id="evDimmed" style="display:none;" onclick="evPopupClose(); return false;"></div>
+
+</div>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<script type="text/javascript">
+	(function($) {var items = new Array(), current = 0;var OnStep = function(Percent) {};var OnComplete = function() {};var getImages = function(element) {$(element).find('*:not(script)').each(function() {var url = "";if ($(this).css('background-image').indexOf('none') == -1 && $(this).css('background-image').indexOf('-gradient') == -1) {url = $(this).css('background-image');if (url.indexOf('url') != -1) {var temp = url.match(/url\((.*?)\)/);url = temp[1].replace(/\"/g, '');}} else if ($(this).get(0).nodeName.toLowerCase() == 'img' && typeof($(this).attr('src')) != 'undefined') {url = $(this).attr('src');}if (url.length > 0) {items.push(url);}});};var loadComplete = function() {current++;OnStep(Math.round((current / items.length) * 100));if (current == items.length) {OnComplete();}};var loadImg = function(url) {$(new Image()).load(loadComplete).error(loadComplete).attr('src', url);};$.fn.DEPreLoad = function(options) {return this.each(function() {if (typeof(options.OnStep) !== "undefined") OnStep = options.OnStep;if (typeof(options.OnComplete) !== "undefined") OnComplete = options.OnComplete;getImages(this);for (var i = 0; i < items.length; i++) {loadImg(items[i]);}});};})(jQuery);
+	$(document).ready(function(e) {
+		var evtSecAni_1 = false;
+		var evtSecAni_2 = false;
+		var evtSecAni_3 = false;
+		var evtSecAni_4 = false;
+		var evtSecAni_5 = false;
+
+		var imageLoader = $('._evt_sec._evt_sec_1').DEPreLoad({
+			OnComplete: function() {
+				if (!evtSecAni_1) {
+					evtSecAni_1 = true;
+					$('._evt_sec._evt_sec_1').addClass('_start');
+					setTimeout(function() {
+						$('._evt_sec_1 ._evt_wrap_1').addClass('_action');
+					}, 600);
+				}
+			}
+		});
+
+		$(window).on('scroll.evtAni', function(ev) {
+			var scrollPosY = $(this).scrollTop();
+
+			if (!evtSecAni_1 && scrollPosY >= $('._evt_sec_1 ._evt_wrap_1').offset().top / 3 && scrollPosY <= $('._evt_sec_1 ._evt_wrap_1').offset().top + $('._evt_sec_1 ._evt_wrap_1').height() / 2) {
+				if ($('._evt_sec._evt_sec_1').is('._start')) {
+					$('._evt_sec_1 ._evt_wrap_1').addClass('_action');
+					evtSecAni_1 = true;
+				} else {
+					setTimeout(function() {
+						if (!evtSecAni_1) {
+							evtSecAni_1 = true;
+							$('._evt_sec._evt_sec_1').addClass('_start');
+							setTimeout(function() {
+								$('._evt_sec_1 ._evt_wrap_1').addClass('_action');
+							}, 600);
+						}
+					}, 600);
+				}
+			}
+			if (!evtSecAni_2 && scrollPosY >= $('._evt_wrap._evt_wrap_2').offset().top / 5 && scrollPosY <= $('._evt_wrap._evt_wrap_2').offset().top + $('._evt_wrap._evt_wrap_2').height() / 2) {
+				$('._evt_sec_1 ._evt_wrap_2').addClass('_action');
+				evtSecAni_2 = true;
+			}
+			if (!evtSecAni_3 && scrollPosY >= $('._evt_c_a21').offset().top / 1.68 && scrollPosY <= $('._evt_c_a21').offset().top + $('._evt_c_a21').height() / 1.1) {
+				$('._evt_c_a21, ._evt_c_a22').addClass('_action');
+				evtSecAni_3 = true;
+			}
+			if (!evtSecAni_4 && scrollPosY >= $('._evt_sec._evt_sec_2').offset().top / 1.6 && scrollPosY <= $('._evt_sec._evt_sec_2').offset().top + $('._evt_sec._evt_sec_2').height() / 2) {
+				$('._evt_sec._evt_sec_2').addClass('_action');
+				evtSecAni_4 = true;
+			}
+			if (!evtSecAni_5 && scrollPosY >= $('._evt_sec._evt_sec_3').offset().top / 1.3 && scrollPosY <= $('._evt_sec._evt_sec_3').offset().top + $('._evt_sec._evt_sec_3').height() / 2) {
+				$('._evt_sec._evt_sec_3').addClass('_action');
+				evtSecAni_5 = true;
+			}
+		}).scroll();
+
+		/* FAQ */
+		$('._evt_fn_accordion').find('li > div:first-child').on('click', function(ev) {
+			ev.preventDefault();
+			var $parent = $(this).closest('ul');
+			var $item = $(this).closest('li');
+			if ($item.is('.current')) {
+				$item.removeClass('current');
+			} else {
+				$item.addClass('current');
+			}
+		});
+
+		/* 레이어 열기 */
+		$('.evWrap ._evt_fn_layer').on('click', function(ev) {
+			ev.preventDefault();
+			var $evtWrap = $('.evWrap');
+			var $target = $($(this).attr('href'));
+			var posType = $(this).data('layerType');
+			var setPos = {
+				left: $(this).offset().left,
+				top: ($(this).offset().top - $evtWrap.offset().top) - 100,
+				viewCenter: function() {
+					var evtWidth = $('.evWrap').width() / 2;
+					var layerWidth = parseInt($target.data('width'), 10) > 1 ? parseInt($target.data('width'), 10) / 2 : 485 / 2;
+
+					return evtWidth - layerWidth;
+				},
+				viewMiddle: function() {
+					var winPos = $(window).scrollTop() - $('.evWrap').offset().top;
+					var winHeight = $(window).innerHeight() / 2;
+
+					if (posType == 'L') {
+						winHeight = 100;
+					}
+
+					return winPos + winHeight;
+				}
+			};
+
+			if ($target.length > 0) {
+
+				$evtWrap.find('._evt_layer').css({display: 'none', top: '', left: '', marginLeft: '', marginTop: '', opacity: ''}).removeClass('active');
+
+				if (!$(this).is('.active')) {
+					$target.css({display: 'block', top: setPos.viewMiddle, left: setPos.viewCenter, marginLeft: 0, opacity: 0}).addClass('active').animate({
+						opacity: 1
+					}, 0, function() {
+						if (posType !== 'L') {
+							$(this).css({marginTop: -$target.height() / 2, opacity: 1});
+						}
+					});
+					$('#evtDimmed').css({display: 'block'});
+				}
+			}
+		});
+
+		/* 얼럿 레이어 닫기 */
+		$('.evWrap ._evt_fn_alert_close').on('click', function(ev) {
+			ev.preventDefault();
+			$(this).closest('._evt_alert').css({display: 'none', top: '', left: '', marginLeft: '', marginTop: '', opacity: ''}).removeClass('active');
+		});
+
+		/* 레이어 닫기 */
+		$('.evWrap ._evt_fn_layer_close').on('click', function(ev) {
+			ev.preventDefault();
+			var $evtWrap = $('.evWrap');
+
+			$(this).closest('._evt_layer').css({display: 'none', top: '', left: '', marginLeft: '', marginTop: '', opacity: ''}).removeClass('active');
+
+			$('#evtDimmed').css({display: 'none'});
+		});
+	});
+</script>
+<style type="text/css">
+	.skyscraper.renewal1806,
+	.skyscraper.renewal1806 .sideBanner,
+	.skyscraper .quickMenu {display:none;}
+	.tabArea {width:100%;}
+
+	.evWrap {position:relative; width:100%; overflow:hidden; z-index:1;}
+	.evWrap img {display:block;}
+	.evWrap a {color:inherit;}
+
+	._evt_hide {position:absolute; width:0; height:0; overflow:hidden; padding:0; margin:0; border:none; clip:rect(0,0,0,0);}
+	._evt_size img {display:block;}
+	._evt_sec_inner {position:relative; width:1020px; margin:0 auto;}
+	._evt_wrap {position:relative;}
+	._evt_area {position:relative;}
+	[class*="_evt_c_"] {position:absolute; z-index:1;}
+	[class*="_evt_m_"] {position:absolute; z-index:1;}
+	[class*="_evt_o_"] {position:absolute; z-index:1;}
+
+	._evt_sec_1 {background:#ea1e4f url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_bg_1.jpg') 50% 0 no-repeat;}
+		._evt_sec_1 ._evt_wrap_1 {height:651px;}
+			._evt_c_a1 {left:129px; top:143px; z-index:20;}
+			._evt_c_a2 {left:129px; top:227px; z-index:20;}
+			._evt_c_a3 {left:129px; top:309px; z-index:20;}
+			._evt_c_a4 {left:126px; top:403px; z-index:20;}
+			._evt_c_a5 {left:126px; top:491px; font-size:14px; line-height:21px; letter-spacing:-0.2px; color:#ffffff; z-index:20;}
+			._evt_c_a5::after {content:''; position:absolute; left:1px; top:-18px; width:17px; height:2px; background:#ffffff;}
+
+			._evt_m_c1 {left:741px; top:88px; z-index:3; opacity:0;}
+			._evt_m_c2 {left:859px; top:52px; z-index:4; opacity:0;}
+			._evt_m_c3 {left:917px; top:187px; z-index:5; opacity:0;}
+			._evt_m_c4 {left:604px; top:96px; z-index:0; opacity:0;}
+			._evt_m_c5 {left:955px; top:257px; z-index:0; opacity:0;}
+			._evt_m_c6 {left:854px; top:475px; z-index:10; opacity:0;}
+			._evt_m_c7 {left:529px; top:223px; z-index:9; opacity:0;}
+			._evt_m_c8 {left:529px; top:223px; z-index:1; opacity:0;}
+			._evt_m_c9 {left:782px; top:309px; z-index:8; opacity:0;}
+			._evt_m_c10 {left:846px; top:373px; z-index:7; opacity:0;}
+			._evt_m_c11 {left:777px; top:226px; z-index:6; opacity:0;}
+			._evt_m_c12 {left:619px; top:261px; z-index:5; opacity:0;}
+			._evt_m_c13 {left:656px; top:198px; z-index:2; opacity:0;}
+
+			._start ._evt_m_c7 {animation:_ev_box 0.9s linear 0.5s forwards;}
+			._start ._evt_m_c7 img {animation:_ev_obj_b1a 2.5s ease-in -1.2s infinite;}
+			._start ._evt_m_c8 {animation:_ev_box 0.9s linear 0.5s forwards;}
+			._start ._evt_m_c8 img {animation:_ev_obj_b1a 2.5s ease-in -1.2s infinite;}
+
+			._action ._evt_m_c1 {animation:_ev_obj_1 7s cubic-bezier(0.625, -0.320, 0.365, 1.330) 0.5s infinite;}
+			._action ._evt_m_c2 {animation:_ev_obj_2 9s cubic-bezier(0.625, -0.320, 0.365, 1.330) 0.9s infinite;}
+			._action ._evt_m_c3 {animation:_ev_obj_3 7.5s cubic-bezier(0.625, -0.320, 0.365, 1.330) 0.7s infinite;}
+			._action ._evt_m_c4 {transform-origin:100% 100%; animation:_ev_obj_4 7s cubic-bezier(.35,.11,.43,1.88) 1s infinite;}
+			._action ._evt_m_c4 img {animation:_ev_obj_b1a 2.5s ease-in 0.1s infinite;}
+			._action ._evt_m_c5 {transform-origin:0% 80%; animation:_ev_obj_5 7s cubic-bezier(.35,.11,.43,1.88) 1s infinite;}
+			._action ._evt_m_c5 img {animation:_ev_obj_b1a 2.5s ease-in 0.5s infinite;}
+			._action ._evt_m_c6 {transform-origin:0% 80%; animation:_ev_obj_6 7s cubic-bezier(.35,.11,.43,1.88) 1s infinite;}
+			._action ._evt_m_c6 img {animation:_ev_obj_b1a 2.5s ease-in 0.9s infinite;}
+
+			._action ._evt_m_c9 {animation: _ev_prd_1 1s linear 0s forwards;}
+			._action ._evt_m_c9 img {animation:_ev_obj_b1a 2.5s ease-in -1.8s infinite;/* animation:t_ev_prd_1_img 8s linear 1.5s infinite; */}
+			._action ._evt_m_c10 {animation:_ev_prd_2 1.1s linear 0.2s forwards;}
+			._action ._evt_m_c10 img {animation:_ev_obj_b1a 2.5s ease-in -1.8s infinite;/* animation:t_ev_prd_2_img 8.4s linear 1.7s infinite; */}
+			._action ._evt_m_c11 {animation:_ev_prd_3 0.9s linear 0.4s forwards;}
+			._action ._evt_m_c11 img {animation:_ev_obj_b1a 2.5s ease-in -1.8s infinite;/* animation:t_ev_prd_3_img 9s linear 2.3s infinite; */}
+			._action ._evt_m_c12 {animation:_ev_prd_4 0.9s linear 0.6s forwards;}
+			._action ._evt_m_c12 img {animation:_ev_obj_b1a 2.5s ease-in -1.8s infinite;/* animation:t_ev_prd_4_img 9.3s linear 1.9s infinite; */}
+			._action ._evt_m_c13 {animation:_ev_prd_5 0.9s linear 0.8s forwards;}
+			._action ._evt_m_c13 img {animation:_ev_obj_b1a 2.5s ease-in -1.8s infinite;/* animation:t_ev_prd_5_img 8.8s linear 2.1s infinite; */}
+
+		._evt_sec_1 ._evt_wrap_2 {height:1070px;}
+		._evt_sec_1 ._evt_wrap_2 [class*="_evt_c_"] {position:relative;}
+		._evt_sec_1 ._evt_wrap_2::after {content:''; display:block; clear:both;}
+			._evt_m_a12 {left:-9px; top:-31px; width:1055px; height:851px; opacity:0; z-index:0;}
+			._evt_m_a12 > * {width:100%; height:100%;}
+			._evt_c_a6 {left:-2px; top:34px; font-size:40px; color:#ffffff; font-family:'Noto Sans Medium'; text-align:center; letter-spacing:-2.3px; opacity:0;}
+			._evt_c_a6 span {color:#ff95b7;}
+			._evt_c_a7 {top:34px; font-size:18px; color:#ffffff; text-align:center; letter-spacing:-1.2px; opacity:0;}
+			._evt_c_a8 {top:51px; font-size:14px; color:#a7a7a7; text-align:center; letter-spacing:-0.9px; opacity:0;}
+			._evt_c_a9 {top:60px; font-size:14px; color:#ffffff; text-align:center; letter-spacing:-0.9px; opacity:0;}
+			._evt_c_a9 span {color:#ff95b7;}
+			._evt_c_a10 {top:60px; font-size:14px; color:#a7a7a7; text-align:center; letter-spacing:-0.9px; opacity:0;}
+			._evt_c_a10 span {color:#ff95b7;}
+			._evt_c_a11 {top:60px; font-size:14px; color:#a7a7a7; text-align:center; letter-spacing:-0.9px; opacity:0;}
+			._evt_c_a11 span {color:#ff95b7;}
+
+			._action ._evt_m_a12 {animation:_ev_face 0.6s cubic-bezier(.69,.08,.36,1) 0s forwards;}
+			._action ._evt_c_a6 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.6s forwards;}
+			._action ._evt_c_a7 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.7s forwards;}
+			._action ._evt_c_a8 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.75s forwards;}
+			._action ._evt_c_a9 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+			._action ._evt_c_a10 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.85s forwards;}
+			._action ._evt_c_a11 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 0.9s forwards;}
+
+			._evt_sec_1 ._evt_wrap_2 ._evt_area_1 {position:absolute; left:112px; top:250px; width:389px; height:523px; z-index:1; opacity:0;}
+			._evt_sec_1 ._evt_wrap_2 ._evt_area_1 [class*="_evt_c_"] {position:absolute;}
+				._evt_c_a12 {left:57px; top:37px; font-size:22px; color:#ffffff; font-family:'Noto Sans Medium'; letter-spacing:-1.2px; opacity:0;}
+				._evt_c_a12::after {content:''; position:absolute; left:83px; top:15px; width:0; height:1px; background:#ffffff; transition:width 0.5s cubic-bezier(.33,1,.37,1.18) 2.0s;}
+				._evt_c_a13 {left:171px; top:213px; font-size:18px; line-height:22px; color:#ffffff; letter-spacing:-0.6px; opacity:0;}
+				._evt_c_a14 {left:172px; top:307px; font-size:13px; line-height:1.2; color:#ffb35b; letter-spacing:-0.9px; opacity:0;}
+				._evt_c_a15 {left:171px; top:374px; font-size:13px; line-height:1.2; color:#c9c9c9; letter-spacing:-0.9px; opacity:0;}
+				._evt_c_a16 {left:49px; top:414px; width:291px; height:66px; font-size:25px; font-weight:bold; color:#f32c6b; letter-spacing:-0.9px; text-align:center; line-height:64px; background:url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_b_1.png') 0 0 no-repeat; opacity:0;}
+				._evt_c_a16 a {display:block; width:100%; height:100%;}
+				._evt_c_a17 {left:147px; top:484px; font-size:13px; color:rgba(255,60,122,0.5); letter-spacing:-0.9px; opacity:0;}
+				._evt_m_a1 {left:-101px; top:31px; z-index:3; opacity:0;}
+				._evt_m_a2 {left:-104px; top:139px; z-index:2; opacity:0;}
+				._evt_m_a3 {left:116px; top:69px; z-index:3; opacity:0;}
+				._evt_c_a17a {left:60px; top:318px; font-size:14px; color:rgba(101,66,6,0.6); line-height:1.2; letter-spacing:-1.1px; z-index:3; opacity:0;}
+				._evt_m_a4 {left:258px; top:99px; opacity:0;}
+				._evt_m_a4a {left:279px; top:115px; opacity:0;}
+				._evt_m_a4b {left:220px; top:104px; opacity:0;}
+				._evt_m_a5 {left:222px; top:121px; opacity:0;}
+				._evt_m_a5a {left:266px; top:172px; opacity:0;}
+				._evt_m_a5b {left:208px; top:143px; opacity:0;}
+				._evt_m_a6 {left:0; top:0; z-index:0;}
+
+				._evt_sec_1 ._evt_wrap_2._action ._evt_area_1 {animation:_ev_face_child .6s cubic-bezier(.06,.24,.12,.99) 1s forwards;}
+				._action ._evt_c_a12 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 1.3s forwards;}
+				._action ._evt_c_a12::after {width:199px;}
+				._action ._evt_m_a2 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 1.35s forwards;}
+				._action ._evt_m_a1 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 1.4s forwards;}
+				._action ._evt_c_a17a {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 1.7s forwards;}
+				._action ._evt_m_a3 {transform-origin:40% 100%; animation:_ev_obj_a4 7s cubic-bezier(.35,.11,.42,1.49) 1.75s infinite;}
+				._action ._evt_m_a4 {animation:_ev_obj_a2 1.6s ease-in 2.1s infinite;}
+				._action ._evt_m_a4a {animation:_ev_obj_a2 1.4s ease-in 1.8s infinite;}
+				._action ._evt_m_a4b {animation:_ev_obj_a2 1.8s ease-in 2s infinite;}
+				._action ._evt_m_a5 {animation:_ev_obj_a3 1.7s ease-in 1.9s infinite;}
+				._action ._evt_m_a5a {animation:_ev_obj_a3 2.4s ease-in 2.3s infinite;}
+				._action ._evt_m_a5b {animation:_ev_obj_a3 1.9s ease-in 2.1s infinite;}
+				._action ._evt_c_a13 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 2.3s forwards;}
+				._action ._evt_c_a14 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 2.4s forwards;}
+				._action ._evt_c_a15 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 2.5s forwards;}
+				._action ._evt_c_a16 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 2.6s forwards;}
+				._action ._evt_c_a17 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 2.7s forwards;}
+
+			._evt_sec_1 ._evt_wrap_2 ._evt_area_2 {position:absolute; left:519px; top:250px; width:389px; height:523px; z-index:1; opacity:0;}
+			._evt_sec_1 ._evt_wrap_2 ._evt_area_2 [class*="_evt_c_"] {position:absolute;}
+				._evt_c_a18 {left:57px; top:37px; font-size:22px; color:#ffffff; font-family:'Noto Sans Medium'; letter-spacing:-1.2px; opacity:0;}
+				._evt_c_a18::after {content:''; position:absolute; left:89px; top:15px; width:0; height:1px; background:#ffffff; transition:width 0.5s cubic-bezier(.33,1,.37,1.18) 3.1s;}
+				._evt_c_a19 {}
+				._evt_c_a20 {left:49px; top:414px; width:291px; height:66px; font-size:25px; font-weight:bold; color:#f32c6b; letter-spacing:-0.9px; text-align:center; line-height:64px; background:url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_b_2.png') 0 0 no-repeat; opacity:0;}
+				._evt_c_a20 a {display:block; width:100%; height:100%;}
+				._evt_m_a7 {left:56px; top:99px; z-index:4; opacity:0;}
+				._evt_m_a8 {left:86px; top:103px; z-index:3; opacity:0;}
+				._evt_m_a9 {left:131px; top:112px; z-index:2; opacity:0;}
+				._evt_m_a10 {left:159px; top:78px; z-index:1; opacity:0;}
+				._evt_m_a11 {left:0; top:0; z-index:0;}
+
+				._evt_sec_1 ._evt_wrap_2._action ._evt_area_2 {animation: _ev_face_child .6s cubic-bezier(.06,.24,.12,.99) 2s forwards;}
+				._action ._evt_c_a18 {animation:_ev_show 0.8s cubic-bezier(.54,.21,.39,.93) 2.3s forwards;}
+				._action ._evt_c_a18::after {width:194px;}
+				._action ._evt_m_a8 {transform-origin:10% 100%; animation:_ev_obj_a5 7s cubic-bezier(.11,.17,.13,.96) 2.6s infinite;}
+				._action ._evt_m_a9 {transform-origin:10% 100%; animation:_ev_obj_a5a 7s cubic-bezier(.11,.17,.13,.96) 2.9s infinite;}
+				._action ._evt_m_a10 {transform-origin:10% 100%; animation:_ev_obj_a5b 7s cubic-bezier(.11,.17,.13,.96) 3.2s infinite;}
+				._action ._evt_m_a7 {transform-origin:50% 100%; animation:_ev_obj_a6 .6s cubic-bezier(.11,.17,.13,.96) 3.4s forwards;}
+				._action ._evt_m_a7 img {animation:_ev_obj_a7 3s ease-in 2.1s infinite;}
+				._action ._evt_c_a20 {animation:_ev_show_left 0.4s cubic-bezier(.43,.15,.6,.8) 3.2s forwards;}
+
+			._evt_o_a1 {left:505px; top:495px; z-index:2; opacity:0;}
+			._evt_o_a1 img {position:relative; z-index:10;}
+			._evt_o_a1::after {content:''; position:absolute; left:50%; top:50%; width:54px; height:54px; margin:-26px 0 0 -30px; border-radius:100%; background:#101010; z-index:0;}
+
+			._action ._evt_o_a1 {animation:_ev_show_left_obj 0.6s cubic-bezier(.35,.11,.22,1.95) 2.1s forwards;}
+
+		._evt_c_a21 {left:113px; top:1523px; opacity:0;}
+		._evt_c_a21::before {content:''; position:absolute; left:-25px; top:-20px; width:0; height:2px; background:#c51433; transition:width 0.7s cubic-bezier(.33,1,.37,1.18) 0.6s;}
+		._evt_c_a21::after {content:''; position:absolute; left:-25px; bottom:-27px; width:0; height:2px; background:#c51433; transition:width 0.6s cubic-bezier(.33,1,.37,1.18) 1.2s;}
+		._evt_c_a21 > div {position:relative; display:block;}
+		._evt_c_a21 > div::before {content:''; position:absolute; left:396px; top:-20px; bottom:120px; width:2px; background:#c51433; transition:bottom 0.7s cubic-bezier(.56,.2,.44,1) 0.8s;}
+		._evt_c_a21 > div::after {content:''; display:block; clear:both;}
+		._evt_c_a21 > div > div:first-child {position:relative; z-index:1;}
+		._evt_c_a21 > div > div:first-child div:first-child {font-size:22px; color:#ffffff; font-family:'Noto Sans Medium'; letter-spacing:-2px;}
+		._evt_c_a21 > div > div:first-child div:first-child + div {position:relative; left:-1px; top:2px; font-size:16px; color:#ffffff; line-height:18px; letter-spacing:-0.8px;}
+		._evt_c_a21 > div > div:first-child div:first-child + div span {position:relative; display:inline-block;}
+		._evt_c_a21 > div > div:first-child div:first-child + div span::after {content:''; position:absolute; left:0; bottom:-2px; width:100%; height:1px; background:#ffffff;}
+		._evt_c_a21 > div > div:first-child div:first-child + div + div {position:relative; left:-1px; top:14px; font-size:13px; color:#000000; letter-spacing:-0.7px;}
+		._evt_c_a21 > div > div:first-child div:first-child + div + div + div {position:relative; left:-1px; top:15px; font-size:12px; color:#7c091d; letter-spacing:-0.8px;}
+		._evt_c_a21 > div > div:first-child + div {position:absolute; left:220px; top:39px; width:139px; text-align:center; z-index:1;}
+		._evt_c_a21 > div > div:first-child + div div:first-child + div {position:relative; font-size:18px; font-weight:bold; color:#ee2e24; text-align:center; z-index:1;}
+		._evt_c_a21 > div > div:first-child + div div:first-child + div span:first-child {font-size:22px;}
+		._evt_c_a21 > div > div:first-child + div div:first-child + div span:first-child + span {position:relative; left:1px; top:-2px;}
+		._evt_c_a21 > div > div:first-child + div div:first-child + div + div {position:relative; left:1px; top:-2px; font-size:10px; color:#ee2e24; font-family:'Noto Sans Medium'; z-index:1;}
+			._evt_o_a2 {left:220px; top:13px; z-index:0;}
+		._evt_c_a22 {left:548px; top:1522px; opacity:0;}
+		._evt_c_a22 > div {position:relative; display:block;}
+		._evt_c_a22 > div::after {content:''; display:block; clear:both;}
+		._evt_c_a22 > div > div:first-child {position:relative; z-index:1;}
+		._evt_c_a22 > div > div:first-child div:first-child {font-size:22px; color:#ffffff; font-family:'Noto Sans Medium'; letter-spacing:-1.9px;}
+		._evt_c_a22 > div > div:first-child div:first-child + div {position:relative; left:1px; top:3px; font-size:16px; color:#ffffff; line-height:18px; letter-spacing:-0.9px;}
+		._evt_c_a22 > div > div:first-child div:first-child + div span {position:relative; display:inline-block;}
+		._evt_c_a22 > div > div:first-child div:first-child + div span::after {content:''; position:absolute; left:0; bottom:-2px; width:100%; height:1px; background:#ffffff;}
+		._evt_c_a22 > div > div:first-child div:first-child + div + div {position:relative; left:0px; top:15px; font-size:13px; color:#000000; letter-spacing:-0.7px;}
+			._evt_o_a3 {left:252px; top:0px; z-index:0;}
+
+		._action._evt_c_a21 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 0s forwards;}
+		._action._evt_c_a21::before {width:846px;}
+		._action._evt_c_a21::after {width:846px;}
+		._action._evt_c_a21 > div::before {bottom:-27px;}
+		._action._evt_c_a22 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 0.4s forwards;}
+
+	._evt_sec_2 {height:787px; background:#ffffff; text-align:center;}
+		._evt_c_a23 {left:398px; top:101px; opacity:0;}
+		._evt_c_a24 {position:relative; left:0; top:131px; font-size:40px; color:#f32c6b; text-align:center; font-family:'Noto Sans Medium'; letter-spacing:-2.3px; opacity:0;}
+		._evt_c_a25 {left:211px; top:378px; font-size:14px; color:#333333; line-height:17px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a25 a {position:relative; left:1px; top:6px; display:block; margin:0 auto; width:107px; height:28px; background:#f32c6b; font-size:14px; color:#ffffff; font-weight:bold; text-align:center; line-height:26px;}
+		._evt_c_a26 {left:436px; top:378px; font-size:14px; color:#333333; line-height:17px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a27 {left:670px; top:376px; font-size:14px; color:#333333; line-height:20px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a28 {left:656px; top:618px; font-size:14px; color:#333333; line-height:17px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a28 a {position:relative; left:4px; top:6px; display:block; margin:0 auto; width:116px; height:28px; background:#f32c6b; font-size:14px; color:#ffffff; font-weight:bold; text-align:center; line-height:26px;}
+		._evt_c_a28 div span {position:relative; color:#f32c6b;}
+		._evt_c_a28 div span::after {content:''; position:absolute; left:0; bottom:1px; width:100%; height:1px; background:#f32c6b;}
+		._evt_c_a29 {left:438px; top:618px; font-size:14px; color:#333333; line-height:17px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a29 div span {position:relative; color:#f32c6b;}
+		._evt_c_a29 div span::after {content:''; position:absolute; left:0; bottom:1px; width:100%; height:1px; background:#f32c6b;}
+		._evt_c_a30 {left:215px; top:618px; font-size:14px; color:#333333; line-height:17px; letter-spacing:-0.7px; opacity:0;}
+		._evt_c_a30a {left:205px; top:219px; z-index:0; opacity:0;}
+		._evt_c_a31 {left:795px; top:50px; z-index:2; opacity:0;}
+		._evt_c_a32 {left:1096px; top:338px; z-index:2; opacity:0;}
+		._evt_c_a33 {left:813px; top:136px; opacity:0;}
+		._evt_c_a34 {left:1085px; top:738px; font-size:14px; color:rgba(168,168,168,0.6); text-align:left; white-space:nowrap; letter-spacing:-1px; line-height:17px; opacity:0;}
+
+		._action ._evt_c_a23 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0s forwards;}
+		._action ._evt_c_a24 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.4s forwards;}
+		._action ._evt_c_a30a {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a25 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a26 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a27 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a28 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a29 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a30 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0.8s forwards;}
+		._action ._evt_c_a31 {transform-origin:60% 100%; animation:_ev_obj_c1 5s cubic-bezier(.35,.11,.42,1.49) 1.4s infinite;}
+		._action ._evt_c_a31 img {transform-origin:60% 100%; animation:t_ev_obj_c1a 4s cubic-bezier(.29,.01,.69,.99) 1.4s infinite;}
+		._action ._evt_c_a32 {transform-origin:40% 100%; animation:_ev_obj_c2 5s cubic-bezier(.35,.11,.42,1.49) 1.8s infinite;}
+		._action ._evt_c_a32 img {transform-origin:40% 100%; animation:t_ev_obj_c2a 4s cubic-bezier(.29,.01,.69,.99) 1.8s infinite;}
+		._action ._evt_c_a33 {animation:_ev_show 1.2s cubic-bezier(.11,.17,.13,.96) 1.2s forwards;}
+		._action ._evt_c_a34 {animation:_ev_show 1.2s cubic-bezier(.11,.17,.13,.96) 1.2s forwards;}
+
+	._evt_sec_3 {padding:82px 0 41px 0; background:#d9d9d9 url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_bg_2.jpg') 50% 0 no-repeat;}
+	._evt_sec_3 [class*="_evt_c_"] {position:static;}
+		._evt_sec_3 ._evt_area_1 {padding:133px 60px 13px 59px; background:#ffffff; border-radius:18px; opacity:0;}
+			._evt_c_a35 {position:absolute !important; left:0; top:51px; width:100%; font-size:40px; color:#000000; font-family:'Noto Sans Medium'; text-align:center; letter-spacing:-2.9px;}
+			._evt_c_a36 ul li {position:relative; padding:16px 40px 0 123px; border-top:2px solid #d3d3d3;}
+			._evt_c_a36 ul li::after {content:''; position:absolute; right:12px; top:23px; width:0; height:0; border-left:6px solid transparent; border-right:7px solid transparent; border-top:7px solid #000000;}
+			._evt_c_a36 ul li div:first-child {padding:0 0 16px 0; font-size:15px; color:#000000; font-family:'Noto Sans Medium'; letter-spacing:-0.3px;}
+			._evt_c_a36 ul li div:first-child::after {content:''; position:absolute; left:0; top:0; width:100%; height:53px; background:transparent; z-index:10; cursor:pointer;}
+			._evt_c_a36 ul li div:first-child span {position:absolute; left:0px; top:12px; width:98px; height:28px; background:#000000; color:#ffffff; line-height:28px; text-indent:8px;}
+			._evt_c_a36 ul li div:first-child span::after {content:''; position:absolute; right:0; top:0; width:0; height:0; border-top:15px solid transparent; border-bottom:13px solid transparent; border-left:11px solid #000000; background:#ffffff;}
+			._evt_c_a36 ul li div:first-child + div {height:0; overflow:hidden; transition:height 0.5s;}
+			._evt_c_a36 ul li.current div:first-child + div {height:auto; padding:0 0 30px 0;}
+			._evt_c_a36 ul li.current::after {border-top:none; border-bottom:7px solid #000000;}
+		._evt_c_a37 {position:absolute !important; left:58px; bottom:305px; font-size:18px; color:#000000; font-family:'Noto Sans Medium'; letter-spacing:-0.9px; opacity:0;}
+		._evt_c_a37::after {content:''; position:absolute; left:-16px; top:-20px; width:33px; height:28px; background:url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_10.png') 0 0 no-repeat;}
+		._evt_c_a38 {position:relative !important; left:190px; padding:46px 0 0 0; font-size:13px; color:#575656; line-height:22px; letter-spacing:-0.2px; opacity:0;}
+		._evt_c_a38 ul li span {color:#e22440;}
+		._evt_c_a38 ul li {position:relative;}
+		._evt_c_a38 ul li::after {content:''; position:absolute; left:-8px; top:10px; width:2px; height:2px; overflow:hidden; border-radius:100%; background:#575656;}
+
+		._evt_sec_3._action ._evt_area_1 {animation:_ev_show 0.7s cubic-bezier(.54,.21,.39,.93) 0s forwards;}
+		._action ._evt_c_a37 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 0.3s forwards;}
+		._action ._evt_c_a38 {animation:_ev_show 0.6s cubic-bezier(.54,.21,.39,.93) 0.5s forwards;}
+
+	._evt_m_b1 {left:-28px; top:287px; opacity:0;}
+	._evt_m_b2 {left:50px; top:382px; opacity:0;}
+	._evt_m_b3 {left:147px; top:-40px; opacity:0;}
+	._evt_m_b4 {left:1056px; top:310px; opacity:0;}
+	._evt_m_b5 {left:1088px; top:342px; opacity:0;}
+	._evt_m_b6 {left:-110px; top:577px; opacity:0;}
+	._evt_m_b7 {left:-194px; top:675px; opacity:0;}
+	._evt_m_b8 {right:-44px; bottom:-68px; opacity:0;}
+
+	._action ._evt_m_b1 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 2s forwards;}
+	._action ._evt_m_b1 img {animation: _ev_obj_b1a 3s ease-in 0.5s infinite;}
+	._action ._evt_m_b2 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 2.5s forwards;}
+	._action ._evt_m_b2 img {animation: _ev_obj_b1a 3s ease-in 1.3s infinite;}
+	._action ._evt_m_b3 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 0s forwards;}
+	._action ._evt_m_b3 img {animation: _ev_obj_b1a 3s ease-in 1.3s infinite;}
+	._action ._evt_m_b4 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 0.3s forwards;}
+	._action ._evt_m_b4 img {animation: _ev_obj_b1a 3s ease-in 1.5s infinite;}
+	._action ._evt_m_b5 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 0.6s forwards;}
+	._action ._evt_m_b5 img {animation: _ev_obj_b1a 3s ease-in 1.7s infinite;}
+	._action ._evt_m_b6 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 0.9s forwards;}
+	._action ._evt_m_b6 img {animation: _ev_obj_b1a 3s ease-in 1.8s infinite;}
+	._action ._evt_m_b7 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 1.2s forwards;}
+	._action ._evt_m_b8 {animation: _ev_obj_b1 .6s cubic-bezier(.11,.17,.13,.96) 1.5s forwards;}
+	._action ._evt_m_b8 img {animation: _ev_obj_b1a 3s ease-in 2.1s infinite;}
+
+	@keyframes _ev_box {
+		0% {transform:translate3d(0,-633px,0);}
+		1% {opacity:1; transform:translate3d(20px,-626.7px,0); animation-timing-function:cubic-bezier(.35,.11,.43,1.88);}
+		70% {opacity:1; transform:translate3d(0,-40px,0); animation-timing-function:cubic-bezier(.35,.11,.47,1.18);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+
+	@keyframes _ev_prd_1 {
+		0% {opacity:0; transform:translate3d(-20px,-500px,0);}
+		1% {opacity:1; transform:translate3d(-20px,-495px,0); animation-timing-function:cubic-bezier(.25,.03,.51,1.6);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_1_img {
+		0% {transform:translate3d(0,0,0);}
+		35% {transform:translate3d(0,0,0); animation-timing-function:cubic-bezier(0,.7,.54,.9);}
+		41% {transform:translate3d(0,-160px,0);}
+		64% {transform:translate3d(0,-160px,0) rotate(18deg);}
+		67% {transform:translate3d(0,-170px,0);}
+		69% {transform:translate3d(0,-190px,0);}
+		72% {transform:translate3d(0,30px,0); animation-timing-function:cubic-bezier(0,.2,.19,.97);}
+		74.5% {transform:translate3d(0,0,0) rotate(0deg);}
+		100% {transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_2 {
+		0% {opacity:0; transform:translate3d(0,-500px,0);}
+		10% {opacity:1; transform:translate3d(0,-450px,0); animation-timing-function:cubic-bezier(.34,.18,.17,1.7);}
+		80% {opacity:1; transform:translate3d(0,-45px,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+		/*
+		0% {opacity:0; transform:translate3d(20px,-500px,0);}
+		10% {opacity:1; transform:translate3d(20px,-450px,0); animation-timing-function:cubic-bezier(.35,.11,.43,1.88);}
+		70% {opacity:1; transform:translate3d(0,-50px,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+		*/
+	}
+	@keyframes _ev_prd_2_img {
+		0% {transform:translate3d(0,0,0);}
+		40% {transform:translate3d(0,0,0); animation-timing-function:cubic-bezier(0,.7,.54,.9);}
+		46% {transform:translate3d(0,-150px,0);}
+		69% {transform:translate3d(0,-150px,0) rotate(-18deg);}
+		72% {transform:translate3d(0,-160px,0);}
+		74% {transform:translate3d(0,-190px,0);}
+		78% {transform:translate3d(0,30px,0); animation-timing-function:cubic-bezier(0,.2,.19,.97);}
+		79.5% {transform:translate3d(0,0,0) rotate(0deg);}
+		100% {transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_3 {
+		0% {opacity:0; transform:translate3d(20px,-500px,0);}
+		10% {opacity:1; transform:translate3d(20px,-450px,0); animation-timing-function:cubic-bezier(.34,.18,.17,1.7);}
+		85% {opacity:1; transform:translate3d(0,0,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_3_img {
+		0% {transform:translate3d(0,0,0);}
+		43% {transform:translate3d(0,0,0); animation-timing-function:cubic-bezier(0,.7,.54,.9);}
+		49% {transform:translate3d(0,-170px,0);}
+		72% {transform:translate3d(0,-170px,0) rotate(20deg);}
+		75% {transform:translate3d(0,-180px,0);}
+		77% {transform:translate3d(0,-200px,0);}
+		80% {transform:translate3d(0,30px,0); animation-timing-function:cubic-bezier(0,.2,.19,.97);}
+		82.5% {transform:translate3d(0,0,0) rotate(0deg);}
+		100% {transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_4 {
+		0% {opacity:0; transform:translate3d(20px,-500px,0);}
+		10% {opacity:1; transform:translate3d(20px,-450px,0); animation-timing-function:cubic-bezier(.34,.18,.17,1.7);}
+		85% {opacity:1; transform:translate3d(0,0,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_4_img {
+		0% {transform:translate3d(0,0,0);}
+		49% {transform:translate3d(0,0,0); animation-timing-function:cubic-bezier(0,.7,.54,.9);}
+		55% {transform:translate3d(0,-150px,0);}
+		78% {transform:translate3d(0,-150px,0) rotate(-21deg);}
+		81% {transform:translate3d(0,-160px,0);}
+		83% {transform:translate3d(0,-190px,0);}
+		86% {transform:translate3d(0,30px,0); animation-timing-function:cubic-bezier(0,.2,.19,.97);}
+		87.5% {transform:translate3d(0,0,0) rotate(0deg);}
+		100% {transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_5 {
+		0% {opacity:0; transform:translate3d(20px,-500px,0);}
+		10% {opacity:1; transform:translate3d(20px,-450px,0); animation-timing-function:cubic-bezier(.34,.18,.17,1.7);}
+		85% {opacity:1; transform:translate3d(0,0,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_prd_5_img {
+		0% {transform:translate3d(0,0,0);}
+		40% {transform:translate3d(0,0,0); animation-timing-function:cubic-bezier(0,.7,.54,.9);}
+		46% {transform:translate3d(0,-175px,0);}
+		69% {transform:translate3d(0,-175px,0) rotate(15deg);}
+		72% {transform:translate3d(0,-185px,0);}
+		74% {transform:translate3d(0,-205px,0);}
+		77% {transform:translate3d(0,30px,0); animation-timing-function:cubic-bezier(0,.2,.19,.97);}
+		78.5% {transform:translate3d(0,0,0) rotate(0deg);}
+		100% {transform:translate3d(0,0,0);}
+	}
+
+	@keyframes _ev_obj_1 {
+		0% {transform:scale(0.8) translate3d(0,300px,0);}
+		30% {transform:scale(1) translate3d(0,0,0); opacity:1;}
+		100% {transform:scale(0.8) translate3d(0,-300px,0); opacity:0;}
+	}
+	@keyframes _ev_obj_2 {
+		0% {transform:scale(0.8) translate3d(0,300px,0);}
+		30% {transform:scale(1) translate3d(0,0,0); opacity:1;}
+		100% {transform:scale(0.8) translate3d(0,-300px,0); opacity:0;}
+	}
+	@keyframes _ev_obj_3 {
+		0% {transform:scale(0.8) translate3d(0,200px,0);}
+		30% {transform:scale(1) translate3d(0,0,0); opacity:1;}
+		100% {transform:scale(0.8) translate3d(0,-300px,0); opacity:0;}
+	}
+	@keyframes _ev_obj_4 {
+		0% {opacity:0; transform:scale(0);}
+		7% {opacity:1; transform:scale(1);}
+		95% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+	}
+	@keyframes _ev_obj_5 {
+		0% {opacity:0; transform:scale(0);}
+		9% {opacity:1; transform:scale(1);}
+		97% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+		/*
+		0% {opacity:0; transform:scale(0.8) translate3d(-30px,5px,0); animation-timing-function:cubic-bezier(.35,.11,.43,1.88);}
+		10% {opacity:1; transform:scale(1) translate3d(0,0,0);}
+		70% {opacity:1; transform:scale(1) translate3d(0,0,0);}
+		85% {opacity:0; transform:scale(0.7) translate3d(150px,-3px,0);}
+		100% {opacity:0; transform:scale(0.7) translate3d(-50px,5px,0);}
+		*/
+	}
+	@keyframes _ev_obj_6 {
+		0% {opacity:0; transform:scale(0);}
+		11% {opacity:1; transform:scale(1);}
+		97% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+	}
+
+	@keyframes _ev_face {
+		0% {transform:scale(0.7);}
+		100% {opacity:1; transform:scale(1);}
+	}
+	@keyframes _ev_show {
+		0% {opacity:0;}
+		100% {opacity:1;}
+	}
+	@keyframes _ev_show_left_obj {
+		0% {opacity:0; transform:translate3d(-30px,0,0);}
+		30% {transform:translate3d(-30px,0,0);}
+		100% {opacity:1; transform:translate3d(0,0,0)}
+	}
+	@keyframes _ev_show_left {
+		0% {opacity:0; transform:translate3d(-30px,0,0);}
+		100% {opacity:1; transform:translate3d(0,0,0)}
+	}
+
+	@keyframes _ev_obj_a1 {
+		0% {transform:scale(1) translate3d(0,0,0);}
+		50% {transform:scale(1.03) translate3d(-3px,-5px,0);}
+		100% {transform:scale(1) translate3d(0,0,0);}
+	}
+	@keyframes _ev_obj_a2 {
+		0% {opacity:0; transform:translate3d(0,0,0) rotate(10deg);}
+		50%, 65% {opacity:1;}
+		90% {opacity:0; transform:translate3d(0,-60px,0) rotate(-10deg);}
+		100% {opacity:0;}
+	}
+	@keyframes _ev_obj_a3 {
+		0% {opacity:0; transform:translate3d(0,0,0) rotate(10deg);}
+		50%, 65% {opacity:1;}
+		90% {opacity:0; transform:translate3d(0,-50px,0) rotate(-10deg);}
+		100% {opacity:0;}
+	}
+	@keyframes _ev_obj_a4 {
+		0% {opacity:0; transform:scale(0);}
+		5% {opacity:1; transform:scale(1);}
+		97% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+	}
+	@keyframes _ev_obj_a5 {
+		0% {opacity:0; transform:rotate(-10deg);}
+		7% {opacity:1; transform:rotate(0deg);}
+		95% {opacity:1; transform:rotate(0deg);}
+		98% {opacity:0; transform:rotate(-10deg);}
+		100% {opacity:0; transform:rotate(-10deg);}
+	}
+	@keyframes _ev_obj_a5a {
+		0% {opacity:0; transform:rotate(-10deg);}
+		7% {opacity:1; transform:rotate(0deg);}
+		88% {opacity:1; transform:rotate(0deg);}
+		91% {opacity:0; transform:rotate(-10deg);}
+		100% {opacity:0; transform:rotate(-10deg);}
+	}
+	@keyframes _ev_obj_a5b {
+		0% {opacity:0; transform:rotate(-10deg);}
+		7% {opacity:1; transform:rotate(0deg);}
+		81% {opacity:1; transform:rotate(0deg);}
+		84% {opacity:0; transform:rotate(-10deg);}
+		100% {opacity:0; transform:rotate(-10deg);}
+	}
+	@keyframes _ev_obj_a6 {
+		0% {opacity:0; transform:translate3d(0,20px,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_obj_a7 {
+		0% {transform:translate3d(0,0,0); animation-timing-function:ease-out;}
+		50% {transform:translate3d(0,-20px,0); animation-timing-function:ease-in;}
+		100% {transform:translate3d(0,0,0);}
+	}
+
+	@keyframes _ev_face_child {
+		0% {transform:scaleX(0);}
+		100% {opacity:1; transform:scaleX(1);}
+	}
+
+	@keyframes _ev_obj_c1 {
+		0% {opacity:0; transform:scale(0);}
+		5% {opacity:1; transform:scale(1);}
+		94% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+	}
+	@keyframes _ev_obj_c1a {
+		0% {transform:rotate(0deg);}
+		74% {transform:rotate(0deg);}
+		78% {transform:rotate(-15deg);}
+		82% {transform:rotate(0deg);}
+		83% {transform:rotate(0deg);}
+		86% {transform:rotate(-10deg);}
+		90% {transform:rotate(0deg);}
+		100% {transform:rotate(0deg);}
+	}
+	@keyframes _ev_obj_c2 {
+		0% {opacity:0; transform:scale(0);}
+		5% {opacity:1; transform:scale(1);}
+		94% {opacity:1; transform:scale(1);}
+		100% {opacity:0; transform:scale(0);}
+	}
+	@keyframes _ev_obj_c2a {
+		0% {transform:rotate(0deg);}
+		74% {transform:rotate(0deg);}
+		78% {transform:rotate(15deg);}
+		82% {transform:rotate(0deg);}
+		83% {transform:rotate(0deg);}
+		86% {transform:rotate(10deg);}
+		90% {transform:rotate(0deg);}
+		100% {transform:rotate(0deg);}
+	}
+
+	@keyframes _ev_obj_b1 {
+		0% {opacity:0; transform:translate3d(0,20px,0);}
+		100% {opacity:1; transform:translate3d(0,0,0);}
+	}
+	@keyframes _ev_obj_b1a {
+		0% {transform:translate3d(0,0,0); animation-timing-function:ease-out;}
+		50% {transform:translate3d(0,-20px,0); animation-timing-function:ease-in;}
+		100% {transform:translate3d(0,0,0);}
+	}
+
+	._evt_layer {position:absolute; left:50%; top:50%; margin-left:-242px; box-shadow:0 0 35px rgba(37, 37, 37, 0.5); z-index:90;}
+	._evt_layer ._evt_layer_wrap {position:relative; width:470px;}
+	._evt_layer ._evt_title {height:60px; padding:0 30px; box-sizing:border-box; background:#343434; line-height:60px; font-size:22px; color:#fff;}
+	._evt_layer ._evt_close {position:absolute; right:15px; top:11px; width:32px; height:32px; background:url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_layer_close.png') 50% 50% no-repeat;}
+
+	._evt_layer ._evt_layer_content {padding:12px 22px 18px 29px; box-sizing:border-box;background:#fff;}
+
+	._evt_layer ._evt_form input {border:none; width:409px; height:39px; border-radius:20px; margin-left:1px; padding:0 14px; text-align:left; vertical-align:middle; font-size:15px; background-color:#f7f7f7; color:#999;}
+
+	._evt_layer ._evt_form ._evt_inp {height: 83px;}
+	._evt_layer ._evt_form ._evt_inp ._evt_label_title {font-size:17px;}
+	._evt_layer ._evt_form ._evt_inp ._evt_label_title span {font-size:15px; color:#fa4e46;}
+	._evt_layer ._evt_form ._evt_mail ._evt_mail_id {width:220px;}
+	._evt_layer ._evt_form ._evt_mail ._evt_mail_addr {width:157px;}
+	._evt_layer ._evt_form ._evt_mail ._evt_mail_mark {font-size:22px; line-height:1.65; color:#333;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_1 {padding-top:9px;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_1 ._evt_label_title {display:block; letter-spacing:-0.02em;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_2 {padding-top:9px;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_2 ._evt_label_title {letter-spacing:-0.02em; padding-top:4px;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_2 {position:relative; height:39px;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_3 {position:relative; padding-top:11px;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_3::after {content:''; position:absolute; left:1px; bottom:0; right:10px; border-bottom:1px dotted #e7e7e7;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_3 ._evt_label_title {display:block;}
+	._evt_layer ._evt_form ._evt_inp._evt_inp_3 ._evt_label_title span {color:#666666;}
+
+	._evt_layer ._evt_form label.ragree {font-size:17px;}
+	._evt_layer ._evt_form input::placeholder {color:#999999 !important;}
+	._evt_layer ._evt_form .radioGroup label {cursor:pointer;}
+	._evt_layer ._evt_form .radioGroup input[type="radio"] {width:auto; height:auto;}
+	._evt_layer ._evt_form .radioGroup.itemA {position:absolute; top:11px; right:93px; letter-spacing:-0.1em;}
+	._evt_layer ._evt_form .radioGroup.itemB {position:absolute; top:11px; right:-9px; letter-spacing:-0.1em;}
+	._evt_layer ._evt_form .checkboxGroup.after label:after,
+	._evt_layer ._evt_form .radioGroup.after label:after {width:21px; height:21px; margin:-1px 0 0 5px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210107/20210107130230625230d3c12c2bf4ff98ae4f86faadafb72.png') no-repeat;}
+	._evt_layer ._evt_form .radioGroup.after input[type="radio"]:checked + label:after {background-position:-21px 0;}
+
+	._evt_layer ._evt_caution {width:100%; margin-top:22px; font-size:13px; color:#7d7d7d;}
+	._evt_layer ._evt_caution li {position:relative; letter-spacing:-0.02em; padding-left:18px; line-height:1.6;}
+	._evt_layer ._evt_caution li:first-child {margin-top:0;}
+	._evt_layer ._evt_caution li::before {content:'※'; position:absolute; left:0; top:0;}
+
+	._evt_layer ._evt_confirm_btn,
+	._evt_layer ._evt_finish_btn {position:relative; display:block; text-align:center; line-height:65px; margin:34px 67px 0; border-radius:15px; width:277px; height:67px; font-size:22px; color:#fff; background-color:#f83164;}
+	._evt_layer ._evt_finish_btn {background:#616161;}
+
+	._evt_layer._evt_layer_join {top:861px;}
+	._evt_layer._evt_layer_join ._evt_title {background:#f83164;}
+	._evt_layer._evt_layer_join.done ._evt_title {background:#616161;}
+	._evt_layer._evt_layer_join.done ._evt_form input {background-color:#c7c7c7;}
+
+	._evt_alert {position:absolute; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:90;}
+	._evt_alert ._evt_alert_wrap {position:absolute; left:50%; top:35%; width:80%; margin-left:-40%;}
+	._evt_alert ._evt_alert_content {padding:40px; box-shadow:0 0 35px rgba(37, 37, 37, 0.5); background:#fff;}
+	._evt_alert ._evt_alert_close {position:absolute; right:13px; top:9px; width:32px; height:32px; background:url('./static-fo-pc/img/ko/event/kk210108_virtual/p_img_layer_close_black.png') 50% 50% no-repeat;}
+	._evt_alert ._evt_alert_text {font-size:20px; color:#222; text-align:center;}
+	._evt_alert ._evt_alert_btn {padding-top:25px; text-align:center;}
+	._evt_alert ._evt_alert_btn > * {display:inline-block; margin:0 5px; padding:0 20px; text-align:center; line-height:40px;border-radius:8px; height:40px; font-size:16px; color:#fff; background-color:#f83164;}
+	._evt_alert ._evt_alert_btn ._evt_ok_btn {background:#616161;}
+
+	#evtDimmed {display:none; position:absolute; z-index:50; left:0; right:0; top:0; bottom:0; background-color:#000; opacity:0.7; filter:Alpha(opacity=70);}
+</style>
+<div class="evWrap">
+	<div class="_evt_intro"></div>
+	<div class="_evt_main">
+
+		<div class="_evt_sec _evt_sec_1">
+			<div class="_evt_sec_inner">
+
+				<div class="_evt_wrap _evt_wrap_1">
+					<div class="_evt_c_a1"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_1.png" alt="lucky" /></div>
+					<div class="_evt_c_a2"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_2.png" alt="duty" /></div>
+					<div class="_evt_c_a3"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_3.png" alt="free cart" /></div>
+					<div class="_evt_c_a4"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_4.png" alt="해외여행을 못 가도 면세 쇼핑을 즐길 수 있는 기회 총 99명에게 $500 상당의 경품을 쏩니다" /></div>
+					<div class="_evt_c_a5">롯데인터넷면세점 한국, 중국, 일본, 대만 <br />베트남, 태국, 인도네시아, 싱가폴 국적 회원 대상</div>
+
+					<div class="_evt_m_c1"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_26.png" alt="" /></div>
+					<div class="_evt_m_c2"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_27.png" alt="" /></div>
+					<div class="_evt_m_c3"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_28.png" alt="" /></div>
+					<div class="_evt_m_c4"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_29.png" alt="" /></div>
+					<div class="_evt_m_c5"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_30.png" alt="" /></div>
+					<div class="_evt_m_c6"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_31.png" alt="" /></div>
+
+					<div class="_evt_m_c7"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_32.png" alt="" /></div>
+					<div class="_evt_m_c8"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_33.png" alt="" /></div>
+
+					<div class="_evt_m_c9"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_34.png" alt="" /></div>
+					<div class="_evt_m_c10"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_35.png" alt="" /></div>
+					<div class="_evt_m_c11"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_36.png" alt="" /></div>
+					<div class="_evt_m_c12"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_37.png" alt="" /></div>
+					<div class="_evt_m_c13"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_38.png" alt="" /></div>
+				</div>
+
+				<div class="_evt_wrap _evt_wrap_2">
+					<div class="_evt_m_a12"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1055 851">
+						<defs>
+							<radialGradient id="_evt_svg_1" cx="-30%" cy="-10%" r="160%" fx="40%" fy="30%" gradientUnits="userSpaceOnUse">
+								<stop offset="0%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+								<stop offset="100%" style="stop-color:rgb(34,34,34);stop-opacity:1" />
+							</radialGradient>
+						</defs>
+						<g><g><path d="M1040 0L14 38 0 851l1055-17z" fill="url(#_evt_svg_1)"/></g></g>
+					</svg></div>
+					<div class="_evt_c_a6">당신만의 <span>행운 장바구니</span>를 채워보세요</div>
+					<div class="_evt_c_a7">결제 고민없이 프리하게 담으면 꿈꿔왔던 선물이 우리 집으로!</div>
+					<div class="_evt_c_a8">1회차 응모 기간&nbsp;&nbsp;&nbsp;2021.02.25 ~ 03.24&nbsp;&nbsp;/&nbsp;&nbsp;당첨자 발표&nbsp;&nbsp;&nbsp;2021.04.15&nbsp;&nbsp;/&nbsp;&nbsp;경품 발송&nbsp;&nbsp;&nbsp;당첨 통보 시 별도 공지 예정</div>
+					<div class="_evt_c_a9"><span>1회차</span> 화장품 기획전&nbsp;&nbsp;&nbsp;&nbsp;2021.02.25 ~ 03.24</div>
+					<div class="_evt_c_a10"><span>2회차</span> 건강식품 기획전&nbsp;&nbsp;&nbsp;&nbsp;2021.04.25 ~ 05.24</div>
+					<div class="_evt_c_a11"><span>3회차</span> 패션/악세서리 기획전&nbsp;&nbsp;&nbsp;&nbsp;2021.06.25 ~ 07.24</div>
+
+					<div class="_evt_area _evt_area_1">
+						<div class="_evt_c_a12">STEP 01</div>
+						<div class="_evt_c_a13">3월 24일까지 <br />장바구니 내 $500 이하의 <br />기획전 상품이 담겨 있는 <br />고객 중 33명 추첨</div>
+						<div class="_evt_c_a14">경품 <br />당첨자 장바구니에 담긴 <br />화장품 증정 <br />(재고 사정에 따라 변경 가능)</div>
+						<div class="_evt_c_a15">국가별 4명 + 여권번호 입력 <br />고객 중 1명 랜덤 추첨</div>
+
+						<!-- 이벤트 응모하기 버튼 -->
+						<div class="_evt_c_a16"><a href="#evtJoinLayer" class="_evt_fn_layer" id="evtJoinBtn"><span>응모하기</span></a></div>
+						<!-- //이벤트 응모하기 버튼 -->
+
+						<div class="_evt_c_a17">(ID당 1인 1회 참여)</div>
+
+						<div class="_evt_m_a1"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_1.png" alt="EXO 세훈" /></div>
+						<div class="_evt_m_a2"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_2.png" alt="" /></div>
+						<div class="_evt_m_a3"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_4.png" alt="행운의 장바구니 이벤트 응모하러 가볼까?" /></div>
+						<div class="_evt_c_a17a">롯데면세점 <br />공식모델 <br />EXO 세훈</div>
+						<div class="_evt_m_a4"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_5.png" alt="" /></div>
+						<div class="_evt_m_a4a"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_5.png" alt="" /></div>
+						<div class="_evt_m_a5"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_6.png" alt="" /></div>
+						<div class="_evt_m_a5a"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_6.png" alt="" /></div>
+						<div class="_evt_m_a6"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_11.png" alt="" /></div>
+					</div>
+					<div class="_evt_o_a1"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_o_1.png" alt="" /></div>
+
+					<div class="_evt_area _evt_area_2">
+						<div class="_evt_c_a18">STEP 02</div>
+						<div class="_evt_c_a19"><span class="_evt_hide">1회차 소중한 사람을 위한 당신을 담아주세요 2021.02.25 ~ 03.24 화장품 기획전</span></div>
+						<div class="_evt_c_a20"><a href="https://kor.lottedfs.com/kr/event/eventDetail?evtDispNo=1037511" target="_blank"><span>장바구니 담으러가기</span></a></div>
+						<div class="_evt_m_a7"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_7.png" alt="" /></div>
+						<div class="_evt_m_a8"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_8.png" alt="" /></div>
+						<div class="_evt_m_a9"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_9.png" alt="" /></div>
+						<div class="_evt_m_a10"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_10.png" alt="" /></div>
+						<div class="_evt_m_a11"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_12.png" alt="" /></div>
+					</div>
+
+				</div>
+
+				<div class="_evt_c_a21">
+					<div>
+						<div>
+							<div>3회차 종료 후 증정 혜택</div>
+							<div>전 사이트 고객 중 100명 추첨 <br /><span>LDF PAY 2만원 증정</span></div>
+							<div><a href="https://kor.lps.lottedfs.com/kr/mypage/vipMemberRegForm" target="_blank">오프라인 VIP 회원 가입 필수 &gt;</a></div>
+							<div>※ LDF PAY : 롯데면세점에서 현금처럼 사용 가능</div>
+						</div>
+						<div>
+							<div><span class="_evt_hide">LDF pay</span></div>
+							<div><span>20,000</span><span>원</span></div>
+							<div>(약 18달러)</div>
+						</div>
+						<div class="_evt_o_a2"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_o_2.png" alt="" /></div>
+					</div>
+				</div>
+				<div class="_evt_c_a22">
+					<div>
+						<div>
+							<div>SNS 이벤트</div>
+							<div>SNS에서 이벤트 한번 더 참여하면 <br /><span>추가 선물 증정</span></div>
+							<div><a href="https://instagram.com/lottedutyfree" target="_blank">자세한 내용은 공식 SNS 계정 확인 &gt;</a></div>
+						</div>
+						<div>
+							<div><span class="_evt_hide">#</span></div>
+						</div>
+						<div class="_evt_o_a3"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_o_3.png" alt="" /></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="_evt_sec _evt_sec_2">
+			<div class="_evt_sec_inner">
+
+				<div class="_evt_c_a23"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_5.png" alt="lucky duty free cart" /></div>
+				<div class="_evt_c_a24">이렇게 응모하세요!</div>
+
+				<div class="_evt_c_a25">
+					<span class="_evt_hide">STEP 01</span>
+					<div>롯데인터넷면세점 <br />신규가입 또는 로그인</div>
+					<a href="https://kor.lps.lottedfs.com/kr/member/submain" target="_blank"><span>신규가입 하기</span></a>
+				</div>
+				<div class="_evt_c_a26">
+					<span class="_evt_hide">STEP 02</span>
+					<div>이벤트 페이지 내에서 <br />‘응모하기’ 클릭</div>
+				</div>
+				<div class="_evt_c_a27">
+					<span class="_evt_hide">STEP 03</span>
+					<div>개인정보입력 후 <br />응모 완료</div>
+				</div>
+				<div class="_evt_c_a28">
+					<span class="_evt_hide">STEP 04</span>
+					<div>기획전 상품에서 <br /><span>총 금액 $500 이하로</span> <br /><span>장바구니에 담기</span> <br />(정상가 기준)</div>
+					<a href="https://kor.lottedfs.com/kr/event/eventDetail?evtDispNo=1037511" target="_blank"><span>기획전 바로가기</span></a>
+				</div>
+				<div class="_evt_c_a29">
+					<span class="_evt_hide">STEP 05</span>
+					<div>응모 종료일까지 <br /><span>총 금액 $500 이하로</span> <br /><span>유지</span>하면 응모 완료 <br />(정상가 기준)</div>
+				</div>
+				<div class="_evt_c_a30">
+					<span class="_evt_hide">STEP 06</span>
+					<div>응모한 고객 중 33명 <br />추첨 후 경품 증정 <br />(당첨자 개별 공지)</div>
+				</div>
+				<div class="_evt_c_a30a"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_6.png" alt="" /></div>
+
+				<div class="_evt_c_a31"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_14.png" alt="우와! 장바구니에 담긴 $500 이하 상품을 다 준다니!" /></div>
+				<div class="_evt_c_a32"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_16.png" alt="응모 방법 확인하고 꼭! 응모해야겠네" /></div>
+				<div class="_evt_c_a33"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_17.png" alt="EXO 백현" /></div>
+				<div class="_evt_c_a34">롯데면세점 공식모델 <br />EXO 백현</div>
+
+				<div class="_evt_m_b1"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_18.png" alt="" /></div>
+				<div class="_evt_m_b2"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_19.png" alt="" /></div>
+
+			</div>
+		</div>
+
+		<div class="_evt_sec _evt_sec_3">
+			<div class="_evt_sec_inner">
+
+				<div class="_evt_area _evt_area_1">
+					<div class="_evt_c_a35">장바구니 담는 방법 확인하세요!</div>
+					<div class="_evt_c_a36">
+						<ul class="_evt_fn_accordion">
+							<li class="current">
+								<div><span>첫번째 방법</span> 기획전에서 원하는 상품 골라 마우스 오버 시 보여지는 카트 아이콘 클릭하면 장바구니 담기 완료!</div>
+								<div><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_7.jpg" alt="기획전에서 상품 고르고 카트 아이콘 클릭!" /></div>
+							</li>
+							<li>
+								<div><span>두번째 방법</span> 상품 상세 페이지에서 장바구니 버튼 클릭하면 장바구니 담기 완료!</div>
+								<div><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_8.jpg" alt="상세페이지에서 장바구니 버튼 클릭!" /></div>
+							</li>
+							<li>
+								<div><span>유의사항</span> 장바구니 내 상품이 정상가 기준 총 합계 금액이 $500 이하 담겨 있어야 이벤트 응모 가능!</div>
+								<div><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_c_9.jpg" alt="장바구니에 $500 이하로 담으면 응모 완료" /></div>
+							</li>
+						</ul>
+					</div>
+					<div class="_evt_m_b8"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_25.png" alt="" /></div>
+				</div>
+
+				<div class="_evt_c_a37"><span class="_evt_hide">중요 </span>꼭 확인하세요</div>
+				<div class="_evt_c_a38">
+					<ul>
+						<li>해당 이벤트는 총 3회차로 진행하며, 회차별 중복 참여가 가능합니다. (단, 회차별 모든 사이트 1인 1회 참여 가능)</li>
+						<li>이벤트 응모 시 이메일 주소 입력, 제3자 개인정보제공 동의를 필수로 하고 있습니다.</li>
+						<li>이벤트 응모 종료일까지 기획전 상품에 한하여 총 금액 $500(정상가 기준) 이하의 상품이 장바구니에 상품이 담겨 있어야 <br />응모 조건이 충족이 됩니다. <span>(응모 종료 전 총 금액이 $500(정상가 기준)을 초과하거나, 실구매로 인하여 장바구니가 비워져 있을 경우 자동 응모 취소)</span></li>
+						<li>당첨 안내는 당첨자 개별 이메일로 공지됩니다.</li>
+						<li><span>당첨자 경품은 장바구니 내 상품으로 제공되며, 제세 공과금은 당첨자 본인에게 부과됩니다.</span></li>
+						<li>LDF PAY 당첨자 발표 및 증정은 8월 내 진행 예정이며, LDF PAY 당첨자는 개별 LMS 또는 이메일로 고지됩니다.</li>
+						<li>LDF PAY 제공 시 고객 VIP 번호 수집을 필수로 하며, 당첨자 고지 시 VIP 번호를 제출한 당첨자에게만 LDF PAY 증정이 가능합니다.</li>
+						<li>LDF PAY는 온오프라인 전점용이며, 유효기간은 발급일로부터 3년까지입니다.</li>
+						<li>LDF PAY는 젠틀몬스터, 담배 등에서는 사용할 수 없습니다.</li>
+						<li>고객 VIP 번호는 오프라인 VIP 회원 가입 시 발급받으실 수 있습니다.</li>
+						<li>잘못된 고객 정보 및 스팸처리로 인한 메일 미 수신 건에 대해서는 재 발송되지 않으며, 당첨 취소 처리가 됩니다.</li>
+						<li>경품 배송 기간은 국가에 따라 상이하며, 잘못된 주소지로 인한 경품 미 수신 건에 대해서는 재 발송이 불가합니다.</li>
+						<li>배송 과정 중 발생한 문제에 대해서는 당사에서 책임을 지지 않습니다.</li>
+						<li>경품은 당첨자 장바구니 내 상품으로 배송되며, 재고 사정에 따라 동일한 금액에 상당하는 다른 제품으로 변경될 수 있습니다.</li>
+					</ul>
+				</div>
+
+				<div class="_evt_m_b3"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_20.png" alt="" /></div>
+				<div class="_evt_m_b4"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_21.png" alt="" /></div>
+				<div class="_evt_m_b5"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_22.png" alt="" /></div>
+				<div class="_evt_m_b6"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_23.png" alt="" /></div>
+				<div class="_evt_m_b7"><img src="./static-fo-pc/img/ko/event/kk210108_virtual/p_img_m_24.png" alt="" /></div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!--
+		응모 레이어 열기 : $('#evtJoinBtn').trigger('click');
+		응모 레이어 닫기 : $('#evtJoinLayer ._evt_close').trigger('click');
+	-->
+
+	<!-- 
+		응모하기 일 때 ._evt_layer에 .done 클래스 삭제
+		응모하기 완료 상태 일 때 ._evt_layer에 .done 클래스 삽입
+	 -->
+	<div class="_evt_layer _evt_layer_join" id="evtJoinLayer" style="display:none;">
+		<div class="_evt_layer_wrap">
+			<div class="_evt_title"><span>응모하기</span></div>
+
+			<!-- 레이어 닫기 버튼 -->
+			<button type="button" class="_evt_close _evt_fn_layer_close"><span class="_evt_hide">닫기</span></button>
+			<!-- //레이어 닫기 버튼 -->
+
+			<div class="_evt_layer_content">
+
+				<form>
+					<div class="_evt_form">
+						<div class="_evt_inp _evt_inp_1">
+							<label for="evtMailId" class="_evt_label_title"><strong>이메일 주소</strong><span>*필수</span></label>
+							<span class="_evt_mail">
+								<input type="text" id="evtMailId" name="evtMailId" class="_evt_mail_id" value="" placeholder="ldf2020" title="이메일아이디" />
+								<span class="_evt_mail_mark">@</span>
+								<input type="text" id="evtMailDomain" name="evtMailDomain" class="_evt_mail_addr" value="" placeholder="lotte.net" title="이메일주소" />
+							</span>
+						</div>
+						<div class="_evt_inp _evt_inp_2">
+							<p class="_evt_label_title"><strong>제3자 개인정보제공</strong><span>*필수</span></p>
+							<div class="radioGroup after itemA">
+								<input type="radio" id="agree" name="evtRadioApply" value="Y" />
+								<label for="agree" class="ragree">동의함</label>
+							</div>
+							<div class="radioGroup after itemB">
+								<input type="radio" id="disagree" name="evtRadioApply" value="N" checked="checked" />
+								<label for="disagree" class="ragree">동의안함</label>
+							</div>
+						</div>
+						<div class="_evt_inp _evt_inp_3">
+							<label for="evtPassport" class="_evt_label_title"><strong>여권번호</strong><span>*선택</span></label>
+							<input type="text" id="evtPassport" name="evtPassport" value="" placeholder="A12345678" />
+						</div>
+					</div>
+
+					<ul class="_evt_caution">
+						<li>마이롯데에 등록된 개인 정보가 아닌 입력하신 이메일로 당첨 개별 <br />공지되오니 정확한 정보를 입력해 주시길 바랍니다.</li>
+						<li>응모 후 응모 내역 수정이 불가하니 신중하게 입력해 주시길 바랍니다.</li>
+						<li>본 이벤트 정보 제공을 위해 개인 정보 수집 및 활용에 대한 동의입니다.</li>
+						<li>응모자의 동의 없이는 해당 정보를 함부로 공개하지 않으며, 동의하지 않을 시 <br />이벤트 응모를 하실 수 없습니다.</li>
+					</ul>
+
+					<!-- 응모하기 가능할 때 -->
+					<button type="button" class="_evt_confirm_btn" onclick="/* 예시 */$('._evt_layer_join').find('#evtJoinFinish').css('display','block'); return false;">응모하기</button>
+					<!-- 응모하기 가능할 때 -->
+
+					<!-- 응모완료 상태일 때 -->
+					<!-- <button type="button" class="_evt_finish_btn _evt_fn_layer_close">확인</button> -->
+					<!-- 응모완료 상태일 때 -->
+				</form>
+
+			</div>
+
+			<!-- 응모 완료 시 얼럿 -->
+			<div class="_evt_alert" id="evtJoinFinish" style="display:none;">
+				<div class="_evt_alert_wrap">
+					<button type="button" class="_evt_alert_close" onclick="/* 예시 */$('._evt_layer_join').find('#evtJoinFinish').css('display','none').end().find('._evt_close').trigger('click'); return false;"><span class="_evt_hide">닫기</span></button>
+					<div class="_evt_alert_content">
+
+						<div class="_evt_alert_text">
+							<p>정상가 $500 이하로 <br />장바구니 담으면 응모 완료!</p>
+						</div>
+
+						<div class="_evt_alert_btn">
+							<a href="https://kor.lottedfs.com/kr/event/eventDetail?evtDispNo=1037511" target="_blank" class="_evt_cart_btn">장바구니 담으러가기</a>
+							<button type="button" class="_evt_ok_btn" onclick="/* 예시 */$('._evt_layer_join').find('#evtJoinFinish').css('display','none').end().find('._evt_close').trigger('click'); return false;">닫기</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- //응모 완료 시 얼럿 -->
+
+		</div>
+	</div>
+
+	<div id="evtDimmed" style="display:none;"></div>
+</div>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

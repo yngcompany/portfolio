@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<script type="text/javascript">
+	/* 팝업 열기 */
+	function evPopupOpen(epid) {
+		$("#evDimmed, " + epid).show();
+		return false;
+	}
+
+	/* 팝업 닫기 */
+	function evPopupClose() {
+		$("#evDimmed, ._ev_layer").hide();
+		return false;
+	}
+</script>
+<style type="text/css">
+	.skyscraper.renewal1806, .skyscraper.renewal1806 .sideBanner, .skyscraper .quickMenu {display: none;}
+	.tabArea,.eventArea {width: 100%;}
+	.evWrap {position: relative; max-width: 1920px; height: 5684px; margin: 0 auto; font-family: 'Noto Sans Regular', 'Noto Sans Regular JP', 'Tahoma', 'Simhei', 'Microsoft Yahei'; line-height: 1.42857143; overflow: hidden; background: #222;}
+	.evWrap img {display: block;}
+	.evWrap .inner {position: absolute; top: 0; left: 50%; width: 1920px; margin-left: -960px;}
+	.evWrap .inner > div {position: relative;}
+	.evWrap .screen-out {position: absolute; width: 1px; height: 1px; margin: 0; clip: rect(0,0,0,0); white-space: nowrap; overflow: hidden;}
+
+	.evWrap .ev-cont1 .period {position: absolute; top: 609px; left: 0; width: 100%; letter-spacing: 1px; text-align: center; color: #e11864; font-size: 24px; font-family:'Montserrat Light';}
+
+	.evWrap .ev-cont2 .noti {position: absolute; top: 157px; right: 380px; letter-spacing: -0.3px; text-align: right; color: #666; font-size: 18px; font-weight: lighter;}
+
+	.evWrap .ev-cont3 .btn-join {position: absolute; top: 128px; left: 854px; width: 192px; height: 35px;}
+	.evWrap .ev-cont3 .form-wrap {position: absolute; top: 329px; left: 380px; width: 1160px; height: 400px; padding: 0 250px 0 110px; box-sizing: border-box; font-size: 0;}
+	.evWrap .ev-cont3 .form-wrap .btn-login {position: absolute; top: 57px; right: 110px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap {display: inline-block; margin-top: 157px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap + .txt-wrap {margin-left: 9px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap1 {width: 362px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap2 {width: 292px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap label {display: block; width: 100px; height: 40px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap input {width: 100%; height: 72px; line-height: 72px; padding: 0 18px; border: 1px solid #222; box-sizing: border-box; letter-spacing: -0.5px; color: #000; font-size: 22px;}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap input::placeholder {color: rgba(0, 0, 0, 0.5);}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap input::-webkit-input-placeholder {color:rgba(0, 0, 0, 0.5);}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap input:-ms-input-placeholder {color:rgba(0, 0, 0, 0.5);}
+	.evWrap .ev-cont3 .form-wrap .txt-wrap input:-moz-placeholder {color:rgba(0, 0, 0, 0.5);}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap {display: inline-block; position: relative; margin-top: 31px;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap + .radio-wrap {margin-left: 45px;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap1 {width: 220px;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap2 {width: 145px;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap input[type=radio] {position: absolute; top: 0; left: 0; width: 0; height: 0; opacity: 0;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap label {width: 100%;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap label:before {content: ''; display: inline-block; width: 32px; height: 32px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_form_radio.png') no-repeat 0 0;}
+	.evWrap .ev-cont3 .form-wrap .radio-wrap input[type=radio]:checked + label:before {background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_form_radio_checked.png') no-repeat 0 0;}
+	.evWrap .ev-cont3 .form-wrap .btn-friend {position: absolute; top: 164px; right: 109px; width: 252px; height: 122px;}
+	.evWrap .ev-cont3 .form-wrap .form-disabled {position: absolute; top: -21px; left: -3px;}
+	.evWrap .ev-cont3 .form-wrap .form-disabled > .deco {position: absolute; bottom: 50px; right: 61px;}
+
+	.evWrap .ev-cont4 .btn-check {position: absolute; top: 253px; right: 380px; width: 194px; height: 35px;}
+	.evWrap .ev-cont4 .counting-wrap {position: absolute; top: 468px; left: 380px;}
+	.evWrap .ev-cont4 .counting-wrap > div {float: left; position: relative; width: 357px;}
+	.evWrap .ev-cont4 .counting-wrap > div.logout:after {content: ''; position: absolute; top: 16px; width: 120px; height: 52px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_counting_txt.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .ev-cont4 .counting1.logout:after {left: 171px;}
+	.evWrap .ev-cont4 .counting2.logout:after {left: 174px;}
+	.evWrap .ev-cont4 .counting1 .unit {display: inline-block; width: 44px; height: 44px; margin-left: 4px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_counting_num_unit_01.png') no-repeat 0 0;}
+	.evWrap .ev-cont4 .counting1 .num {display: inline-block; width: 59px; height: 84px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_counting_num_01.png') no-repeat 0 0;}
+	.evWrap .ev-cont4 .counting1.num0 .num {background-position: 0 0;}
+	.evWrap .ev-cont4 .counting1.num1 .num {width: 36px; background-position: 0 -84px;}
+	.evWrap .ev-cont4 .counting1.num2 .num {background-position: 0 -168px;}
+	.evWrap .ev-cont4 .counting1.num3 .num {background-position: 0 -252px;}
+	.evWrap .ev-cont4 .counting1.num4 .num {background-position: 0 -336px;}
+	.evWrap .ev-cont4 .counting1.num5 .num {background-position: 0 -420px;}
+	.evWrap .ev-cont4 .counting1.num6 .num {background-position: 0 -504px;}
+	.evWrap .ev-cont4 .counting1.num7 .num {background-position: 0 -588px;}
+	.evWrap .ev-cont4 .counting1.num8 .num {background-position: 0 -672px;}
+	.evWrap .ev-cont4 .counting1.num9 .num {background-position: 0 -756px;}
+	.evWrap .ev-cont4 .counting1.num10 .num {width: 101px; background-position: 0 -840px;}
+	.evWrap .ev-cont4 .counting1.logout .num {background-position: 0 -924px;}
+	.evWrap .ev-cont4 .counting2 .unit {display: inline-block; position: relative; top: 1px; width: 43px; height: 60px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_counting_num_unit_02.png') no-repeat 0 0;}
+	.evWrap .ev-cont4 .counting2 .num {display: inline-block; width: 101px; height: 84px; margin-left: 3px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_counting_num_02.png') no-repeat 0 0;}
+	.evWrap .ev-cont4 .counting2.num0 .num {background-position: 0 0;}
+	.evWrap .ev-cont4 .counting2.num2 .num {background-position: 0 -84px;}
+	.evWrap .ev-cont4 .counting2.num7 .num {background-position: 0 -168px;}
+	.evWrap .ev-cont4 .counting2.num14 .num {background-position: 0 -252px;}
+	.evWrap .ev-cont4 .counting2.logout .num {background-position: 0 -336px;}
+	.evWrap .ev-cont4 .graph-wrap {position: absolute; top: 742px; left: 380px;}
+	.evWrap .ev-cont4 .graph ul {width: 1160px;}
+	.evWrap .ev-cont4 .graph li {float: left; position: relative; width: 115px; margin-left: 1px; padding-top: 193px; box-sizing: border-box;}
+	.evWrap .ev-cont4 .graph li:nth-child(5) {width: 114px;}
+	.evWrap .ev-cont4 .graph li .bar {position: absolute; bottom: 43px; left: 0; width: 100%; height: 0;}
+	.evWrap .ev-cont4 .graph li .bar > span {position: absolute; left: 0; bottom: 0; width: 100%; height: 0; background: #114c3d url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_graph_bar.png') repeat-y 0 0; background-size: 115px auto;}
+	.evWrap .ev-cont4 .graph li:nth-child(2) .bar > span,
+	.evWrap .ev-cont4 .graph li:nth-child(5) .bar > span,
+	.evWrap .ev-cont4 .graph li:nth-child(10) .bar > span {background-color: #821d43;}
+	.evWrap .ev-cont4 .graph li.active .bar {height: 50px;}
+	.evWrap .ev-cont4 .graph li.active:nth-child(2) .bar,
+	.evWrap .ev-cont4 .graph li.active:nth-child(5) .bar,
+	.evWrap .ev-cont4 .graph li.active:nth-child(10) .bar {height: 180px;}
+	.evWrap .ev-cont4 .graph li .tit {margin-top: 13px; letter-spacing: -0.5px; text-indent: 5px; text-align: center; color: #fff; font-size: 21px; opacity: 0.15;}
+	.evWrap .ev-cont4 .graph li .point {position: absolute; top: 66px; left: 0; opacity: 0.4;}
+
+	.evWrap .ev-cont5 .banner {position: absolute; left: 980px; width: 559px; height: 160px;}
+	.evWrap .ev-cont5 .banner1 {top: 513px;}
+	.evWrap .ev-cont5 .banner2 {top: 703px;}
+
+	/* 레이어 팝업 */
+	.evWrap .inner > ._ev_layer {position:absolute; left:50%; margin-left:-315px; z-index:80;}
+	._ev_layer ._sr_only {position:absolute; width:0; height:0; overflow:hidden; padding:0; margin:0; border:none; clip:rect(0,0,0,0);}
+	._ev_layer ._layer_wrap {position:relative; width:630px;}
+	._ev_layer ._title {height:80px; padding:28px 31px; box-sizing:border-box; background:#d0145b; line-height:60px; font-size:22px; color:#fff;}
+	._ev_layer ._content {padding:54px 0 46px 0; box-sizing:border-box; background:#222; font-size:16px; color:#fff;}
+	._ev_layer ._content_img {padding:0; box-sizing:border-box; background:#fff; font-size:16px; color:#666;}
+	._ev_layer ._content_barcode {padding:90px 0px 90px 0px; border-radius:42px 0 42px 0; overflow:hidden; background:#fff; font-size:16px; color:#666;}
+	._ev_layer ._content img {display:block; margin:0 auto; max-width:100%;}
+	._ev_layer ._content > table {width: 570px; margin: 0 auto;}
+	._ev_layer ._content > table th {height: 46px; border-bottom: 3px solid #e11864;}
+	._ev_layer ._content > table th:nth-child(1) {background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_pop_table_titlte_01.png') no-repeat 20px 0;}
+	._ev_layer ._content > table th:nth-child(2) {background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_pop_table_titlte_02.png') no-repeat 61px 0;}
+	._ev_layer ._content > table th:nth-child(3) {background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_pop_table_titlte_03.png') no-repeat 0 0;}
+	._ev_layer ._content > table td {padding: 20px 0 20px; border-bottom: 1px dashed #e11864; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size: 18px;}
+	._ev_layer ._content > table td:nth-child(1) {text-align: center; font-size: 21px; font-family:'Montserrat Bold';}
+	._ev_layer ._content > table td:nth-child(2) {max-width: 361px; padding-left: 61px; padding-right: 20px;}
+	._ev_layer ._content > table td:nth-child(3) {max-width: 138px;}
+	._ev_layer ._content > table tr:nth-child(5n) td {border-bottom: 2px solid #e11864;}
+	._ev_layer ._content > p {line-height: 26px; margin: 31px 0 0 -19px; letter-spacing: -0.9px; text-align: center; color: #fff; font-size: 17px; opacity: 0.7;}
+	._ev_layer ._content > ul + p {margin-top:45px;}
+	._ev_layer ._content ._btn_close {display: block; margin: 40px 0 0 174px; width: 267px; height: 86px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_btn_pop_close_02.png') no-repeat 0 0;}
+	._ev_layer ._close {position:absolute; right:32px; top:28px; width:25px; height:25px; background:url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_btn_pop_close_01.png') no-repeat 0 0;}
+	._ev_layer._auto_width ._layer_wrap {width:100%;}
+	#evDimmed {display:none; position:absolute; z-index:50; left:0; right:0; top:0; bottom:0; background-color:#000; opacity:0.7; filter:Alpha(opacity=70);}
+	#evLayer1 {top: 3350px;}
+
+	/* 모션 */
+	.evWrap .inner > .motion-cont {position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none;}
+	.evWrap .motion-cont .target {position: absolute; width: 100px; height: 145px; overflow: hidden; z-index: 10;}
+	.evWrap .motion-cont .target-1 {top: 0; left: 320px;}
+	.evWrap .motion-cont .target-1 > div {width: 200px; margin-left: -100px; padding-left: 100px; box-sizing: border-box; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_me.png') no-repeat 6px 10px; background-size: 88px auto;}
+	.evWrap .motion-cont.data0 .target-1 {animation: step-11 0.5s ease-in 0s forwards;}
+	.evWrap .motion-cont.data150 .target-1 {animation: step-12 3s ease-in-out 0s forwards, hide-1 3s linear 3.1s forwards;}
+	.evWrap .motion-cont.data900 .target-1 {top: 1795px; left: 513px; padding-left: 100px; transform: scaleX(-1); animation: step-13 3s ease-in-out 0s;}
+	.evWrap .motion-cont.data1650 .target-1 {padding-left: 0; transform: scaleX(1); animation: step-14 2s ease-in-out 0s forwards, hide-3 3s linear 2.1s forwards;}
+	.evWrap .motion-cont.data2350 .target-1 {animation: step-15 3.5s ease-in-out 0s forwards, flip-1 0.1s linear 1s forwards, flip-2 0.1s linear 3.4s forwards, hide-2 4s linear 3.6s forwards;}
+
+	.evWrap .motion-cont .target-2 {top: 1046px; left: 1461px; padding-left: 100px;}
+	.evWrap .motion-cont .target-2 > div {width: 200px; margin-left: -100px; padding-left: 100px; box-sizing: border-box; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_friend.png') no-repeat 6px 10px; background-size: 88px auto;}
+	.evWrap .motion-cont.data150 .target-2 {padding-left: 100px; animation: hide-1 3s linear 3.1s forwards;}
+	.evWrap .motion-cont.data900 .target-2 {padding-left: 0; transform: scaleX(-1); animation: step-23 3.5s ease-in-out 0s forwards;}
+	.evWrap .motion-cont.data1650 .target-2 {transform: scaleX(1); animation: step-24 2s ease-in-out 0s forwards, flip-1 0.1s linear 0.3s forwards, flip-2 0.1s linear 0.5s forwards, hide-3 3s linear 2.1s forwards;}
+	.evWrap .motion-cont.data2350 .target-2 {animation: step-25 3.5s ease-in-out 0s forwards, flip-3 0.1s linear 1s forwards, flip-4 0.1s linear 3.4s forwards, hide-2 4s linear 3.6s forwards;}
+
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(1) .bar > span {animation: graph-bar 1.3s ease-in-out 0s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(2) .bar > span {animation: graph-bar 1.3s ease-in-out 0.1s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(3) .bar > span {animation: graph-bar 1.3s ease-in-out 0.2s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(4) .bar > span {animation: graph-bar 1.3s ease-in-out 0.3s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(5) .bar > span {animation: graph-bar 1.3s ease-in-out 0.4s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(6) .bar > span {animation: graph-bar 1.3s ease-in-out 0.5s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(7) .bar > span {animation: graph-bar 1.3s ease-in-out 0.6s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(8) .bar > span {animation: graph-bar 1.3s ease-in-out 0.7s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(9) .bar > span {animation: graph-bar 1.3s ease-in-out 0.8s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li:nth-child(10) .bar > span {animation: graph-bar 1.3s ease-in-out 0.9s forwards;}
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li.active .tit,
+	.evWrap .ev-cont4 .graph-wrap.data3750 .graph li.active .point {opacity: 1; transition: 0.3s linear 1.3s;}
+
+	.evWrap .motion-cont .item {position: absolute;}
+	.evWrap .motion-cont .item > img {width: 100%;}
+
+	.evWrap .motion-cont .agent-1 {top: 542px; right: 279px;}
+	.evWrap .motion-cont .agent-2 {top: 542px; right: 169px;}
+	.evWrap .motion-cont .agent-3 {top: 542px; right: 59px;}
+	.evWrap .motion-cont .agent-4 {top: 4937px; right: 139px;}
+	.evWrap .motion-cont .agent-5 {top: 5411px; left: 678px;}
+	.evWrap .motion-cont .agent-6 {top: 5411px; left: 788px;}
+	.evWrap .motion-cont .agent-7 {top: 4927px; left: 1254px;}
+	.evWrap .motion-cont .agent-8 {top: 4879px; left: 1402px;}
+
+	/* 모션 : 코인 */
+	.evWrap .motion-cont .coin-1,
+	.evWrap .motion-cont .coin-2,
+	.evWrap .motion-cont .coin-3,
+	.evWrap .motion-cont .coin-4,
+	.evWrap .motion-cont .coin-5,
+	.evWrap .motion-cont .coin-6,
+	.evWrap .motion-cont .coin-7,
+	.evWrap .motion-cont .coin-8,
+	.evWrap .motion-cont .coin-9,
+	.evWrap .motion-cont .coin-10,
+	.evWrap .motion-cont .coin-12,
+	.evWrap .motion-cont .coin-13 {width: 52px; height: 52px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_coin.png') no-repeat 0 0;}
+	.evWrap .motion-cont .coin-1 {top: 85px; right: 33px; animation: coin 1s steps(5) infinite;}
+	.evWrap .motion-cont .coin-2 {top: 85px; right: 174px; animation: coin 1s steps(5) 0.2s infinite;}
+	.evWrap .motion-cont .coin-3 {top: 85px; right: 315px; animation: coin 1s steps(5) 0.4s infinite;}
+	.evWrap .motion-cont .coin-4 {top: 85px; right: 457px; animation: coin 1s steps(5) infinite;}
+	.evWrap .motion-cont .coin-5 {top: 72px; left: 335px; animation: coin 1s steps(5) infinite;}
+	.evWrap .motion-cont .coin-6 {top: 207px; left: 335px; animation: coin 1s steps(5) 0.4s infinite;}
+	.evWrap .motion-cont .coin-7 {top: 345px; left: 335px; animation: coin 1s steps(5) 0.2s infinite;}
+	.evWrap .motion-cont .coin-8 {top: 1559px; left: 62px; animation: coin 1s steps(5) infinite;}
+	.evWrap .motion-cont .coin-9 {top: 1636px; left: 195px; animation: coin 1s steps(5) 0.2s infinite;}
+	.evWrap .motion-cont .coin-10 {top: 1713px; left: 328px; animation: coin 1s steps(5) 0.4s infinite;}
+	.evWrap .motion-cont .coin-11 {top: 1731px; left: 545px; opacity: 0;}
+	.evWrap .motion-cont .coin-12 {top: 4780px; right: 53px; animation: coin 1s steps(5) infinite;}
+	.evWrap .motion-cont .coin-13 {top: 4780px; right: 192px; animation: coin 1s steps(5) 0.2s infinite;}
+	.evWrap .motion-cont.data0 .coin-5 {animation: flip-out-top 0.6s ease-in 0.2s both;}
+	.evWrap .motion-cont.data0 .coin-6 {animation: flip-out-top 0.6s ease-in 0.4s both;}
+	.evWrap .motion-cont.data0 .coin-7 {animation: flip-out-top 0.6s ease-in 0.6s both;}
+	.evWrap .motion-cont.data900 .coin-8 {animation: coin 1s steps(5) infinite, flip-out-top 0.6s ease-in 1.9s both;}
+	.evWrap .motion-cont.data900 .coin-9 {animation: coin 1s steps(5) 0.2s infinite, flip-out-top 0.6s ease-in 2.1s both;}
+	.evWrap .motion-cont.data900 .coin-10 {animation: coin 1s steps(5) 0.4s infinite, flip-out-top 0.6s ease-in 2.3s both;}
+	.evWrap .motion-cont.data900 .coin-11 {opacity: 1; transition: 0.1s linear 3.7s;}
+
+	/* 모션 : 달고나 */
+	.evWrap .motion-cont .candy-1 {top: 455px; left: 423px; width: 90px; height: 95px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_candy.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .motion-cont.data150 .candy-1 {animation: broken 1.5s steps(4) 0.2s infinite;}
+
+	/* 모션 : 구슬 */
+	.evWrap .motion-cont .marble-1 {top: 880px; left: 970px; width: 27px; height: 27px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_marble_01.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .motion-cont .marble-2 {top: 880px; left: 1100px; width: 27px; height: 27px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_marble_01.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .motion-cont .marble-3 {top: 985px; left: 1245px; width: 322px; height: 203px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_marble_02.png') no-repeat 0 0; background-size: 100% auto; opacity: 0;}
+	.evWrap .motion-cont .marble-4 {top: 1735px; left: 1048px; opacity: 0;}
+	.evWrap .motion-cont.data150 .marble-1 {animation: roll-out-top 0.3s ease-in 1.7s both;}
+	.evWrap .motion-cont.data150 .marble-2 {animation: roll-out-top 0.3s ease-in 1.9s both;}
+	.evWrap .motion-cont.data150 .marble-3 {animation: marble-1 3s steps(9) 3s infinite;}
+	.evWrap .motion-cont.data900 .marble-4 {opacity: 1; transition: 0.1s linear 3.7s;}
+
+	/* 모션 : 숫자 */
+	.evWrap .motion-cont .num-1 {top: 1814px; left: 801px; width: 145px; height: 122px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_num_01.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .motion-cont .num-2 {top: 1814px; left: 1124px; width: 371px; height: 145px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_num_02.png') no-repeat 0 0; background-size: 100% auto;}
+	.evWrap .motion-cont .num-1:after {content: ''; position: absolute; top: -19px; left: -288px; width: 100px; height: 145px; transform: scaleX(-1); background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_me.png') no-repeat 6px 10px; background-size: 88px auto; opacity: 0;}
+	.evWrap .motion-cont .num-2:after {content: ''; position: absolute; top: -19px; left: -110px; width: 100px; height: 145px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_friend.png') no-repeat 6px 10px; background-size: 88px auto; opacity: 0;}
+	.evWrap .motion-cont.data900 .num-1 {animation: num-1 1.5s steps(14) 3.7s forwards;}
+	.evWrap .motion-cont.data900 .num-2 {animation: num-2 1.5s steps(15) 3.7s forwards;}
+	.evWrap .motion-cont.data900 .num-2:after,
+	.evWrap .motion-cont.data900 .num-1:after {opacity: 1; transition: 0.1s linear 3.6s;}
+
+	/* 모션 : 돼지 */
+	.evWrap .motion-cont .pig-1 {top: 2308px; left: 1238px; width: 260px; height: 370px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_pig_01.png') no-repeat 0 0; background-size: 100% auto; opacity: 0;}
+	.evWrap .motion-cont.data1650 .pig-1 {animation: pig-1 3s steps(18) 2s infinite;}
+	
+	/* 모션 : 줄다리기 */
+	.evWrap .motion-cont .tug-1 {top: 3332px; left: 0; width: 1181px; height: 220px; background: url('./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_tug.png') no-repeat 0 0; background-size: 100% auto; opacity: 0;}
+	.evWrap .motion-cont.data2350 .tug-1 {animation: tug-1 3s steps(17) 3.5s infinite;}
+
+	@keyframes graph-bar {
+		0% {height: 0;}
+		65% {height: 193px;}
+		100% {height: 100%;}
+	}
+
+	@keyframes step-11 {
+		0% {top: 0; left: 320px; padding-left: 100px;}
+		100% {top: 435px; left: 320px; padding-left: 100px;}
+	}
+
+	@keyframes step-12 {
+		0% {top: 435px; left: 320px;}
+		15% {top: 435px; left: 574px;}
+		35% {top: 830px; left: 574px;}
+		65% {top: 830px; left: 1148px;}
+		80% {top: 1046px; left: 1148px;}
+		100% {top: 1046px; left: 1251px;}
+	}
+
+	@keyframes step-13 {
+		0% {top: 1046px; left: 1251px; padding-left: 0;}
+		10% {top: 1231px; left: 1251px;}
+		40% {top: 1231px; left: -102px; opacity: 1; transform: scaleX(-1);}
+		41% {top: 1231px; left: -102px; opacity: 0; transform: scaleX(1);}
+		50% {top: 1400px; left: -102px; opacity: 0;}
+		51% {top: 1400px; left: -102px; opacity: 1;}
+		78% {top: 1686px; left: 346px;}
+		79% {top: 1686px; left: 346px; animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1);}
+		85% {top: 1606px; left: 479px; animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);}
+		99.99999% {top: 1795px; left: 513px;}
+		100% {top: 1795px; left: 513px; padding-left: 0; transform: scaleX(1);}
+	}
+
+	@keyframes step-23 {
+		0% {top: 1046px; left: 1461px;}
+		9% {top: 1231px; left: 1461px;}
+		44% {top: 1231px; left: -102px; opacity: 1; transform: scaleX(-1);}
+		45% {top: 1231px; left: -102px; opacity: 0; transform: scaleX(1);}
+		52% {top: 1400px; left: -102px; opacity: 0;}
+		53% {top: 1400px; left: -102px; opacity: 1;}
+		78% {top: 1686px; left: 346px;}
+		79% {top: 1686px; left: 346px; animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1);}
+		85% {top: 1585px; left: 720px; animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333);}
+		99.99999% {top: 1795px; left: 1014px; padding-left: 0;}
+		100% {top: 1795px; left: 1014px; padding-left: 100px; transform: scaleX(1);}
+	}
+
+	@keyframes step-14 {
+		0% {top: 1795px; left: 513px; }
+		17% {top: 2030px; left: 513px;}
+		34% {top: 2030px; left: 750px;}
+		51% {top: 2310px; left: 750px;}
+		68% {top: 2310px; left: 1110px;}
+		85% {top: 2534px; left: 1110px;}
+		100% {top: 2534px; left: 1242px;}
+	}
+
+	@keyframes step-24 {
+		0% {top: 1808px; left: 1014px; padding-left: 0;}
+		17% {top: 2030px; left: 1014px;}
+		34% {top: 2030px; left: 855px;}
+		51% {top: 2310px; left: 855px;}
+		68% {top: 2310px; left: 1210px;}
+		85% {top: 2534px; left: 1210px;}
+		99.99999% {top: 2534px; left: 1393px; padding-left: 0;}
+		100% {top: 2534px; left: 1393px; padding-left: 100px;}
+	}
+
+	@keyframes step-15 {
+		0% {top: 2534px; left: 1270px;}
+		25% {top: 2534px; left: 1546px;}
+		50% {top: 3105px; left: 1546px;}
+		75% {top: 3105px; left: 534px;}
+		100% {top: 3388px; left: 534px;}
+	}
+
+	@keyframes step-25 {
+		0% {top: 2534px; left: 1393px;}
+		25% {top: 2534px; left: 1646px;}
+		50% {top: 3105px; left: 1646px;}
+		75% {top: 3105px; left: 645px;}
+		100% {top: 3388px; left: 645px;}
+	}
+
+	@keyframes flip-1 {
+		0% {transform: scaleX(-1);}
+		100% {transform: scaleX(-1);}
+	}
+
+	@keyframes flip-2 {
+		0% {transform: scaleX(1);}
+		100% {transform: scaleX(1);}
+	}
+
+	@keyframes flip-3 {
+		0% {transform: scaleX(-1);}
+		100% {transform: scaleX(-1);}
+	}
+
+	@keyframes flip-4 {
+		0% {transform: scaleX(1);}
+		100% {transform: scaleX(1);}
+	}
+
+	@keyframes hide-1 {
+		0% {opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	@keyframes hide-2 {
+		0% {opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	@keyframes hide-3 {
+		0% {opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+	@keyframes coin {
+		100% {background-position: 0 -260px;}
+	}
+
+	@keyframes broken {
+		100% {background-position: 0 -380px;}
+	}
+
+	@keyframes marble-1 {
+		0% {opacity: 1;}
+		100% {background-position: 0 -1827px; opacity: 1;}
+	}
+
+	@keyframes num-1 {
+		0% {opacity: 1;}
+		100% {background-position: 0 -1708px; opacity: 1;}
+	}
+
+	@keyframes num-2 {
+		0% {opacity: 1;}
+		100% {background-position: 0 -2175px; opacity: 1;}
+	}
+
+	@keyframes pig-1 {
+		0% {opacity: 1;}
+		100% {background-position: 0 -6660px; opacity: 1;}
+	}
+
+	@keyframes tug-1 {
+		0% {opacity: 1;}
+		100% {background-position: 0 -3740px; opacity: 1;}
+	}
+
+	@keyframes flip-out-top {
+		0% {transform: translate3d(0, 0, 0) rotateY(0); animation-timing-function: cubic-bezier(0.33333, 0.66667, 0.66667, 1); opacity: 1;}
+		69.0983% {transform: translate3d(0, -100px, 0) rotateY(-360deg); animation-timing-function: cubic-bezier(0.33333, 0, 0.66667, 0.33333); opacity: 1;}
+		100% {transform: translate3d(0, 0, 0) rotateY(-720deg); opacity: 0;}
+	}
+
+	@keyframes roll-out-top {
+		0% {transform: translateY(0) rotate(0deg); opacity: 1;}
+		100% {transform: translateY(-100px) rotate(-540deg); opacity: 0;}
+	}
+</style>
+<div class="evWrap">
+	<div class="inner">
+		<div class="ev-cont1">
+			<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_img_01.jpg" alt="" />
+			<div class="screen-out">
+				<h2>오늘부터 우린 깐부잖아</h2>
+				<p>새 친구 추천하면 사이 좋게 받는 혜택</p>
+				<span>How to</span>
+				<ol>
+					<li>step.1 기간 내 신규가입한 친구의 회원유형 선택 후, ID와 이름 입력하고 [깐부맺기]</li>
+					<li>step.2 깐부가 맺어지면 나와 친구에게 구간별 혜택 증정!</li>
+					<li>step.3 최대 10명 까지 깐부를 늘려보세요. 혜택도 점점 늘어납니다!</li>
+				</ol>
+			</div>
+			<p class="period">2021.11.00 - 00.00</p>
+		</div>
+		<div class="ev-cont2">
+			<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_img_02_211104.jpg" alt="" /> <!-- 2021-11-04 수정 -->
+			<div class="screen-out">
+				<h3>우리, 깐부부터 맺어야지?</h3>
+				<p>나와 친구 모두에게 드려요 (ID당 1회 증정)</p>
+				<p>나(더드림) 최대 $14 깐부맺기 목표 달성 시 증정</p>
+				<p>친구(캔디) 1,000개 나와 깐부맺은 신규 회원에게 증정</p>
+			</div>
+			<p class="noti">※ 유효기간 : 발급일로부터 6개월</p>
+		</div>
+		<div class="ev-cont3">
+			<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_img_03.jpg" alt="" />
+			<div class="screen-out">
+				<h3>깐부맺고, 사이좋게 혜택받기</h3>
+				<p>깐부맺기 꿀팁!  친구와 함께 롯데인터넷면세점 신규가입 후 서로 깐부를 맺으세요! 더드림과 캔디혜택을 모두 받을 수 있습니다.</p>
+			</div>
+			<a class="btn-join" href="https://kor.lps.lottedfs.com/kr/member/submain"><span class="screen-out">신규가입 하러가기</span></a>
+			<div class="form-wrap">
+				<strong class="screen-out">깐부를 맺으시겠습니까?</strong>
+
+				<!-- 로그인 버튼 : 로그인 상태일 시 숨김 -->
+				<a class="btn-login" href="#"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_btn_login.png" alt="LOG IN" /></a>
+	
+				<!-- 폼 영역 활성화 : 10명 초대 완료 전 노출 영역 -->
+				<!-- 친구 ID, 이름 입력 -->
+				<div class="txt-wrap txt-wrap1">
+					<label for="evFriendId"><span class="screen-out">ID</span></label>
+					<input type="text" id="evFriendId" name="evFriendId" placeholder="친구 ID를 입력하세요." value="" />
+				</div>
+				<div class="txt-wrap txt-wrap2">
+					<label for="evFriendName"><span class="screen-out">NAME</span></label>
+					<input type="text" id="evFriendName" name="evFriendName" placeholder="친구 이름을 입력하세요." value="" />
+				</div>
+	
+				<!-- 회원가입 유형 구분 -->
+				<div class="radio-wrap radio-wrap1">
+					<input type="radio" id="evMemberA" name="evMember" value="" checked="checked" />
+					<label for="evMemberA"><span class="screen-out">L.POINT 통합 회원</span></label>
+				</div>
+				<div class="radio-wrap radio-wrap2">
+					<input type="radio" id="evMemberB" name="evMember" value="" />
+					<label for="evMemberB"><span class="screen-out">면세점 회원</span></label>
+				</div>
+	
+				<!-- 깐부맺기 버튼 -->
+				<a class="btn-friend" href="#"><span class="screen-out">깐부맺기</span></a>
+				<!-- // 폼 영역 활성화 -->
+
+				<!-- 폼 영역 비활성화 : 10명 초대 완료 후 노출 영역 -->
+				<div class="form-disabled">
+					<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_form_disabled.gif" alt="이벤트 참여가 완료되었습니다." />
+					<span class="deco"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_form_disabled_deco.gif" alt="" /></span>
+				</div>
+				<!-- //폼 영역 비활성화 -->
+			</div>
+		</div>
+		<div class="ev-cont4">
+			<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_img_04.jpg" alt="" />
+			<div class="screen-out">
+				<h3>깐부를 모아서 최대 혜택에 도전하세요!</h3>
+				<p>깐부맺기는 최대 10명까지 가능합니다.</p>
+			</div>
+
+			<!-- 나의 깐부 확인하기 버튼 : evPopupOpen 함수로 팝업 출력 -->
+			<a class="btn-check" href="#" onclick="evPopupOpen('#evLayer1'); return false;"><span class="screen-out">나의 깐부 확인하기</span></a>
+			
+			<div class="counting-wrap">
+				<span class="screen-out">내가 모은 깐부</span>
+
+				<!--
+					깐부 숫자 
+					: 비 로그인 상태일 시 div.counting1 태그에 logout 클래스 추가
+					: 로그인 상태일 시, 초대된 깐부 0 ~ 10명에 따라 num0 ~ num10 클래스로 교체
+				-->
+				<div class="counting1 logout">
+					<span class="num"><span class="screen-out">?</span></span>
+					<span class="unit"><span class="screen-out">명</span></span>
+				</div>
+				<span class="screen-out">내가 받은 더드림</span>
+
+				<!--
+					더드림 숫자 
+					: 비 로그인 상태일 시 div.counting2 태그에 logout 클래스 추가
+					: 로그인 상태일 시, 초대된 깐부가 0 ~ 1명이면 num0 / 2 ~ 4명이면 num2 / 5 ~ 9명이면 num7 / 10명이면 num14 클래스로 교체
+				-->
+				<div class="counting2 num0">
+					<span class="unit"><span class="screen-out">$</span></span>
+					<span class="num"><span class="screen-out">0</span></span>
+				</div>
+				<p class="screen-out">친구가 받는 캔디 1,000 개</p>
+			</div>
+	
+			<div class="graph-wrap">
+				<span class="screen-out">깐부맺기 현황</span>
+				<ul class="screen-out">
+					<li>내가 받은 더드림 + 친구에게 캔디 1,000개 증정</li>
+					<li>친구에게 캔디 1,000개 증정</li>
+				</ul>
+	
+				<div class="graph">
+					<ul>
+						<!-- 깐부맺기 현황 체크 : 로그인 상태일 시 깐부 수 만큼 li 태그에 active 클래스 추가 -->
+						<li class="active">
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부1</p>
+						</li>
+						<li class="active">
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부2</p>
+							<p class="point"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_graph_num_02.png" alt="$2" /></p>
+						</li>
+						<li class="active">
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부3</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부4</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부5</p>
+							<p class="point"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_graph_num_05.png" alt="$5" /></p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부6</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부7</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부8</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부9</p>
+						</li>
+						<li>
+							<p class="bar"><span></span></p>
+							<p class="tit">깐부10</p>
+							<p class="point"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_graph_num_07.png" alt="$7" /></p>
+						</li>
+						<!-- //깐부맺기 현황 체크 -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ev-cont5">
+			<img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_img_05.jpg" alt="" />
+			<div class="screen-out">
+				<h3>롯데면세점과 플친으로 깐부맺고 더 많은 혜택과 소식을 만나보세요!</h3>
+				<p>롯데면세점 플러스친구 바로가기 QR</p>
+			</div>
+			<a class="banner banner1" href="https://www.ldfbuy.com.au/" target="_blank"><span class="screen-out">롯데면세점에서 바로 만나는 호주 직구</span></a>
+			<a class="banner banner2" href="https://www.ldfluxemall.com/" target="_blank"><span class="screen-out">출국없이 구매하는 면세품 쇼핑</span></a>
+		</div>
+	
+		<!-- 모션 영역 -->
+		<div class="motion-cont">
+			<div class="target target-1" 
+				data-emit-events
+				data-smooth-scrolling="on"
+				data-0=""
+				data-150=""
+				data-900=""
+				data-1650=""
+				data-2350=""
+				data-3750=""
+			>
+				<div><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_me_running.gif" alt="" /></div>
+			</div>
+			<div class="target target-2"
+				data-smooth-scrolling="on"
+			>
+				<div><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_friend_running.gif" alt="" /></div>
+			</div>
+	
+			<div class="item coin-1"></div>
+			<div class="item coin-2"></div>
+			<div class="item coin-3"></div>
+			<div class="item coin-4"></div>
+	
+			<div class="item coin-5"></div>
+			<div class="item coin-6"></div>
+			<div class="item coin-7"></div>
+	
+			<div class="item agent-1"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_01.gif" alt="" /></div>
+			<div class="item agent-2"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_02.gif" alt="" /></div>
+			<div class="item agent-3"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_03.gif" alt="" /></div>
+			<div class="item agent-4"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_04.gif" alt="" /></div>
+			<div class="item agent-5"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_02.gif" alt="" /></div>
+			<div class="item agent-6"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_agent_03.gif" alt="" /></div>
+			<div class="item agent-7"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_me_skin.gif" alt="" /></div>
+			<div class="item agent-8"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_friend_skin.gif" alt="" /></div>
+	
+			<div class="item candy-1"></div>
+	
+			<div class="item marble-1"></div>
+			<div class="item marble-2"></div>
+			<div class="item marble-3"></div>
+			<div class="item marble-4"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_marble_mini.gif" alt="" /></div>
+	
+			<div class="item coin-8"></div>
+			<div class="item coin-9"></div>
+			<div class="item coin-10"></div>
+			<div class="item coin-11"><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_motion_coin_mini.gif" alt="" /></div>
+	
+			<div class="item num-1"></div>
+			<div class="item num-2"></div>
+	
+			<div class="item pig-1"></div>
+	
+			<div class="item tug-1"></div>
+	
+			<div class="item coin-12"></div>
+			<div class="item coin-13"></div>
+		</div>
+	
+		<!-- 나의 깐부 확인하기 팝업 -->
+		<div class="_ev_layer" id="evLayer1" style="display:none;">
+			<div class="_layer_wrap">
+				<div class="_title"><span><img src="./static-fo-pc/img/kr/event/kk211027_bestFriend/p_pop_title.png" alt="나의 깐부 확인하기" /></span></div>
+				<div class="_content">
+					<table>
+						<caption>나의 깐부 확인하기</caption>
+						<colgroup>
+							<col style="width:12.5%"/>
+							<col style="width:63.4%"/>
+							<col style="width:auto"/>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><span class="_sr_only">NO</span></th>
+								<th scope="col"><span class="_sr_only">ID</span></th>
+								<th scope="col"><span class="_sr_only">NAME</span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>01</td>
+								<td>ohi******** </td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>02</td>
+								<td>sun***@*********</td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>03</td>
+								<td>Ali****@*******</td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>04</td>
+								<td>ohi******** </td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>05</td>
+								<td>sun***@*********</td>
+								<td>홍*</td>
+							</tr>
+							<tr>
+								<td>06</td>
+								<td>Ali****@*******</td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>07</td>
+								<td>ohi******** </td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>08</td>
+								<td>sun***@*********</td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>09</td>
+								<td>Ali****@*******</td>
+								<td>홍길*</td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td>ohi********</td>
+								<td>홍홍길*</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="_noti">※ 개인정보 보호를 위하여 <br />ID 및 이름은 일부만 공개됩니다.</p>
+					<a href="#" class="_btn_close" onclick="evPopupClose(); return false;"><span class="_sr_only">닫기</span></a>
+				</div>
+				<a href="#" class="_close" onclick="evPopupClose(); return false;"><span class="_sr_only">닫기</span></a>
+			</div>
+		</div>
+		<!-- // 나의 깐부 확인하기 팝업 -->
+	
+		<div id="evDimmed" style="display:none;" onclick="evPopupClose(); return false;"></div>
+	</div>
+</div>
+<script type="text/javascript">
+	var $motionWrap = $('.evWrap .motion-cont');
+	var $target = $('.target-1');
+	var aniScroll = 0;
+	var aniStep = [0,150,900,1650,2350];
+	var aniName = null;
+	var aniState = false;
+	var aniFrame = function () {
+		if (aniStep.length) {
+			window.requestAnimationFrame(aniFrame);
+		}
+
+		$.each(aniStep, function(i, v) {
+			if (v <= aniScroll) {
+				if (!aniState) {
+					aniStep.splice(i, 1);
+					$motionWrap.addClass('data' + v);
+				}
+			}
+		});
+	};
+
+	$target.on('animationstart webkitAnimationStart', function(e) {
+		aniState = true;
+	}).on('animationend webkitAnimationEnd', function(e) {
+		aniState = false;
+	});
+
+	$(window).on('scroll', function(e) {
+		var winWidth = $(window).width();
+		var st = $(this).scrollTop();
+		aniScroll = st;
+
+		var ani3750 = 3750;
+
+		if (aniScroll > ani3750 && !$('.evWrap .ev-cont4 .graph-wrap').is('.data3750')) {
+			$('.evWrap .ev-cont4 .graph-wrap').addClass('data3750');
+		}
+	});
+	aniFrame();
+</script>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

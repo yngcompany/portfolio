@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/common.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/scss/minify/unit.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/event.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/webfont.css?version=202202220215">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/reset.css?v=6">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layout.css?v=24">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/member.css">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/layerpop.css?v=31">
+	<link rel="stylesheet" type="text/css" href="https://static.lottedfs.com/static-fo-pc/css/commonLang.css?v=11">
+</head>
+<body>
+<div id="wrap">
+
+<!-- 퍼블리싱 작업 영역 시작 -->
+<style type="text/css">
+	.tabArea {width: 100%;}
+	.evWrap {position:relative; width:100%; font-family:'Noto Sans Regular';}
+	._sr_only {position:absolute; width:0; height:0; overflow:hidden; padding:0; margin:0; border:none; clip:rect(0,0,0,0);}
+	._mss {width:100%; background:#fff;}
+	._mss img {display:block !important; width:auto; height:auto; margin:0 auto;}
+	._mss_video {position:relative; width:100%; padding-top:56.25%; overflow:hidden; background:#e2e2e3; font-size:0;}
+	._mss_video ._video_wrap {position:absolute; left:0; top:0; width:100%; padding-top:66.66667%; margin-top:-5.20833%; overflow:hidden;}
+	._mss_video ._video_wrap iframe {position:absolute; left:0; top:0; width:100.1%; height:100.1%; margin:0; padding:0; border:none;}
+	._mss_video ._video_wrap video {position:absolute; left:0; top:0; display:block; width:100%; height:100%;}
+	._mss_video ._video_cover {position:absolute; left:0; top:0; right:0; bottom:0; background:#e2e2e3 url('https://static.lottedfs.com/contents/images/ckeditor-img/20210720/202107201022345704cae3f9fc2444d0e8cf36346caa97ad7.jpg') 50% 0 no-repeat; background-size:100%; opacity:0; z-index:100; transition:opacity .5s;}
+	._mss_video._video_wait ._video_cover {opacity:1; text-align:center;}
+	._mss_video ._video_play {display:none; position:absolute; left:50%; top:50%; width:100px; height:100px; margin:-50px 0 0 -50px; border-radius:100px; overflow:hidden; background:#fff; z-index:350; box-shadow:5px 5px 10px rgba(0,0,0,0.5);}
+	._mss_video ._video_play::after {content:''; position:absolute; left:50%; top:50%; width:0; height:0; margin:-30px 0 0 -18px; border:solid 30px transparent; border-right:solid 0 transparent; border-left:solid 50px #000;}
+	._mss_video._video_wait ._video_play {display:block;}
+
+	._mss_content ._event_header {position:relative; width:100%; height:614px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210719/20210719140613232249343c14d8b471285cb9fa2d045d2db.jpg') 50% 0 no-repeat;}
+	._mss_content ._event_header ul {position:absolute; left:50%; top:323px; margin-left:-640px; font-size:18px; color:#fff;}
+	._mss_content ._event_header ul li {position:relative; margin-top:15px; padding-left:115px;}
+	._mss_content ._event_header ul li:first-child {margin-top:0;}
+	._mss_content ._event_header ul li span {position:absolute; left:0; top:0;}
+	._mss_content ._event_header ul li p {margin-top:5px;}
+	._mss_content ._event_header ul li span + p {margin-top:0;}
+	._mss_content ._event_header ul li:first-child span + p {color:#ebf150;}
+	._mss_content ._event_prd_1 {position:relative; width:100%; height:1826px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210722/2021072216293656193f9df46106e4118a9dfe5eeeaf9ff9b.jpg') 50% 0 no-repeat;}
+	._mss_content ._event_prd_1 ._prd_info ._price {position:absolute; left:50%; top:487px; width:64px; height:64px; margin-left:-390px; box-sizing:border-box; border:4px solid #ebf150; border-radius:64px; background:#000; font-size:32px; color:#ebf150; text-align:center; font-family:'Montserrat Medium'; line-height:60px;}
+	._mss_content ._event_prd_1 ._prd_info ._price span {position:relative; left:3px; top:-3px; font-size:24px;}
+	._mss_content ._event_prd_1 ._prd_info ._txt {position:absolute; left:50%; top:439px; margin-left:-276px; font-size:28px; line-height:40px; color:#fff;}
+	._mss_content ._event_prd_1 ._prd_info ._txt strong {font-family:'Noto Sans Medium'; font-weight:bold;}
+	._mss_content ._event_prd_1 ._prd_info ._date {margin-top:2px; font-size:19px; color:#fff;}
+	._mss_content ._event_prd_1 ._prd_info ._date span {position:relative; top:-1px; font-family:'Montserrat Regular';}
+	._mss_content ._event_prd_2 {position:relative; width:100%; height:2260px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210722/20210722162857854fe6caa51567147b694688094a07719fd.jpg') 50% 0 no-repeat;}
+	._mss_content ._event_prd_3 {position:relative; width:100%; height:760px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210722/202107221629208509fb0645e8a0b4d069376f49972cc658e.jpg') 50% 0 no-repeat;}
+	._mss_content ._event_footer {position:relative; width:100%; height:1878px; background:url('https://static.lottedfs.com/contents/images/ckeditor-img/20210719/202107191408375809c8a267131b74cbdbfebd40fee6036f1.jpg') 50% 0 no-repeat;}
+	._mss_content ._event_footer ._step {position:absolute; left:50%; top:1102px; margin-left:-380px; font-size:21px; color:#fff;}
+	._mss_content ._event_footer ._step li {margin-bottom:12px;}
+	._mss_content ._event_footer ._step em {color:#7a7979; font-size:19px;}
+	._mss_content ._event_footer ._join {position:absolute; left:50%; top:1394px; width:540px; height:100px; margin-left:-270px;}
+	._mss_content ._event_footer ._caution {position:absolute; left:50%; top:1566px; width:1000px; margin-left:-493px; font-size:18px; color:#999; line-height:32px;}
+
+	._mss_banner {position:relative; width:100%; height:440px; overflow:hidden; background:#fff;}
+	._mss_banner ._banner_wrap {position:absolute; left:50%; top:50px; width:1920px; height:340px; margin-left:-960px; z-index:10;}
+	._mss_banner ._banner_wrap > div {width:1920px; height:100%; margin:0 auto;}
+</style>
+<div class="evWrap">
+	<div class="_mss">
+		<div class="_mss_video _video_wait">
+			<div class="_video_wrap">
+				<video muted playsinline autoplay loop>
+					<source type="video/mp4" src="pc_06.mp4" />
+				</video>
+			</div>
+		</div>
+		<div class="_mss_content">
+			<div class="_event_header">
+				<div class="_sr_only">
+					<h2>7종 인기 스니커즈와 총 600만 솔드아웃 포인트에 응모하세요</h2>
+				</div>
+				<ul>
+					<li>
+						<span>응모 기간</span>
+						<p>-&nbsp;&nbsp;2021.07.27 (10시) ~ 08.02 (18시)</p>
+					</li>
+					<li>
+						<span>응모 대상</span>
+						<p>-&nbsp;&nbsp;롯데인터넷면세점 &amp; 솔드아웃 회원</p>
+					</li>
+					<li>
+						<span>당첨 인원</span>
+						<p>-&nbsp;&nbsp;스니커즈 : 11명 (7종 스니커즈 중 1켤레 랜덤증정)</p>
+						<p>-&nbsp;&nbsp;솔드아웃 포인트 : 101명 (총 600만 포인트)</p>
+					</li>
+					<li>
+						<span>당첨자 발표</span>
+						<p>-&nbsp;&nbsp;1차 : 2021.08.11 / 2차 : 2021.09.08</p>
+					</li>
+				</ul>
+			</div>
+			<div class="_event_prd_2">
+				<div class="_sr_only">
+					<h3>SPECIAL RAFFLE LINE-UP adidas Yeezy Boost 350</h3>
+					<ul>
+						<li>01 이지부스트 350 V2 지브라 (230~275 사이즈 랜덤, 1켤레) 칸예 웨스트가 모두를 위해 만든 아디다스 이지 시리즈 최고의 인기모델</li>
+						<li>02 이지부스트 350 V2 에쉬 펄 (230~275 사이즈 랜덤, 1켤레) 블랙, 화이트, 크림의 따뜻함과 부드러움을 모두 가진 모델</li>
+						<li>03 이지부스트 350 V2 시온 (230~275 사이즈 랜덤, 1켤레) 회색 계열 어퍼에 갈색 스트라이프로 조화로운 컬러웨이를 자랑하는 모델</li>
+						<li>04 이지부스트 350 V2 내추럴 (230~275 사이즈 랜덤, 1켤레) 화이트톤 프라임니트의 베이직한 컬러로 사랑받는 모델</li>
+					</ul>
+				</div>
+			</div>
+			<div class="_event_prd_3">
+				<div class="_sr_only">
+					<h3>SPECIAL RAFFLE LINE-UP New Balance 992</h3>
+					<ul>
+						<li>05 뉴발란스 992 그레이 (230~275 사이즈 랜덤, 5켤레) 평범하지만 특별한, 모두가 사랑한 뉴발란스</li>
+					</ul>
+				</div>
+			</div>
+			<div class="_event_prd_1">
+				<div class="_prd_info">
+					<div class="_price"><span>$</span>1</div>
+					<div class="_txt">
+						<strong>나이키 SB 덩크</strong>에 당첨되신 분께서는 기간 내<br><strong>롯데면세점 $1이상 인도완료</strong>하셔야 경품이 증정됩니다.
+						<div class="_date">- 인도완료 기간 :&nbsp;&nbsp;2021.07.27 ~ 08.31</div>
+					</div>
+				</div>
+				<div class="_sr_only">
+					<h3>SPECIAL RAFFLE LINE-UP NIKE SB DUNK Low</h3>
+					<ul>
+						<li>06 SB 덩크 로우 트래비스 스캇 (275 사이즈, 1켤레) 스케이트보드 문화를 담아낸 SB 덩크 시리즈 끝판 왕</li>
+						<li>07 SB 덩크 로우 밴 앤 제리스 청키 덩키 (270 사이즈, 1켤레) 아이스크림과 컬래버, 세상에서 가장 고칼로리 나이키 덩크</li>
+					</ul>
+				</div>
+			</div>
+			<div class="_event_footer">
+				<div class="_sr_only">
+					<h2>응모 고객 추가 혜택</h2>
+					<p>스니커즈에 당첨되지 않은 고객님 중 추첨을 통해 최대 100만 솔드아웃 포인트 증정!</p>
+					<p>SOLDOUT POINT 1,000,000P</p>
+					<ul>
+						<li>1,000,000P 1명</li>
+						<li>50,000P 100명</li>
+					</ul>
+					<h3>응모방법</h3>
+				</div>
+				<ul class="_step">
+					<li><span class="_sr_only">STEP_1 </span>롯데인터넷면세점 및 솔드아웃 앱 회원가입</li>
+					<li><span class="_sr_only">STEP_2 </span>이벤트페이지 내 응모하기를 통해 응모정보 입력 <em>(ID당 1회 가능)</em></li>
+					<li><span class="_sr_only">STEP_3 </span>개인정보 수집 동의 후 최종 응모 완료</li>
+				</ul>
+				<a href="https://forms.gle/HjReHvueCwKNRgTB8" target="_blank" class="_join"><span class="_sr_only">응모하기</span></a>
+				<ul class="_caution">
+					<li>-&nbsp;&nbsp;응모 대상 모델은 랜덤이며 교환 불가 제품입니다.</li>
+					<li>-&nbsp;&nbsp;SB덩크에 당첨되신 분께서는 기간 내 롯데면세점 $1이상 인도완료 하셔야 경품이 증정됩니다.</li>
+					<li>-&nbsp;&nbsp;롯데인터넷면세점 &amp; 솔드아웃 회원이 아닌 경우 응모되지 않습니다.</li>
+					<li>-&nbsp;&nbsp;중복 응모 시 마지막 응모만 인정됩니다.</li>
+					<li>-&nbsp;&nbsp;응모 페이지 안내사항과 하단 유의사항을 반드시 확인해 주세요.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="_mss_banner">
+			<div class="_banner_wrap">
+				<div><a href="https://soldout.onelink.me/w8LH/7ae68fc8" target="_blank"><img src="https://static.lottedfs.com/contents/images/ckeditor-img/20210719/20210719140855926337162e7eac046948fd47def626496fc.jpg" alt="가입 시 3,000P 즉시 발급. 갖고 싶은 한정판 제품은 다 솔드아웃에서. 솔드아웃 바로가기" /></a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //퍼블리싱 작업 영역 끝 -->
+</div>
+</body>
+</html>

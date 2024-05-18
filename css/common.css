@@ -1,0 +1,70 @@
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, xmp, del, dfn, em, img, ins, samp, small, strike, strong, sub, sup, tt, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary, time, audio, video {margin: 0; padding: 0; border: 0; font-family: 'Roboto', 'Noto Sans', helvetica, arial, sans-serif; font-weight: 400; vertical-align: baseline;}
+article, aside, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ul, li {list-style: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+a {color: blue; text-decoration: none;}
+body {line-height: 1.4; font-size: 14px; background-color: #282c34; color: #f2f2f2;}
+
+/* Read me */
+body.readme {background-color: #f03070; color: #303030;}
+
+/* layout */
+#wrap {position: relative; width: 100%; max-width: 100%; margin: 0 auto;}
+#container {position: relative;}
+#header {position: fixed; overflow: hidden; top: 0; left: 0; z-index: 10; width: calc(100% - 80px); padding: 22px 40px 18px; background-color: rgba(40, 44, 52, .9); font-size: 16px;}
+#contents {position: relative; padding: 110px 40px 40px;}
+h1 {display: inline-block; line-height: 1.2; font-weight: 400; font-size: 36px;}
+h1 em {display: block; font-style: normal; font-weight: 300; font-size: 18px;}
+
+.gnb {float: right; overflow: hidden; padding-top: 14px;}
+.gnb li {float: left;}
+.gnb li:not(:first-child) {padding-left: 8px;}
+.gnb a {display: block; padding: 8px 12px 7px; border: 1px solid #f2f2f2; background-color: #282c34; color: #f2f2f2; border-radius: 4px;}
+.gnb a.active {background-color: #f2f2f2; color: #282c34;}
+
+/* grid */
+.grid {max-width: 100%;}
+.grid li {display: block; position: relative; float: left; padding: 16px; width: calc(20% - 32px); opacity: 0;}
+.grid li.shown, 
+.no-js .grid li, 
+.no-cssanimations .grid li {opacity: 1;}
+.grid li img {outline: none; border: none; display: block; max-width: 100%; border-top-left-radius: 12px; border-top-right-radius: 12px;}
+.grid .no-data {width: calc(100% - 160px) !important; padding: 80px; text-align: center;}
+
+.grid .detail {position: relative; padding: 20px 0; background-color: #fff; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;}
+.grid .detail p {width: 100%; line-height: 1.4; text-align: center; color: #282c34;}
+.grid .detail p span {display: inline-block; font-size: 14px;}
+.grid .detail .subject {display: block; font-size: 20px; font-weight: 500; word-break: keep-all;}
+.grid .detail .type {font-size: 14px;}
+.grid .detail .date {font-size: 14px;}
+.grid .detail .date:before {content: ' ㆍ '; display: inline-block; padding-right: 6px;}
+.grid .detail .cowork {display: block; padding-top: 12px; font-size: 12px;}
+
+#pop {display: none; position: fixed; z-index: 110; top: 0; left: 0; width: 100%; height: 100%; overflow-x: hidden; overflow-y: auto; background-color: rgba(40, 44, 52, .8);}
+#pop .pop-wrap {display: none; position: absolute; z-index: 111; overflow: hidden; top: 0; left: 0; right: 0; max-width: calc(100% - 120px); margin: 40px; padding: 20px; background-color: #fff; cursor: pointer;}
+#pop .pop-wrap img {display: block; max-width: 100%; margin: 0 auto;}
+#pop .pop-wrap img + img {margin-top: 20px;}
+
+/* Move Up */
+.grid li.animate {-webkit-transform: translateY(200px); transform: translateY(200px); -webkit-animation: moveUp .65s ease forwards; animation: moveUp .65s ease forwards;}
+@-webkit-keyframes moveUp {0% {}
+	100% {-webkit-transform: translateY(0); opacity: 1;}}
+@keyframes moveUp {0% {}
+	100% {-webkit-transform: translateY(0); transform: translateY(0); opacity: 1;}}
+@media screen and (max-width: 1600px) {
+	.grid li {width: calc(25% - 32px);}
+}
+@media screen and (max-width: 1240px) {
+	#header {position: relative; width: auto; padding: 24px 24px 0;}
+	h1 {font-size: 28px;}
+	h1 em {display: inline-block; font-size: 1em;}
+	#contents {padding: 12px;}
+	.grid li {width: calc(33% - 32px);}
+}
+@media screen and (max-width: 640px) {
+	#header {position: relative; width: auto; padding: 18px 18px 0;}
+	h1 {font-size: 28px;}
+	h1 em {display: inline-block; font-size: 1em;}
+	#contents {padding: 6px 6px 12px;}
+	.grid li {width: calc(50% - 32px);}
+}
